@@ -1,22 +1,27 @@
 <section class="sec-2">
   <div class="container">
-    <h2>Cobra Coffee</h2>
+    <h2>{{ section.settings.banner-text }}</h2>
   </div>
 </section>
 
-
 {% schema %}
   {
-    "name": "t:sections.bigtext-banner.name",
+    "name": "Bigtext Banner",
     "tag": "section",
     "class": "section",
     "disabled_on": {
       "groups": ["header", "footer"]
     },
-    "settings": [],
+    "settings": [
+      {
+        "id": "banner-text",
+        "type": "text",
+        "label": "Banner Text"
+      }
+    ],
     "presets": [
       {
-        "name": "t:sections.bigtext-banner.presets.name"
+        "name": "Bigtext Banner"
       }
     ]
   }
