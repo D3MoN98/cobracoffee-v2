@@ -20,17 +20,24 @@
   </div>
 </section>
 
-
 {% schema %}
   {
     "name": "Product Slider",
     "tag": "section",
     "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
     "settings": [
       {
         "id": "collection",
         "type": "collection",
         "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Slider"
       }
     ]
   }
