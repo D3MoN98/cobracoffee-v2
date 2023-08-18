@@ -1,9 +1,9 @@
 {
   "sections": {
-    "b05b9fcf-dd5d-4f40-a7ee-390d5d4cf763": {
+    "9d29f763-ccd3-4891-9d3e-e2db41890c60": {
       "type": "product-slider",
       "settings": {
-        "collection": "frontpage"
+        "slider_collections": "frontpage"
       }
     },
     "c34a6b05-170a-4b76-85d6-24506d81c892": {
@@ -29,7 +29,7 @@
     }
   },
   "order": [
-    "b05b9fcf-dd5d-4f40-a7ee-390d5d4cf763",
+    "9d29f763-ccd3-4891-9d3e-e2db41890c60",
     "c34a6b05-170a-4b76-85d6-24506d81c892",
     "video"
   ]
