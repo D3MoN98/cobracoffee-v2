@@ -1,0 +1,19 @@
+<section class="sec-2">
+  <div class="container">
+    <h2>{{ section.settings.banner-text }}</h2>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Bigtext Banner",
+    "class": "bigtext-banner",
+    "settings": [
+      {
+        "id": "banner-text",
+        "type": "text",
+        "label": "Banner Text"
+      }
+    ]
+  }
+{% endschema %}
