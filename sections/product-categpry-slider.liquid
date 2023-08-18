@@ -1,0 +1,64 @@
+<section class="categori-sec">
+  <div class="container">
+    <div class="categori-wrap">
+      <div class="categori-col active">
+        <a href="#" class="categori-box">
+          <img
+            class="cate-img"
+            src="{{ 'cat1.jpg' | asset_url }}"
+            alt="">
+          <span class="number">1</span>
+          <div class="title">
+            <h4>Coffee</h4>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </a>
+      </div>
+      <div class="categori-col">
+        <a href="#" class="categori-box">
+          <img
+            class="cate-img"
+            src="{{ 'cat3.jpg' | asset_url }}"
+            alt="">
+          <span class="number">2</span>
+          <div class="title">
+            <h4>Apparel</h4>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </a>
+      </div>
+      <div class="categori-col">
+        <a href="#" class="categori-box">
+          <img
+            class="cate-img"
+            src="{{ 'cat2.jpg' | asset_url }}"
+            alt="">
+          <span class="number">3
+          </span>
+          <div class="title">
+            <h4>Gear</h4>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Product Category Slider",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [],
+    "presets": [
+      {
+        "name": "Product Category Slider"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,110 @@
+<section class="accordion-sec">
+  <div class="container">
+    <div class="start-sub">
+      <h6>Embrace The Strike</h6>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <div class="accordion" id="accordionExample">
+      {%- assign slider_collections = section.settings.collection.products -%}
+      {% for product in slider_collections %}
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne">
+              <div class="acc-head">
+                <div class="title">
+                  <h2>{{ product.title }}</h2>
+                </div>
+                <div class="ratting">
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                </div>
+                <div class="quantity">
+                  <h4>BOLD</h4>
+                </div>
+                <div class="color">
+                  <span style="background-color: #362204;"></span>
+                </div>
+              </div>
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="left">
+                <img src="{{ product | img_url: 'master' }}" alt="product-img">
+              </div>
+              <div class="right">
+                <div class="acc-body-content">
+                  <ul>
+                    <li>X BAKER CHOCOLATE</li>
+                    <li>X CARAMELIZED SUGAR</li>
+                  </ul>
+                  <h4>GROUND COFFEE</h4>
+                  <a href="#" class="btn">ADD 35 USD
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+                <div class="acc-body-content">
+                  <h4>250G (8.8OZ)</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+    <div class="end-sub">
+      <i class="fas fa-chevron-up"></i>
+      <h6>Dominate</h6>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Product Accordion",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Accordion"
+      }
+    ]
+  }
+{% endschema %}
