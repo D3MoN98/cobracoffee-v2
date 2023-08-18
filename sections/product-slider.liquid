@@ -5,7 +5,7 @@
         {%- assign slider_collections = collections[section.settings.collection] -%}
 
         {% for product in slider_collections %}
-          {% if product.products_count > 10 %}
+          {% if product.products_count > 3 %}
             <div class="product-box">
               <figure><img src="{{ product | img_url: 'master' }}" alt="product-img"></figure>
               <div class="pro-btn">
