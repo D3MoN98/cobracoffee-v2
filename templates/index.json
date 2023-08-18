@@ -20,10 +20,17 @@
       "settings": {
         "banner-text": "Cobras Coffee"
       }
+    },
+    "b05b9fcf-dd5d-4f40-a7ee-390d5d4cf763": {
+      "type": "product-slider",
+      "settings": {
+        "collection": "frontpage"
+      }
     }
   },
   "order": [
     "video",
-    "c34a6b05-170a-4b76-85d6-24506d81c892"
+    "c34a6b05-170a-4b76-85d6-24506d81c892",
+    "b05b9fcf-dd5d-4f40-a7ee-390d5d4cf763"
   ]
 }
