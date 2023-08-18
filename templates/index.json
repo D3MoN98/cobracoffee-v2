@@ -12,6 +12,22 @@
         "banner-text": "Cobras Coffee"
       }
     },
+    "861f3849-beea-4ae5-acfb-0d879058bfc2": {
+      "type": "world-mission",
+      "settings": {
+      }
+    },
+    "64663f2c-e9c3-466b-986a-495d40e97724": {
+      "type": "product-categpry-slider",
+      "settings": {
+      }
+    },
+    "e1b72c87-6fe7-435e-ba9f-3ff2507e022d": {
+      "type": "product-accordion",
+      "settings": {
+        "collection": "frontpage"
+      }
+    },
     "video": {
       "type": "video",
       "disabled": true,
@@ -31,6 +47,9 @@
   "order": [
     "9d29f763-ccd3-4891-9d3e-e2db41890c60",
     "c34a6b05-170a-4b76-85d6-24506d81c892",
+    "861f3849-beea-4ae5-acfb-0d879058bfc2",
+    "64663f2c-e9c3-466b-986a-495d40e97724",
+    "e1b72c87-6fe7-435e-ba9f-3ff2507e022d",
     "video"
   ]
 }
