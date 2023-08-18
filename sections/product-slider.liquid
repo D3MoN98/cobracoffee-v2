@@ -4,12 +4,12 @@
       <div>
         <!-- {%- assign slider_collections = collections[section.settings.slider_collections] -%} -->
 
-        {% for collection in product.collections  %}
+        {% for product in section.settings.collection.products  %}
           <div class="product-box">
             <!-- <figure><img src="{{ product | img_url: 'master' }}" alt="product-img"></figure> -->
             <div class="pro-btn">
               <i class="fas fa-chevron-up"></i>
-              <a href="{{ collection.url }}" class="btn">{{ collection.title }}</a>
+              <a href="{{ product.url }}" class="btn">{{ product.title }}</a>
             </div>
           </div>
         {% endfor %}
@@ -28,7 +28,7 @@
     },
     "settings": [
       {
-        "id": "slider_collections",
+        "id": "collection",
         "type": "collection",
         "label": "Collection"
       }
