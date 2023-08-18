@@ -4,6 +4,7 @@
       <div>
         <!-- {%- assign slider_collections = collections[section.settings.slider_collections] -%} -->
 
+        {{ section.settings.collection | json }}
         {% for product in section.settings.collection.products  %}
           <div class="product-box">
             <!-- <figure><img src="{{ product | img_url: 'master' }}" alt="product-img"></figure> -->
