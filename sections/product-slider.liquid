@@ -1,11 +1,7 @@
 <section class="product-sec">
   <div class="container-fluid">
     <div class="product-slider slick-carousel">
-      <div>
-        {%- assign slider_collections = section.settings.collection.products -%}
         {% for product in slider_collections %}
-          <div>
-            <div class="product-box">
               <figure><img
                   loading="lazy"
                   src="{{ product | img_url: 'master' }}"
@@ -18,7 +14,6 @@
           </div>
 
         {% endfor %}
-      </div>
     </div>
   </div>
 </section>
