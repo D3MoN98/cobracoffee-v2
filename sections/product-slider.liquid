@@ -2,14 +2,14 @@
   <div class="container-fluid">
     <div class="product-slider slick-carousel">
       <div>
-        {%- assign slider_collections = collections[section.settings.slider_collections] -%}
+        <!-- {%- assign slider_collections = collections[section.settings.slider_collections] -%} -->
 
-        {% for product in slider_collections %}
+        {% for collection in product.collections  %}
           <div class="product-box">
-            <figure><img src="{{ product | img_url: 'master' }}" alt="product-img"></figure>
+            <!-- <figure><img src="{{ product | img_url: 'master' }}" alt="product-img"></figure> -->
             <div class="pro-btn">
               <i class="fas fa-chevron-up"></i>
-              <a href="{{ product.url }}" class="btn">{{ product.title }}</a>
+              <a href="{{ collection.url }}" class="btn">{{ collection.title }}</a>
             </div>
           </div>
         {% endfor %}
