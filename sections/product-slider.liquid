@@ -1,11 +1,11 @@
 <section class="product-sec">
   <div class="container-fluid">
-    <div class="">
+    <div class="product-slider slick-carousel">
       <div>
         {%- assign slider_collections = section.settings.collection.products -%}
         {% for product in slider_collections  %}
           <div class="product-box">
-            <!-- <figure><img src="{{ product | img_url: 'master' }}" alt="product-img"></figure> -->
+            <figure><img loading="lazy" src="{{ product | img_url: 'master' }}" alt="product-img"></figure>
             <div class="pro-btn">
               <i class="fas fa-chevron-up"></i>
               <a href="{{ product.url }}" class="btn">{{ product.title }}</a>
