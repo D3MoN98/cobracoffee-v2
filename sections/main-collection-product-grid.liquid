@@ -3,13 +3,13 @@
     <div class="product-cat-filter">
       <ul>
         <li>
-          <a href="/collection/coffee">COFFEE</a>
+          <a href="/collections/coffee">COFFEE</a>
         </li>
         <li class="active">
-          <a href="/collection/apparel">APPAREL</a>
+          <a href="/collections/apparel">APPAREL</a>
         </li>
         <li>
-          <a href="/collection/gear">GEAR</a>
+          <a href="/collections/gear">GEAR</a>
         </li>
       </ul>
     </div>
@@ -42,17 +42,46 @@
             <a href="#" class="f-img">
               <img
                 class="front"
-                src="images/product1-f.webp"
+                src="{{ product | img_url: 'master' }}"
                 alt="">
               <img
                 class="back"
-                src="images/product1-b.webp"
+                src="{{ product | img_url: 'master' }}"
                 alt="">
             </a>
             <h4>
               <a href="{{ product.url }}">{{ product.title }}</a>
             </h4>
-            <a href="{{ product.url }}" class="btn">ADD {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}<i class="fas fa-chevron-right"></i>
+            <product-form data-section-id="{{ section.id }}">
+              {%- form 'product',
+                product,
+                id: product_form_id,
+                class: 'form',
+                novalidate: 'novalidate',
+                data-type: 'add-to-cart-form'
+                -%}
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ product.selected_or_first_available_variant.id }}"
+                  class="product-variant-id"
+                  disabled>
+                <button
+                  id="{{ product_form_id }}-submit"
+                  type="submit"
+                  name="add"
+                  class="btn"
+                  aria-haspopup="dialog"
+                  aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}"
+                  aria-live="polite"
+                  data-sold-out-message="true"
+                  {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                  {% endif %}>
+                  ADD {% render 'price', product: product, price_class: '', show_compare_at_price: false %}<i class="fas fa-chevron-right"></i>
+                </button>
+              {%- endform -%}
+            </product-form>
             </a>
           </div>
         </div>
