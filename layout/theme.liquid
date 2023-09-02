@@ -105,31 +105,19 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    <div class="main-sec-wrap" data-scroll-container>
+    {% sections 'header-group' %}
 
-      <div class="active">
-        {% sections 'header-group' %}
-      </div>
+    <main
+      id="MainContent"
+      class="content-for-layout focus-none main-sec"
+      role="main"
+      tabindex="-1">
+      {{ content_for_layout }}
+    </main>
 
-      <main
-        id="MainContent"
-        class="content-for-layout focus-none main-sec"
-        role="main"
-        tabindex="-1">
-        {{ content_for_layout }}
-      </main>
 
-      <div class="fixed_wrapper">
-        <div class="fixed_target" id="fixed-target"></div>
-        <div
-          class="fixed"
-          data-scroll
-          data-scroll-sticky
-          data-scroll-target="#fixed-target">
-          {% sections 'footer-group' %}
-        </div>
-      </div>
-    </div>
+    {% sections 'footer-group' %}
+
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
