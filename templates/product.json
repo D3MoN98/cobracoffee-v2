@@ -15,11 +15,18 @@
       "settings": {
         "banner-text": "COBRAS COFFEE"
       }
+    },
+    "ce4b0780-b9a0-41d6-af23-e228783f84a5": {
+      "type": "recent-products",
+      "settings": {
+        "collection": "all-collections"
+      }
     }
   },
   "order": [
     "main",
     "related-products",
-    "eb14ee73-3bc4-44d8-a466-22165af344f9"
+    "eb14ee73-3bc4-44d8-a466-22165af344f9",
+    "ce4b0780-b9a0-41d6-af23-e228783f84a5"
   ]
 }
