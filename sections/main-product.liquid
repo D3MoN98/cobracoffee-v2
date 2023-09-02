@@ -4,9 +4,9 @@
     <div class="row">
       <div class="col-md-5">
         <div class="product-thumb-slider">
-          {% for item in product.media %}
+          {% for media in product.media %}
             <div>
-              <img src="{{ item.src }}" alt="{{ product.title }}{{ forloop.index }}">
+              <img src="{{ media | img_url: 'master'}}" alt="{{ product.title }}{{ forloop.index }}">
             </div>
           {% endfor %}
         </div>
