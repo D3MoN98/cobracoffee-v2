@@ -1,12 +1,12 @@
 
 @font-face {
     font-family: 'made-by-bears-demo';
-    src: url('made_by_bears_demo-webfont.eot');
-    src: url('made_by_bears_demo-webfont.eot?#iefix') format('embedded-opentype'),
-         url('made_by_bears_demo-webfont.woff2') format('woff2'),
-         url('made_by_bears_demo-webfont.woff') format('woff'),
-         url('made_by_bears_demo-webfont.ttf') format('truetype'),
-         url('made_by_bears_demo-webfont.svg#made_by_bears_demoregular') format('svg');
+    src: url('./made_by_bears_demo-webfont.eot');
+    src: url('./made_by_bears_demo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./made_by_bears_demo-webfont.woff2') format('woff2'),
+         url('./made_by_bears_demo-webfont.woff') format('woff'),
+         url('./made_by_bears_demo-webfont.ttf') format('truetype'),
+         url('./made_by_bears_demo-webfont.svg#made_by_bears_demoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -14,12 +14,12 @@
 
 @font-face {
     font-family: 'source-sans-pro';
-    src: url('sourcesanspro-regular-webfont.eot');
-    src: url('sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sourcesanspro-regular-webfont.woff2') format('woff2'),
-         url('sourcesanspro-regular-webfont.woff') format('woff'),
-         url('sourcesanspro-regular-webfont.ttf') format('truetype'),
-         url('sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+    src: url('./sourcesanspro-regular-webfont.eot');
+    src: url('./sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./sourcesanspro-regular-webfont.woff2') format('woff2'),
+         url('./sourcesanspro-regular-webfont.woff') format('woff'),
+         url('./sourcesanspro-regular-webfont.ttf') format('truetype'),
+         url('./sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
     font-weight: 400;
     font-style: normal;
 
@@ -27,12 +27,12 @@
 
 @font-face {
     font-family: 'source-sans-pro';
-    src: url('sourcesanspro-semibold-webfont.eot');
-    src: url('sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sourcesanspro-semibold-webfont.woff2') format('woff2'),
-         url('sourcesanspro-semibold-webfont.woff') format('woff'),
-         url('sourcesanspro-semibold-webfont.ttf') format('truetype'),
-         url('sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
+    src: url('./sourcesanspro-semibold-webfont.eot');
+    src: url('./sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./sourcesanspro-semibold-webfont.woff2') format('woff2'),
+         url('./sourcesanspro-semibold-webfont.woff') format('woff'),
+         url('./sourcesanspro-semibold-webfont.ttf') format('truetype'),
+         url('./sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
     font-weight: 600;
     font-style: normal;
 
@@ -40,12 +40,12 @@
 
 @font-face {
     font-family: 'source-sans-pro';
-    src: url('sourcesanspro-bold-webfont.eot');
-    src: url('sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sourcesanspro-bold-webfont.woff2') format('woff2'),
-         url('sourcesanspro-bold-webfont.woff') format('woff'),
-         url('sourcesanspro-bold-webfont.ttf') format('truetype'),
-         url('sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+    src: url('./sourcesanspro-bold-webfont.eot');
+    src: url('./sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./sourcesanspro-bold-webfont.woff2') format('woff2'),
+         url('./sourcesanspro-bold-webfont.woff') format('woff'),
+         url('./sourcesanspro-bold-webfont.ttf') format('truetype'),
+         url('./sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
     font-weight: 700;
     font-style: normal;
 
@@ -257,7 +257,7 @@ select {
     border: 1px solid rgba(114, 109, 131, 0.3);
     width: 100%;
     padding: 20px 30px;
-    background: url(down-arow.svg) no-repeat calc(100% - 16px) center #fff;
+    background: url(./down-arow.svg) no-repeat calc(100% - 16px) center #fff;
     background-size: 14px;
     outline: none;
     -webkit-appearance: none;
@@ -379,7 +379,7 @@ line-height: 20px;
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
-    background: url(tick.svg) no-repeat center center;
+    background: url(./tick.svg) no-repeat center center;
     background-size: 15px;
     filter: brightness(0) invert(1);
     -webkit-filter: brightness(0) invert(1);
@@ -572,7 +572,7 @@ transition: all 0.3s ease-in-out;
     width: 20px;
     height: 15px;
     opacity: 1;
-    background: url(right-arrows.png) center no-repeat;
+    background: url(./right-arrows.png) center no-repeat;
     background-size: 100%;
     opacity: 0;
     -webkit-transition: all 0.3s ease-in-out;
@@ -1122,7 +1122,7 @@ transition: all 0.3s ease-in-out;
     color: #ffffff;
     font-weight: 400;
     padding: 15px 80px;
-    background: url(email.png) left 35px center no-repeat;
+    background: url(./email.png) left 35px center no-repeat;
     background-size: 25px;
 }
 .ftr-frm input[type="email"]::-webkit-input-placeholder{
@@ -1161,7 +1161,7 @@ transition: all 0.3s ease-in-out;
     top: 0;
     width: 80px;
     height: 100%;
-    background: url(right-arrow-white.png) center center no-repeat;
+    background: url(./right-arrow-white.png) center center no-repeat;
     background-size: 10px;
 }
 .ftr-big-text h2{
@@ -1453,7 +1453,7 @@ transition: all 0.3s ease-in-out;
     position: absolute;
     top: 0;
     left: 0;
-    background: url(hash-pattern_440x.webp) center center no-repeat;
+    background: url(./hash-pattern_440x.webp) center center no-repeat;
     background-size: 100% 100%;
     z-index: -1;
     opacity: 0;
@@ -1559,13 +1559,13 @@ transition: all 0.3s ease-in-out;
     width: 40px;
     height: 40px;
     content: "";
-    background-image: url(cross.png);
+    background-image: url(./cross.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100%;
 }
 .faq-accordion .accordion-button:not(.collapsed)::after {
-    background-image: url(minus.png);
+    background-image: url(./minus.png);
 }
 
 
