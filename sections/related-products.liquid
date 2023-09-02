@@ -5,18 +5,33 @@
     <section class="product-details-slider-sec">
       <div class="container-fluid">
         <div class="product-details-slider slick-carousel">
-          {%- for product in recommendations.products -%}
-            <div>
-              <div class="product-details-sbox">
-                <a href="{{ product.url }}"><img src="{{ product | img_url: 'master' }}" alt="{{ product.title }}"></a>
-              </div>
+          <div>
+            <div class="product-details-sbox">
+              <a href="#"><img src="images/coffe.jpg" alt=""></a>
             </div>
-          {%- endfor -%}
+          </div>
+          <div>
+            <div class="product-details-sbox">
+              <a href="#"><img src="images/coffe.jpg" alt=""></a>
+            </div>
+          </div>
+          <div>
+            <div class="product-details-sbox">
+              <a href="#"><img src="images/coffe.jpg" alt=""></a>
+            </div>
+          </div>
+          <div>
+            <div class="product-details-sbox">
+              <a href="#"><img src="images/coffe.jpg" alt=""></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   {% endif %}
 </product-recommendations>
+
+
 
 <!-- product detail slider section end -->
 
