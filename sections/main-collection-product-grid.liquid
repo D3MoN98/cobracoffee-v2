@@ -3,13 +3,13 @@
     <div class="product-cat-filter">
       <ul>
         <li>
-          <a href="coffee.html">COFFEE</a>
+          <a href="/collection/coffee">COFFEE</a>
         </li>
         <li class="active">
-          <a href="apparel.html">APPAREL</a>
+          <a href="/collection/apparel">APPAREL</a>
         </li>
         <li>
-          <a href="gear.html">GEAR</a>
+          <a href="/collection/gear">GEAR</a>
         </li>
       </ul>
     </div>
@@ -36,235 +36,27 @@
       </ul>
     </div>
     <div class="row product-list">
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
+      {%- for product in collection.products -%}
+        <div class="col-md-4 item">
+          <div class="product-boxx">
+            <a href="#" class="f-img">
+              <img
+                class="front"
+                src="images/product1-f.webp"
+                alt="">
+              <img
+                class="back"
+                src="images/product1-b.webp"
+                alt="">
+            </a>
+            <h4>
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h4>
+            <a href="{{ product.url }}" class="btn">ADD {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}<i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product5.png"
-              alt="">
-            <img
-              class="back"
-              src="images/product5.png"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-03 Sweat Short</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product4.png"
-              alt="">
-            <img
-              class="back"
-              src="images/product4.png"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-03 Sweat Short</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product3.png"
-              alt="">
-            <img
-              class="back"
-              src="images/product3.png"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Sweat Short</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product2.png"
-              alt="">
-            <img
-              class="back"
-              src="images/product2.png"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-02 Dad Hat</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1.png"
-              alt="">
-            <img
-              class="back"
-              src="images/product1.png"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-03 Dad Hat</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
+      {%- endfor -%}
 
     </div>
   </div>
