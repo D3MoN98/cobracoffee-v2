@@ -1,7 +1,10 @@
 <!-- product details slider section start -->
 <section class="product-details-slider-sec">
   <div class="container-fluid">
-    <div class="product-details-slider slick-carousel">
+    <div
+      class="product-details-slider slick-carousel product-recommendations"
+      data-product-id="{{ product.id }}"
+      data-limit="3">
       {%- for product in recommendations.products -%}
         <div>
           <div class="product-details-sbox">

@@ -38,7 +38,7 @@
               <li>X CARAMELIZED SUGAR</li>
             </ul>
             <h4>GROUND COFFEE</h4>
-            <a href="#" class="btn btn2">ADD {{ product.price }}
+            <a href="#" class="btn btn2">ADD {{ product.price | money }}
               <i class="fas fa-chevron-right"></i>
             </a>
           </div>
@@ -53,80 +53,6 @@
 </section>
 <!-- product detail section end -->
 
-<!-- Big text section -->
-<section class="sec-2">
-  <div class="container">
-    <h2>COBRAS
-      COFFEE</h2>
-  </div>
-</section>
-<!-- Big text section end -->
-
-<!-- recent product section start -->
-<section class="recent-product">
-  <div class="container2">
-    <div class="row product-list">
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 item">
-        <div class="product-boxx">
-          <a href="#" class="f-img">
-            <img
-              class="front"
-              src="images/product1-f.webp"
-              alt="">
-            <img
-              class="back"
-              src="images/product1-b.webp"
-              alt="">
-          </a>
-          <h4>
-            <a href="#">EK-LS-01 Tee Shirt</a>
-          </h4>
-          <a href="#" class="btn">ADD 35 USD<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- recent product section end -->
 {% schema %}
   {
     "name": "t:sections.main-product.name",
