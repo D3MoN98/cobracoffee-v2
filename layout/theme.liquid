@@ -106,7 +106,10 @@
     {%- endif -%}
 
     <div class="main-sec-wrap" data-scroll-container>
-      {% sections 'header-group' %}
+
+      <div class="active">
+        {% sections 'header-group' %}
+      </div>
 
       <main
         id="MainContent"
@@ -116,7 +119,16 @@
         {{ content_for_layout }}
       </main>
 
-      {% sections 'footer-group' %}
+      <div class="fixed_wrapper">
+        <div class="fixed_target" id="fixed-target"></div>
+        <div
+          class="fixed"
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#fixed-target">
+          {% sections 'footer-group' %}
+        </div>
+      </div>
     </div>
 
     <ul hidden>
