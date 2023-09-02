@@ -52,36 +52,7 @@
             <h4>
               <a href="{{ product.url }}">{{ product.title }}</a>
             </h4>
-            <product-form data-section-id="{{ section.id }}">
-              {%- form 'product',
-                product,
-                id: product_form_id,
-                class: 'form',
-                novalidate: 'novalidate',
-                data-type: 'add-to-cart-form'
-                -%}
-                <input
-                  type="hidden"
-                  name="id"
-                  value="{{ product.selected_or_first_available_variant.id }}"
-                  class="product-variant-id"
-                  disabled>
-                <button
-                  id="{{ product_form_id }}-submit"
-                  type="submit"
-                  name="add"
-                  class="btn"
-                  aria-haspopup="dialog"
-                  aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}"
-                  aria-live="polite"
-                  data-sold-out-message="true"
-                  {% if product.selected_or_first_available_variant.available == false %}
-                  disabled
-                  {% endif %}>
-                  ADD {% render 'price', product: product, price_class: '', show_compare_at_price: false %}<i class="fas fa-chevron-right"></i>
-                </button>
-              {%- endform -%}
-            </product-form>
+            <a href="{{ product.url }}" class="btn">ADD {{ {- product.selected_or_first_available_variant.unit_price | money -}}<i class="fas fa-chevron-right"></i>
             </a>
           </div>
         </div>
