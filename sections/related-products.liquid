@@ -1,27 +1,28 @@
 <!-- product details slider section start
--->
-<product-recommendations class="related-products"
-  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=3">
+--><product-recommendations class="related-products" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=3">
   {% if recommendations.performed and recommendations.products_count > 0 %}
-  <section class="product-details-slider-sec">
-    <div class="container-fluid">
-        {%- for product in recommendations.products -%}
-        <div class="product-details-sbox">
-          <a href="{{ product.url }}"><img src="{{ product.featured_image | image_url: 'master' }}"
-              alt="{{ product.title }}"></a>
+    <section class="product-details-slider-sec">
+      <div class="container-fluid">
+        <div class="product-details-slider slick-carousel">
+          {%- for product in recommendations.products -%}
+            <div>
+              <div class="product-details-sbox">
+                <a href="{{ product.url }}"><img src="{{ product.featured_image | image_url: 'master' }}" alt="{{ product.title }}"></a>
+              </div>
+            </div>
+          {%- endfor -%}
         </div>
-        {%- endfor -%}
-    </div>
-  </section>
+      </div>
+    </section>
   {% endif %}
 </product-recommendations>
 <!-- product detail slider section end -->
 
 {% schema %}
-{
-"name": "t:sections.related-products.name",
-"tag": "section",
-"class": "section",
-"settings": []
-}
+  {
+    "name": "t:sections.related-products.name",
+    "tag": "section",
+    "class": "section",
+    "settings": []
+  }
 {% endschema %}
