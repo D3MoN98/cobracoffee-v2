@@ -9,10 +9,17 @@
       "type": "related-products",
       "settings": {
       }
+    },
+    "eb14ee73-3bc4-44d8-a466-22165af344f9": {
+      "type": "bigtext-banner",
+      "settings": {
+        "banner-text": "COBRAS COFFEE"
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "eb14ee73-3bc4-44d8-a466-22165af344f9"
   ]
 }
