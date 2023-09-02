@@ -33,7 +33,7 @@
     </div>
     <div class="row product-list">
       {%- for product in collection.products -%}
-        {{ product }}
+        {{ product | json }}
       {%- endfor -%}
 
     </div>
