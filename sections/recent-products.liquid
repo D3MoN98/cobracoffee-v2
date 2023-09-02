@@ -10,11 +10,11 @@
             <a href="{{ product.url }}" class="f-img">
               <img
                 class="front"
-                src="{{ product.featured_image | image_url: 'master' }}"
+                src="{{ product | img_url: 'master' }}"
                 alt="">
               <img
                 class="back"
-                src="{{ product.featured_image | image_url: 'master' }}"
+                src="{{ product | img_url: 'master' }}"
                 alt="">
             </a>
             <h4>

@@ -7,7 +7,7 @@
           {%- for product in recommendations.products -%}
             <div>
               <div class="product-details-sbox">
-                <a href="{{ product.url }}"><img src="{{ product.featured_image | image_url: 'master' }}" alt="{{ product.title }}"></a>
+                <a href="{{ product.url }}"><img src="{{ product | img_url: 'master' }}" alt="{{ product.title }}"></a>
               </div>
             </div>
           {%- endfor -%}
