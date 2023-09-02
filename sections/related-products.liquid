@@ -40,6 +40,7 @@
     var request = new XMLHttpRequest();
     request.open("GET", requestUrl);
     request.onload = function() {
+      console.log(request);
       if (request.status >= 200 && request.status < 300) {
         var container = document.createElement("div");
         container.innerHTML = request.response;
