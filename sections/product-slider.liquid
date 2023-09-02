@@ -1,22 +1,22 @@
-<section class="product-sec">
+<section class="product-sec section">
   <div class="container-fluid">
     <div class="product-slider slick-carousel">
-        {%- assign slider_collections = section.settings.collection.products -%}
-        {% for product in slider_collections %}
-          <div>
-            <div class="product-box">
-              <figure><img
-                  loading="lazy"
-                  src="{{ product | img_url: 'master' }}"
-                  alt="{{ product.title }}"></figure>
-              <div class="pro-btn">
-                <i class="fas fa-chevron-up"></i>
-                <a href="{{ product.url }}" class="btn">{{ product.title }}</a>
-              </div>
+      {%- assign slider_collections = section.settings.collection.products -%}
+      {% for product in slider_collections %}
+        <div>
+          <div class="product-box">
+            <figure><img
+                loading="lazy"
+                src="{{ product | img_url: 'master' }}"
+                alt="{{ product.title }}"></figure>
+            <div class="pro-btn">
+              <i class="fas fa-chevron-up"></i>
+              <a href="{{ product.url }}" class="btn">{{ product.title }}</a>
             </div>
           </div>
+        </div>
 
-        {% endfor %}
+      {% endfor %}
     </div>
   </div>
 </section>

@@ -53,10 +53,10 @@ $(".navbar-toggler").click(function(){
 
 
 
-// // fixed nav bar
+// fixed nav bar
 // $(window).scroll(function() {     
-//     var scroll = $(window).scrollTop();     
-//     if (scroll > 200) { 
+//     var scroll = $(window).scrollDown();     
+//     if (scroll > 100) { 
 //         $(".main-head").addClass("fixed"); 
 //     } 
 //     else {
@@ -65,11 +65,29 @@ $(".navbar-toggler").click(function(){
 // }) 
 
 
+// var lastScroll = 0;
+// var isScrolled = false;
+// window.addEventListener("scroll", function () {
+//   var topHeader = document.querySelector(".main-head");
+//   var currentScroll =
+//     window.pageYOffset ||
+//     document.documentElement.scrollTop ||
+//     document.body.scrollTop ||
+//     0;
+//   var scrollDirection = currentScroll < lastScroll;
+//   var shouldToggle = isScrolled && scrollDirection;
+//   isScrolled = currentScroll > 100;
+//   topHeader.classList.toggle("fixed", shouldToggle);
+//   lastScroll = currentScroll;
+// });
+
+
+
 /*testimonial*/
 $(".product-slider").slick({
   speed: 4000,
   autoplay: true,
-  autoplaySpeed: 00,
+  autoplaySpeed: 0,
   cssEase: 'linear',
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -103,13 +121,62 @@ $(".product-slider").slick({
 });
 
 
+$(".product-details-slider").slick({
+    autoplay: true,
+    autoplaySpeed: 1500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    dots: false,
+    navs: true,
+    responsive: [
+              
+             {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+              }
+            }
+           
+            ]
+  });
+
+
+  
+  $(".product-thumb-slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    navs: false,
+    dots: true,
+    
+  });
+
+  
 /*testimonial end*/
   
-
+/*new*/
 $('.categori-wrap .categori-col').mouseenter(function(){
     $('.categori-wrap .categori-col').removeClass('active');
     $(this).addClass('active');
 })
+
+
+$('.product-cat-filter ul li a').click(function(){
+    $('.product-cat-filter ul li').removeClass('active');
+    $(this).parent('li').addClass('active');
+})
+
+$('.faq-nav ul li a').click(function(){
+    $('.faq-nav ul li').removeClass('active');
+    $(this).parent('li').addClass('active');
+})
+
+
+const scroller = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true
+})
+
+
 
 
 
@@ -117,5 +184,3 @@ $('.categori-wrap .categori-col').mouseenter(function(){
 // document end
 
 })
-
-

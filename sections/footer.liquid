@@ -1,49 +1,58 @@
-<footer class="footer">
-  <div class="container">
-    <div class="ftr-frm">
-      <form>
-        <input type="email" placeholder="Enter email">
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-    <div class="row ftr-content-wrap">
-      <div class="col-md-4 left">
-        <p>THE UNDISPUTED KING <br>OF BOLD COFFEE</p>
+<div class="fixed_wrapper">
+  <div class="fixed_target" id="fixed-target"></div>
+  <div
+    class="fixed"
+    data-scroll
+    data-scroll-sticky
+    data-scroll-target="#fixed-target"></div>
+    <footer class="footer">
+      <div class="container">
+        <div class="ftr-frm">
+          <form>
+            <input type="email" placeholder="Enter email">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        <div class="row ftr-content-wrap">
+          <div class="col-md-4 left">
+            <p>THE UNDISPUTED KING <br>OF BOLD COFFEE</p>
+          </div>
+          <div class="col-auto">
+            <ul class="ftr-menu">
+              {% for link in linklists.footer-extra-menu.links %}
+                <li>
+                  <a class="{% if link.current %}active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-md-4 right">
+            <p>
+              <a href="{{ routes.root_url }}">@COBRASCOFFEE</a>
+            </p>
+          </div>
+        </div>
+        <div class="ftr-big-text">
+          <h2>COBRAS
+            COFFEE</h2>
+        </div>
+        <div class="row ftr-content-wrap">
+          <div class="col-md-4 left">
+            <p>
+              <a href="{{ routes.root_url }}">©COBRAS COFFEE</a>
+              2023. ALL RIGHTS RESERVED</p>
+          </div>
+          <div class="col-md-4 mid">
+            <a href="/pages/termsofservice">Terms</a>
+          </div>
+          <div class="col-md-4 right">
+            <a href="/pages/termsofservice">Privacy</a>
+          </div>
+        </div>
       </div>
-      <div class="col-auto">
-        <ul class="ftr-menu">
-          {% for link in linklists.footer-extra-menu.links %}
-            <li>
-              <a class="{% if link.current %}active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="col-md-4 right">
-        <p>
-          <a href="{{ routes.root_url }}">@COBRASCOFFEE</a>
-        </p>
-      </div>
-    </div>
-    <div class="ftr-big-text">
-      <h2>COBRAS
-        COFFEE</h2>
-    </div>
-    <div class="row ftr-content-wrap">
-      <div class="col-md-4 left">
-        <p>
-          <a href="{{ routes.root_url }}">©COBRAS COFFEE</a>
-          2023. ALL RIGHTS RESERVED</p>
-      </div>
-      <div class="col-md-4 mid">
-        <a href="/pages/termsofservice">Terms</a>
-      </div>
-      <div class="col-md-4 right">
-        <a href="/pages/termsofservice">Privacy</a>
-      </div>
-    </div>
+    </footer>
   </div>
-</footer>
+</div>
 
 
 {% schema %}
