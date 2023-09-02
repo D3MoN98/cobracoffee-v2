@@ -7,403 +7,80 @@
 
     <div class="accordion pro-accordion" id="accordionExample">
       <!-- new class added "pro-accordion" -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne">
-            <div class="acc-head">
-              <div class="title">
-                <h2>SNAKEBITE</h2>
-              </div>
-              <div class="ratting">
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-              </div>
-              <div class="quantity">
-                <h4>BOLD</h4>
-              </div>
-              <div class="color">
-                <span style="background-color: #362204"></span>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseOne"
-          class="accordion-collapse collapse show"
-          aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <div class="left">
-              <img src="./product5.png" alt="product-img" />
-            </div>
-            <div class="right">
-              <div class="acc-body-content">
-                <ul>
-                  <li>X BAKER CHOCOLATE</li>
-                  <li>X CARAMELIZED SUGAR</li>
-                </ul>
-                <h4>GROUND COFFEE</h4>
-                <a href="#" class="btn">ADD 35 USD
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
-              <div class="acc-body-content">
-                <h4>250G (8.8OZ)</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo">
-            <div class="acc-head">
-              <div class="title">
-                <h2>VENOM</h2>
-              </div>
-              <div class="ratting">
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-              </div>
-              <div class="quantity">
-                <h4>BOLD</h4>
-              </div>
-              <div class="color">
-                <span style="background-color: #362204"></span>
-              </div>
-            </div>
-          </button>
-        </h2>
+      {%- assign slider_collections = section.settings.collection.products -%}
+      {% assign accordion_counter = 1 %}
 
-        <div
-          id="collapseTwo"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingTwo"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <div class="left">
-              <img src="./product3.png" alt="product-img" />
-            </div>
-            <div class="right">
-              <div class="acc-body-content">
-                <ul>
-                  <li>X BAKER CHOCOLATE</li>
-                  <li>X CARAMELIZED SUGAR</li>
-                </ul>
-                <h4>GROUND COFFEE</h4>
-                <a href="#" class="btn">ADD 35 USD
-                  <i class="fas fa-chevron-right"></i>
-                </a>
+      {% for product in slider_collections %}
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading{{accordion_counter}}">
+            <button
+              class="accordion-button {% if accordion_counter > 1 %} collapsed {% endif %}"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse{{accordion_counter}}"
+              aria-expanded="{% if accordion_counter == 1 %} true {% else %} false {% endif %}"
+              aria-controls="collapse{{accordion_counter}}">
+              <div class="acc-head">
+                <div class="title">
+                  <h2>{{ product.title }}</h2>
+                </div>
+                <div class="ratting">
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                </div>
+                <div class="quantity">
+                  <h4>BOLD</h4>
+                </div>
+                <div class="color">
+                  <span style="background-color: #362204"></span>
+                </div>
               </div>
-              <div class="acc-body-content">
-                <h4>250G (8.8OZ)</h4>
+            </button>
+          </h2>
+          <div
+            id="collapse{{accordion_counter}}"
+            class="accordion-collapse collapse {% if accordion_counter ==1 1 %} show {% endif %}"
+            aria-labelledby="heading{{accordion_counter}}"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="left">
+                <img
+                  loading="lazy"
+                  src="{{ product | img_url: 'master' }}"
+                  alt="{{ product.title }}" />
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseThree"
-            aria-expanded="false"
-            aria-controls="collapseThree">
-            <div class="acc-head">
-              <div class="title">
-                <h2>FANGSOUT</h2>
-              </div>
-              <div class="ratting">
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-              </div>
-              <div class="quantity">
-                <h4>MEDIUM</h4>
-              </div>
-              <div class="color">
-                <span style="background-color: #d3b683"></span>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseThree"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingThree"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <div class="left">
-              <img src="./product2.png" alt="product-img" />
-            </div>
-            <div class="right">
-              <div class="acc-body-content">
-                <ul>
-                  <li>X BAKER CHOCOLATE</li>
-                  <li>X CARAMELIZED SUGAR</li>
-                </ul>
-                <h4>GROUND COFFEE</h4>
-                <a href="#" class="btn">ADD 35 USD
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
-              <div class="acc-body-content">
-                <h4>250G (8.8OZ)</h4>
+              <div class="right">
+                <div class="acc-body-content">
+                  <ul>
+                    <li>X BAKER CHOCOLATE</li>
+                    <li>X CARAMELIZED SUGAR</li>
+                  </ul>
+                  <h4>GROUND COFFEE</h4>
+                  <a href="{{ product.url }}" class="btn">ADD 35 USD
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+                <div class="acc-body-content">
+                  <h4>250G (8.8OZ)</h4>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFour">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseFour"
-            aria-expanded="false"
-            aria-controls="collapseFour">
-            <div class="acc-head">
-              <div class="title">
-                <h2>SLITHER</h2>
-              </div>
-              <div class="ratting">
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-              </div>
-              <div class="quantity">
-                <h4>MEDIUM</h4>
-              </div>
-              <div class="color">
-                <span style="background-color: #d3b683"></span>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseFour"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingFour"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <div class="left">
-              <img src="./product2.png" alt="product-img" />
-            </div>
-            <div class="right">
-              <div class="acc-body-content">
-                <ul>
-                  <li>X BAKER CHOCOLATE</li>
-                  <li>X CARAMELIZED SUGAR</li>
-                </ul>
-                <h4>GROUND COFFEE</h4>
-                <a href="#" class="btn">ADD 35 USD
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
-              <div class="acc-body-content">
-                <h4>250G (8.8OZ)</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFive">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseFive"
-            aria-expanded="false"
-            aria-controls="collapseFive">
-            <div class="acc-head">
-              <div class="title">
-                <h2>REPTILE</h2>
-              </div>
-              <div class="ratting">
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-              </div>
-              <div class="quantity">
-                <h4>DECAF</h4>
-              </div>
-              <div class="color">
-                <span style="background-color: #f9801e"></span>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseFive"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingFive"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <div class="left">
-              <img src="./product2.png" alt="product-img" />
-            </div>
-            <div class="right">
-              <div class="acc-body-content">
-                <ul>
-                  <li>X BAKER CHOCOLATE</li>
-                  <li>X CARAMELIZED SUGAR</li>
-                </ul>
-                <h4>GROUND COFFEE</h4>
-                <a href="#" class="btn">ADD 35 USD
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
-              <div class="acc-body-content">
-                <h4>250G (8.8OZ)</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSix">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseSix"
-            aria-expanded="false"
-            aria-controls="collapseSix">
-            <div class="acc-head">
-              <div class="title">
-                <h2>BRAZIL</h2>
-              </div>
-              <div class="ratting">
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-              </div>
-              <div class="quantity">
-                <h4>SINGLE ORIGIN</h4>
-              </div>
-              <div class="color">
-                <span style="background-color: #00bb27"></span>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseSix"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingSix"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <div class="left">
-              <img src="./product2.png" alt="product-img" />
-            </div>
-            <div class="right">
-              <div class="acc-body-content">
-                <ul>
-                  <li>X BAKER CHOCOLATE</li>
-                  <li>X CARAMELIZED SUGAR</li>
-                </ul>
-                <h4>GROUND COFFEE</h4>
-                <a href="#" class="btn">ADD 35 USD
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
-              <div class="acc-body-content">
-                <h4>250G (8.8OZ)</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
 
     <div class="end-sub">
