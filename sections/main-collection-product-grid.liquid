@@ -48,7 +48,7 @@
             <h4>
               <a href="{{ product.url }}">{{ product.title }}</a>
             </h4>
-            <a href="{{ product.url }}" class="btn">ADD {{- product.selected_or_first_available_variant.unit_price | money -}}<i class="fas fa-chevron-right"></i>
+            <a href="{{ product.url }}" class="btn">ADD {{ product.selected_or_first_available_variant.unit_price | money }}<i class="fas fa-chevron-right"></i>
             </a>
           </div>
         </div>
