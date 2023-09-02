@@ -2,7 +2,7 @@
   <div class="container2">
     <div class="product-cat-filter">
       <ul>
-        {% for link in linklists.main-menu.links %}
+        {% for link in linklists.collection-menu.links %}
           <li>
             <a class="{% if link.current %}active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
           </li>
@@ -33,7 +33,25 @@
     </div>
     <div class="row product-list">
       {%- for product in collection.products -%}
-        {{ product | json }}
+        <div class="col-md-4 item">
+          <div class="product-boxx">
+            <a href="#" class="f-img">
+              <img
+                class="front"
+                src="{{ product | img_url: 'master' }}"
+                alt="">
+              <img
+                class="back"
+                src="{{ product | img_url: 'master' }}"
+                alt="">
+            </a>
+            <h4>
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h4>
+            <a href="{{ product.url }}" class="btn">ADD {{ {- product.selected_or_first_available_variant.unit_price | money -}}<i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
       {%- endfor -%}
 
     </div>
