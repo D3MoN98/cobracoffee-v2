@@ -3,8 +3,8 @@
     <div class="product-cat-filter">
       <ul>
         {% for link in linklists.collection-menu.links %}
-          <li>
-            <a class="{% if link.current %}active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+          <li class="{% if link.current %}active{% endif %}">
+            <a href="{{ link.url }}">{{ link.title }}</a>
           </li>
         {% endfor %}
       </ul>
@@ -35,7 +35,7 @@
       {%- for product in collection.products -%}
         <div class="col-md-4 item">
           <div class="product-boxx">
-            <a href="#" class="f-img">
+            <a href="{{ product.url }}" class="f-img">
               <img
                 class="front"
                 src="{{ product | img_url: 'master' }}"
