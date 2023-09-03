@@ -18,18 +18,15 @@
 
     {% for product in collections.all.products %}
       {% if product.type == 'Clothes' %}
-        {% capture productInfo %}
-          {% if product.variants.size > 1 %}
-            {% for option in product.options %}
-              {% if option.name == 'color' %}
-                {% for value in option.values %}
-                  {{ value }},
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-        {% endcapture %}
-        {% assign productsOfType = productsOfType | push: productInfo %}
+        {% if product.variants.size > 1 %}
+          {% for option in product.options %}
+            {% if option.name == 'color' %}
+              {% for value in option.values %}
+                {{ value }},
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
       {% endif %}
     {% endfor %}
 
