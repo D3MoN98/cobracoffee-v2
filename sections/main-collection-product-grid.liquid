@@ -11,7 +11,6 @@
     </div>
     {% assign specific_slug = "apparel" %}
     {% assign current_url = request.url %}
-    {{ current_url }}
 
     {% if current_url contains specific_slug %}{% endif %}
 
@@ -32,9 +31,9 @@
       {% endif %}
     {% endfor %}
 
-    {% assign colors_array = colors_array | remove: '\' | split: "," %}
+    {{ current_url }}
 
-    {{ colors_array | json }}
+    {% assign colors_array = colors_array | remove: '\' | split: "," %}
 
     {% assign unique_array = colors_array[0] %}
 
@@ -50,9 +49,9 @@
           {% assign color_class = "color1" %}
           {% if color == "Black" %}
             {% assign color_class = "color1" %}
-          {% elsif color == "value2" %}
+          {% elsif color == "Camel" %}
             {% assign color_class = "color2" %}
-          {% elsif color == "value3" %}
+          {% elsif color == "White" %}
             {% assign color_class = "color3" %}
           {% endif %}
           <li>
