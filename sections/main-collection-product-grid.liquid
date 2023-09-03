@@ -121,9 +121,9 @@
   })
 
   fetchProduct(colors) {
-    fetch("{{current_url}}" + "/products.json").then((products) => {
+    fetch("{{current_url}}" + "/products.json").then(function(products) {
       console.log(products)
-    }).catch((error) => {
+    }).catch(function(error) {
       console.log(error)
     })
   }
