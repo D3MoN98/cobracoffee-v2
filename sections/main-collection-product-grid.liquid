@@ -130,16 +130,12 @@
       var filtered_product = data.products.map((element) => {
         var condition = element.options.map((option) => {
           if (option.name == 'color' && colors.includes(option.values[0])) {
-            console.log(true, option.values)
             return true
           } else {
-            console.log(false, option.values)
             return false
           }
         })
-        return condition
-          ? element
-          : null
+        console.log(condition)
       });
 
       console.log(filtered_product)
