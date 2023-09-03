@@ -31,7 +31,7 @@
       {% endif %}
     {% endfor %}
 
-    {% assign colors_array = colors_array | split: ',' | remove: '' %}
+    {% assign colors_array = colors_array | remove: '\' %}
 
     {{ colors_array | json }}
 
