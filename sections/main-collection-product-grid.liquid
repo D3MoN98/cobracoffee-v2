@@ -20,7 +20,7 @@
         {% if product.variants.size > 1 %}
           {% for option in product.options %}
             {% if option == 'color' %}
-              {% assign index = forloop.index %}
+              {% assign index = forloop.index0 %}
               {{ index }}
               {% for variant in product.variants %}
                 {{ variant.options[index] }}
