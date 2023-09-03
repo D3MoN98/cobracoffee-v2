@@ -21,8 +21,8 @@
           {% for variant in product.variants %}
             {% if variant.option1 != blank and variant.option1 != 'Default Title' %}
               {% assign color_value = variant.option1 %}
-              {{ color_value | json }}
               {% unless color_options contains color_value %}
+                {{ color_value | json }}
                 {% assign color_options = color_options | push: color_value %}
               {% endunless %}
             {% endif %}
