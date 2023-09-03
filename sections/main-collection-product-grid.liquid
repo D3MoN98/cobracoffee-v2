@@ -17,12 +17,12 @@
     {% assign productsOfType = '' | split: ',' %}
 
     {% for product in collections.all.products %}
-      {{ product.type | json }}
-      <hr>
       {% if product.type == 'Clothes' %}
         {% capture productInfo %}
           {% if product.variants.size > 1 %}
             {% for option in product.options %}
+              {{ option | json }}
+              <hr>
               {{ option.name }}:
               {% for value in option.values %}
                 {{ value }},
@@ -34,7 +34,7 @@
       {% endif %}
     {% endfor %}
 
-    {{ productInfo }}
+    {{ productInfo | json }}
 
     {% for productInfo in productsOfType %}
       {% assign productInfoArray = productInfo | split: ',' %}
