@@ -130,7 +130,6 @@
       var filtered_product = data.products.filter((element) => {
         for (let i = 0; i < element.options.length; i++) {
           let option = element.options[i];
-          console.log(option)
           if (option.name == 'color' && colors.includes(option.values[0])) {
             return true
           } else {
