@@ -125,8 +125,10 @@
       if (! response.ok) {
         throw new Error('Network response was not ok');
       }
-      return response.json().products; // Parse the response as JSON
+      return response.json(); // Parse the response as JSON
     }).then(function(data) {
+      console.log(data);
+
       data.map(function(element) {
         console.log(element)
       });
