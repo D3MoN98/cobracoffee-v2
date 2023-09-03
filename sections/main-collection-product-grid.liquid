@@ -21,12 +21,11 @@
         {% capture productInfo %}
           {% if product.variants.size > 1 %}
             {% for option in product.options %}
-              {{ option | json }}
-              <hr>
-              {{ option.name }}:
-              {% for value in option.values %}
-                {{ value }},
-              {% endfor %}
+              {% if option.name == 'color' %}
+                {% for value in option.values %}
+                  {{ value }},
+                {% endfor %}
+              {% endif %}
             {% endfor %}
           {% endif %}
         {% endcapture %}
@@ -34,24 +33,7 @@
       {% endif %}
     {% endfor %}
 
-    {{ productInfo | json }}
-
-    {% for productInfo in productsOfType %}
-      {% assign productInfoArray = productInfo | split: ',' %}
-      <h2>{{ productInfoArray[0] }}</h2>
-      <p>{{ productInfoArray[1] }}</p>
-
-      {% if productInfoArray.size > 3 %}
-        <h3>Options:</h3>
-        <ul>
-          {% for i in (3..productInfoArray.size) %}
-            <li>{{ productInfoArray[i] }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endfor %}
-
-
+    {{ productsOfType | json }}
 
     <div class="product-color-filter">
       <ul>
