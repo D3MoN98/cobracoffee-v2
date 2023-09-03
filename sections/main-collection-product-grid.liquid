@@ -129,6 +129,7 @@
     }).then(function(data) {
       var filtered_product = data.products.filter((element) => {
         for (var option in element.options) {
+          console.log(option)
           if (option.name == 'color' && colors.includes(option.values[0])) {
             return true
           } else {
