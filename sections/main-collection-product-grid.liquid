@@ -14,15 +14,16 @@
 
     {% if current_url contains specific_slug %}{% endif %}
 
+    {% assign color_array = "item1,item2,item3" | split: ',' %}
+
     {% for product in collections.all.products %}
       {% if product.type == 'Clothes' %}
         {% if product.variants.size > 1 %}
           {% for option in product.options %}
             {% if option == 'color' %}
               {% assign index = forloop.index0 %}
-              {{ index }}
               {% for variant in product.variants %}
-                {{ variant.options[index] }}
+                {% assign color_array = color_array | join: ',' | append: variant.options[index] | split: ',' %}
               {% endfor %}
               <hr>
             {% endif %}
@@ -31,6 +32,7 @@
       {% endif %}
     {% endfor %}
 
+    {{ color_array | json }}
 
     <div class="product-color-filter">
       <ul>
