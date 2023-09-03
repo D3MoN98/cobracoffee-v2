@@ -37,7 +37,7 @@
 
     {% for item in colors_array %}
       {% unless unique_array contains item %}
-        {% assign unique_array = unique_array | append: item | append: "," | remove: "\" | split: ", " %}
+        {% assign unique_array = unique_array | append: item | append: ", " | remove: "\" | split: ", " %}
         {{ unique_array | json }}
         <hr>
       {% endunless %}
