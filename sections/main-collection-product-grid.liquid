@@ -105,13 +105,17 @@
   // Get a reference to the checkbox element
   var checkboxes = document.querySelectorAll('input[name="product_color"]')
 
+  var colors = []
+
 // Add a change event listener to the checkbox
   checkboxes.forEach(function(checkbox) {
     checkbox.addEventListener('change', function() {
       if (checkbox.checked) {
-        console.log(this.value)
+        colors.push(this.value)
+        console.log(colors)
       } else { // Checkbox is unchecked
-        console.log("uncheck", this.value)
+        colors = colors.filter((element) => element !== this.value);
+        console.log(colors)
       }
     });
   })
