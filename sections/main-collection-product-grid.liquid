@@ -17,10 +17,8 @@
     {% assign productsOfType = '' | split: ',' %}
 
     {% for product in collections.all.products %}
-      {% if product.id == 42329943376068 %}
-        {{ product | json }}
-      {% endif %}
-      {% if product.product_type == 'Clothes' %}
+      {{ product.type | json }}
+      {% if product.type == 'Clothes' %}
         {% capture productInfo %}
           {{ product.title | escape }},{{ product.description | escape }},{{ product.price | money }}
           {% if product.variants.size > 1 %}
