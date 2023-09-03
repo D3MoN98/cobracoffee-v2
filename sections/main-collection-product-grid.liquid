@@ -9,28 +9,50 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="product-color-filter">
-      <ul>
-        <li>
-          <div class="c-checkbox color1">
-            <input type="checkbox">
-            <label></label>
-          </div>
-        </li>
-        <li>
-          <div class="c-checkbox color2">
-            <input type="checkbox">
-            <label></label>
-          </div>
-        </li>
-        <li>
-          <div class="c-checkbox color3">
-            <input type="checkbox">
-            <label></label>
-          </div>
-        </li>
-      </ul>
-    </div>
+    {% assign specific_slug = "apparel" %}
+    {% assign current_url = request.url %}
+
+    {% if current_url contains specific_slug %}
+
+      {% assign color_options = '' | split: ',' %}
+      {% for product in collections.all.products %}
+        {% for variant in product.variants %}
+          {% for option in variant.options %}
+            {% if option == 'color' %}
+              {% assign color_value = variant.option1 %}
+              {% if color_value != blank and color_options contains color_value == false %}
+                {% assign color_options = color_options | push: color_value %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+
+      {{ color_options | json }}
+      <div class="product-color-filter">
+        <ul>
+          <li>
+            <div class="c-checkbox color1">
+              <input type="checkbox">
+              <label></label>
+            </div>
+          </li>
+          <li>
+            <div class="c-checkbox color2">
+              <input type="checkbox">
+              <label></label>
+            </div>
+          </li>
+          <li>
+            <div class="c-checkbox color3">
+              <input type="checkbox">
+              <label></label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    {% endif %}
+
     <div class="row product-list">
       {%- for product in collection.products -%}
         <div class="col-md-4 item">
