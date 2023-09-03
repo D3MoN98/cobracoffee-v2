@@ -19,7 +19,14 @@
         {{ product.options | json }}
         {% if product.variants.size > 1 %}
           {% for option in product.options %}
-            {{ option }}
+            {% if option == 'color' %}
+              {% assign index = forloop.index %}
+              {{ index }}
+              {% for variant in product.variants %}
+                {{ variant.options[index] }}
+              {% endfor %}
+              <hr>
+            {% endif %}
           {% endfor %}
         {% endif %}
       {% endif %}
