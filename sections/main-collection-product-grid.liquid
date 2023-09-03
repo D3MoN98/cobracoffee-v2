@@ -33,6 +33,8 @@
 
     {% assign colors_array = colors_array | remove: '\' | split: "," %}
 
+    {{ colors_array | json }}
+
     {% assign unique_array = colors_array[0] %}
 
     {% for item in colors_array %}
