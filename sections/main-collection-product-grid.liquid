@@ -14,19 +14,29 @@
 
     {% if current_url contains specific_slug %}
 
-      {% assign color_options = '' | split: ',' %}
-      {% for product in collections.all.products %}
-        {% for variant in product.variants %}
-          {% if variant.option1 != blank and variant.option1 != 'Default Title' %}
-            {% assign color_value = variant.option1 %}
-            {% if color_options contains color_value == false %}
-              {% assign color_options = color_options | push: color_value %}
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
+      <div class="color-filter">
+        <h3>Filter by Color:</h3>
+        <ul>
+          {% assign color_options = '' | split: ',' %}
+          {% for product in collections.all.products %}
+            {% for variant in product.variants %}
+              {% if variant.option1 != blank and variant.option1 != 'Default Title' %}
+                {% assign color_value = variant.option1 %}
+                {% unless color_options contains color_value %}
+                  {% assign color_options = color_options | push: color_value %}
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
 
-      {{ color_options | json }}
+          {% for color in color_options %}
+            <li>
+              <a href="?color={{ color | handleize }}">{{ color }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
       <div class="product-color-filter">
         <ul>
           <li>
