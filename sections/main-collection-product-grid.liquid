@@ -33,6 +33,9 @@
 
     {% assign colors_array = colors_array | remove: '\' | split: "," %}
 
+    {{ colors_array | json }}
+    <hr>
+
     {% assign unique_array = "" %}
 
     {% for item in colors_array %}
