@@ -121,8 +121,13 @@
   })
 
   function fetchProduct(colors) {
-    fetch("/collections/apparel/products.json").then(function(products) {
-      console.log(products)
+    fetch("/collections/apparel/products.json").then(function(response) {
+      if (! response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json(); // Parse the response as JSON
+    }).then(function(data) {
+      console.log(data);
     }).catch(function(error) {
       console.log(error)
     })
