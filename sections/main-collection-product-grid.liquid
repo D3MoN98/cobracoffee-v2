@@ -127,7 +127,7 @@
       }
       return response.json().products; // Parse the response as JSON
     }).then(function(data) {
-      data.map((element) => {
+      data.map(function(element) {
         console.log(element)
       });
 
