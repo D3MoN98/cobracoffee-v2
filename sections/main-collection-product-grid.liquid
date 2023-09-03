@@ -31,7 +31,7 @@
       {% endif %}
     {% endfor %}
 
-    {{ current_url }}
+    {{ request.url }}
 
     {% assign colors_array = colors_array | remove: '\' | split: "," %}
 
