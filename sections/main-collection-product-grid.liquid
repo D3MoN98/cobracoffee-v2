@@ -16,6 +16,8 @@
 
     {% for product in collections.all.products %}
       {% if product.type == 'Clothes' %}
+        {{ product.variants | json }}
+        <hr>
         {% if product.variants.size > 1 %}
           {{ product.options | json }}
           {% for option in product.options %}
