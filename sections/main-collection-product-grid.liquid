@@ -19,10 +19,9 @@
         {% assign color_options = '' | split: ',' %}
         {% for product in collections.all.products %}
           {% for variant in product.variants %}
-            {% if variant.option1 != blank and variant.option1 != 'Default Title' %}
+            {% if variant.option1 != null and variant.option1 != 'Default Title' %}
               {% assign color_value = variant.option1 %}
               {% unless color_options contains color_value %}
-                {{ color_value | json }}
                 {% assign color_options = color_options | push: color_value %}
               {% endunless %}
             {% endif %}
@@ -36,6 +35,7 @@
         {% endfor %}
       </ul>
     </div>
+
 
     <div class="product-color-filter">
       <ul>
