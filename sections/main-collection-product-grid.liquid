@@ -103,16 +103,16 @@
 
 <script>
   // Get a reference to the checkbox element
-  var checkbox = document.querySelectorAll('input[name="product_color"]')
-
-// Get a reference to the paragraph element where we'll display the state
+  var checkboxes = document.querySelectorAll('input[name="product_color"]')
 
 // Add a change event listener to the checkbox
-  checkbox.addEventListener('change', function() {
-    if (checkbox.checked) {
-      console.log(this.value)
-    } else { // Checkbox is unchecked
-      console.log("uncheck", this.value)
-    }
-  });
+  checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      if (checkbox.checked) {
+        console.log(this.value)
+      } else { // Checkbox is unchecked
+        console.log("uncheck", this.value)
+      }
+    });
+  })
 </script>
