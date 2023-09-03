@@ -17,6 +17,7 @@
     {% assign productsOfType = '' | split: ',' %}
 
     {% for product in collections.all.products %}
+      {{ product.product_type }}
       {% if product.product_type == 'Clothes' %}
         {% capture productInfo %}
           {{ product.title | escape }},{{ product.description | escape }},{{ product.price | money }}
@@ -32,6 +33,8 @@
         {% assign productsOfType = productsOfType | push: productInfo %}
       {% endif %}
     {% endfor %}
+
+    {{ productInfo | json }}
 
     {% for productInfo in productsOfType %}
       {% assign productInfoArray = productInfo | split: ',' %}
