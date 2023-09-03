@@ -129,6 +129,8 @@
     }).then(function(data) {
       var filtered_product = data.products.map((element) => {
         return element.options.map((option) => {
+          console.log(option)
+
           if (option.name == 'color' && colors.includes(option.value)) {
             return true
           }
