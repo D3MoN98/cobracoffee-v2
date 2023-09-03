@@ -33,12 +33,7 @@
 
     {% assign colors_array = colors_array | remove: '\' %}
 
-    {{ colors_array | json }}
-
-    {% for item in colors_array %}
-      {{ item }}
-      <hr>
-    {% endfor %}
+    {{ colors_array }}
 
     <div class="product-color-filter">
       <ul>
