@@ -14,7 +14,7 @@
 
     {% if current_url contains specific_slug %}{% endif %}
 
-    {% assign my_array = "" %}
+    {% assign colors_array = "" %}
 
     {% for product in collections.all.products %}
       {% if product.type == 'Clothes' %}
@@ -23,18 +23,27 @@
             {% if option == 'color' %}
               {% assign index = forloop.index0 %}
               {% for variant in product.variants %}
-                {% assign my_array = my_array | append: variant.options[index] | append: "," %}
+                {% assign colors_array = colors_array | append: variant.options[index] | append: "," %}
               {% endfor %}
-              <hr>
             {% endif %}
           {% endfor %}
         {% endif %}
       {% endif %}
     {% endfor %}
 
-    {% assign my_array = my_array | split: ',' | remove: '' %}
+    {% assign colors_array = colors_array | split: ',' | remove: '' %}
 
-    {{ my_array | json }}
+    {{ colors_array | json }}
+
+    {% assign unique_array = "" %}
+
+    {% for item in colors_array %}
+      {% unless unique_array contains item %}
+        {% assign unique_array = unique_array | join: ', ' | append: item | split: ', ' %}
+      {% endunless %}
+    {% endfor %}
+
+    {{ unique_array | json }}
 
     <div class="product-color-filter">
       <ul>
