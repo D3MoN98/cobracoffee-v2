@@ -11,6 +11,7 @@
     </div>
     {% assign specific_slug = "apparel" %}
     {% assign current_url = request.url %}
+    {{ current_url }}
 
     {% if current_url contains specific_slug %}{% endif %}
 
@@ -43,27 +44,24 @@
       {% endunless %}
     {% endfor %}
 
-    {{ unique_array | json }}
     <div class="product-color-filter">
       <ul>
-        <li>
-          <div class="c-checkbox color1">
-            <input type="checkbox">
-            <label></label>
-          </div>
-        </li>
-        <li>
-          <div class="c-checkbox color2">
-            <input type="checkbox">
-            <label></label>
-          </div>
-        </li>
-        <li>
-          <div class="c-checkbox color3">
-            <input type="checkbox">
-            <label></label>
-          </div>
-        </li>
+        {% for color in unique_array %}
+          {% assign color_class = "color1" %}
+          {% if color == "Black" %}
+            {% assign color_class = "color1" %}
+          {% elsif color == "value2" %}
+            {% assign color_class = "color2" %}
+          {% elsif color == "value3" %}
+            {% assign color_class = "color3" %}
+          {% endif %}
+          <li>
+            <div class="c-checkbox {{color_class}}">
+              <input type="checkbox">
+              <label></label>
+            </div>
+          </li>
+        {% endfor %}
       </ul>
     </div>
 
