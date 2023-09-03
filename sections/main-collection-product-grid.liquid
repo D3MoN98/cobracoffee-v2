@@ -14,11 +14,10 @@
 
     {% if current_url contains specific_slug %}{% endif %}
 
-    {% assign productsOfType = '' | split: ',' %}
-
     {% for product in collections.all.products %}
       {% if product.type == 'Clothes' %}
         {% if product.variants.size > 1 %}
+          {{ option | json }}
           {% for option in product.options %}
             {{ option.name }}
             {% for value in option.values %}
@@ -29,7 +28,6 @@
       {% endif %}
     {% endfor %}
 
-    {{ productsOfType | json }}
 
     <div class="product-color-filter">
       <ul>
