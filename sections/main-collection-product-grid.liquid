@@ -35,7 +35,7 @@
 
     {% assign unique_array = "" %}
 
-    {% for item in source_array %}
+    {% for item in colors_array %}
       {% unless unique_array contains item %}
         {% assign unique_array = unique_array | append: item | append: "," | remove: '\' | split: "," %}
         {{ unique_array }}
