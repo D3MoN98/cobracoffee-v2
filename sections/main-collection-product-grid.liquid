@@ -31,7 +31,8 @@
       {% endif %}
     {% endfor %}
 
-    {{ request.path }}
+    {% assign full_url = request.host | append: request.path %}
+    {{ full_url }}
 
     {% assign colors_array = colors_array | remove: '\' | split: "," %}
 
