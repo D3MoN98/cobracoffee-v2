@@ -13,18 +13,21 @@
     {% assign current_url = request.url %}
 
     {% if current_url contains specific_slug %}{% endif %}
+
     <div class="color-filter">
       <h3>Filter by Color:</h3>
       <ul>
         {% assign color_options = '' | split: ',' %}
         {% for product in collections.all.products %}
           {% for variant in product.variants %}
-            {% if variant.option1 != null and variant.option1 != 'Default Title' %}
-              {% assign color_value = variant.option1 %}
-              {% unless color_options contains color_value %}
-                {% assign color_options = color_options | push: color_value %}
-              {% endunless %}
-            {% endif %}
+            {% for option in variant.options %}
+              {% if option == 'Color' %}
+                {% assign color_value = variant.option1 %}
+                {% if color_value != blank and color_options contains color_value %}
+                  {% assign color_options = color_options | push: color_value %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
           {% endfor %}
         {% endfor %}
 
@@ -35,6 +38,7 @@
         {% endfor %}
       </ul>
     </div>
+
 
 
     <div class="product-color-filter">
