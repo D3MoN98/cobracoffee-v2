@@ -16,15 +16,10 @@
 
     {% for product in collections.all.products %}
       {% if product.type == 'Clothes' %}
-        {{ product | json }}
-        <hr>
+        {{ product.options | json }}
         {% if product.variants.size > 1 %}
-          {{ product.options | json }}
           {% for option in product.options %}
-            {{ option.name }}
-            {% for value in option.values %}
-              {{ value }}
-            {% endfor %}
+            {{ option }}
           {% endfor %}
         {% endif %}
       {% endif %}
