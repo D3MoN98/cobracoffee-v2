@@ -120,7 +120,7 @@
     });
   })
 
-  fetchProduct(colors) {
+  function fetchProduct(colors) {
     fetch("{{current_url}}" + "/products.json").then(function(products) {
       console.log(products)
     }).catch(function(error) {
