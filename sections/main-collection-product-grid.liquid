@@ -18,6 +18,7 @@
 
     {% for product in collections.all.products %}
       {{ product.type | json }}
+      <hr>
       {% if product.type == 'Clothes' %}
         {% capture productInfo %}
           {{ product.title | escape }},{{ product.description | escape }},{{ product.price | money }}
