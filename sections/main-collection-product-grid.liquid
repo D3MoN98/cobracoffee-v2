@@ -31,9 +31,9 @@
       {% endif %}
     {% endfor %}
 
-    {% assign colors_array = colors_array | remove: '\' %}
+    {% assign colors_array = colors_array | remove: '\' | split: ', ' %}
 
-    {{ colors_array }}
+    {{ colors_array | json }}
 
     <div class="product-color-filter">
       <ul>
