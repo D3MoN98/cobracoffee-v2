@@ -19,6 +19,7 @@
         {% assign color_options = '' | split: ',' %}
         {% for product in collections.all.products %}
           {% for variant in product.variants %}
+            {{ variant | json }}
             {% if variant.option1 != blank and variant.option1 != 'Default Title' %}
               {% assign color_value = variant.option1 %}
               {% unless color_options contains color_value %}
