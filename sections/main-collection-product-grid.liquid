@@ -33,7 +33,15 @@
 
     {% assign colors_array = colors_array | remove: '\' | split: "," %}
 
-    {{ colors_array | json }}
+    {% assign unique_array = "" %}
+
+    {% for item in source_array %}
+      {% unless unique_array contains item %}
+        {% assign unique_array = unique_array | join: ', ' | append: item | split: ', ' %}
+      {% endunless %}
+    {% endfor %}
+
+    {{ unique_array | json }}
 
     <div class="product-color-filter">
       <ul>
