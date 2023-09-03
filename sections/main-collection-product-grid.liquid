@@ -17,14 +17,12 @@
       {% assign color_options = '' | split: ',' %}
       {% for product in collections.all.products %}
         {% for variant in product.variants %}
-          {% for option in variant.options %}
-            {% if option == 'color' %}
-              {% assign color_value = variant.option1 %}
-              {% if color_value != blank and color_options contains color_value == false %}
-                {% assign color_options = color_options | push: color_value %}
-              {% endif %}
+          {% if variant.option1 != blank and variant.option1 != 'Default Title' %}
+            {% assign color_value = variant.option1 %}
+            {% if color_options contains color_value == false %}
+              {% assign color_options = color_options | push: color_value %}
             {% endif %}
-          {% endfor %}
+          {% endif %}
         {% endfor %}
       {% endfor %}
 
