@@ -129,12 +129,11 @@
     }).then(function(data) {
       var filtered_product = data.products.map((element) => {
         return element.options.map((option) => {
-          console.log(option)
-
-          if (option.name == 'color' && colors.includes(option.value)) {
+          if (option.name == 'color' && colors.includes(option.values[0])) {
             return true
+          } else {
+            return false
           }
-          return false
         })
       });
       console.log(filtered_product)
