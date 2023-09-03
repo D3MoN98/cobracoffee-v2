@@ -36,11 +36,12 @@
     {% assign unique_array = "" %}
 
     {% for item in colors_array %}
-      {{ item }}
-      <hr>
+      {% unless unique_array contains item %}
+        {% assign unique_array = unique_array | append: item | append: "," | remove: "\" | split: ", " %}
+        {{ unique_array | json }}
+        <hr>
+      {% endunless %}
     {% endfor %}
-
-    {{ unique_array | json }}
 
     <div class="product-color-filter">
       <ul>
