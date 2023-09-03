@@ -21,7 +21,6 @@
       <hr>
       {% if product.type == 'Clothes' %}
         {% capture productInfo %}
-          {{ product.title | escape }},{{ product.description | escape }},{{ product.price | money }}
           {% if product.variants.size > 1 %}
             {% for option in product.options %}
               {{ option.name }}:
@@ -35,7 +34,7 @@
       {% endif %}
     {% endfor %}
 
-    {{ productInfo | json }}
+    {{ productInfo }}
 
     {% for productInfo in productsOfType %}
       {% assign productInfoArray = productInfo | split: ',' %}
@@ -50,9 +49,6 @@
           {% endfor %}
         </ul>
       {% endif %}
-
-      <p>Price: {{ productInfoArray[2] }}</p>
-      <!-- Add to cart button or other product-specific content here -->
     {% endfor %}
 
 
