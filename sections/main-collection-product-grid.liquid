@@ -112,11 +112,19 @@
     checkbox.addEventListener('change', function() {
       if (checkbox.checked) {
         colors.push(this.value)
-        console.log(colors)
+        fetchProduct(colors)
       } else { // Checkbox is unchecked
         colors = colors.filter((element) => element !== this.value);
-        console.log(colors)
+        fetchProduct(colors)
       }
     });
   })
+
+  fetchProduct(colors) {
+    fetch({{current_url}} + "/products.json").then((products) => {
+      console.log(products)
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
 </script>
