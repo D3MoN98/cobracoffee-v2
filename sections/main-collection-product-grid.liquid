@@ -14,30 +14,42 @@
 
     {% if current_url contains specific_slug %}{% endif %}
 
-    <div class="color-filter">
-      <h3>Filter by Color:</h3>
-      <ul>
-        {% assign color_options = '' | split: ',' %}
-        {% for product in collections.all.products %}
-          {% for variant in product.variants %}
-            {% for option in variant.options %}
-              {% if option == 'Color' %}
-                {% assign color_value = variant.option1 %}
-                {% if color_value != blank and color_options contains color_value %}
-                  {% assign color_options = color_options | push: color_value %}
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
-        {% endfor %}
+    {% assign productsOfType = '' | split: ',' %}
 
-        {% for color in color_options %}
-          <li>
-            <a href="?color={{ color | handleize }}">{{ color }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+    {% for product in collections.all.products %}
+      {% if product.product_type == 'Clothes' %}
+        {% capture productInfo %}
+          {{ product.title | escape }},{{ product.description | escape }},{{ product.price | money }}
+          {% if product.variants.size > 1 %}
+            {% for option in product.options %}
+              {{ option.name }}:
+              {% for value in option.values %}
+                {{ value }},
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
+        {% endcapture %}
+        {% assign productsOfType = productsOfType | push: productInfo %}
+      {% endif %}
+    {% endfor %}
+
+    {% for productInfo in productsOfType %}
+      {% assign productInfoArray = productInfo | split: ',' %}
+      <h2>{{ productInfoArray[0] }}</h2>
+      <p>{{ productInfoArray[1] }}</p>
+
+      {% if productInfoArray.size > 3 %}
+        <h3>Options:</h3>
+        <ul>
+          {% for i in (3..productInfoArray.size) %}
+            <li>{{ productInfoArray[i] }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <p>Price: {{ productInfoArray[2] }}</p>
+      <!-- Add to cart button or other product-specific content here -->
+    {% endfor %}
 
 
 
