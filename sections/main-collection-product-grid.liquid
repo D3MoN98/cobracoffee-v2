@@ -18,20 +18,15 @@
       <ul>
         {% assign color_options = '' | split: ',' %}
         {% for product in collections.all.products %}
-          {% if product.id == 7406200258756 %}
-
-            {% for variant in product.variants %}
-              {{ product.variants | json }}
-              {% for option in variant.options %}
-                {% if option == 'color' %}
-                  {% assign color_value = variant.option1 %}
-                  {% if color_value != blank and color_options contains color_value %}
-                    {% assign color_options = color_options | push: color_value %}
-                  {% endif %}
-                {% endif %}
-              {% endfor %}
-            {% endfor %}
-          {% endif %}
+          {% for variant in product.variants %}
+            {% if variant.option1 != blank and variant.option1 != 'Default Title' %}
+              {% assign color_value = variant.option1 %}
+              {{ color_value | json }}
+              {% unless color_options contains color_value %}
+                {% assign color_options = color_options | push: color_value %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
         {% endfor %}
 
         {% for color in color_options %}
