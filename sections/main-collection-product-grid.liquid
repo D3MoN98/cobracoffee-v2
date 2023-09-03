@@ -12,54 +12,52 @@
     {% assign specific_slug = "apparel" %}
     {% assign current_url = request.url %}
 
-    {% if current_url contains specific_slug %}
-
-      <div class="color-filter">
-        <h3>Filter by Color:</h3>
-        <ul>
-          {% assign color_options = '' | split: ',' %}
-          {% for product in collections.all.products %}
-            {% for variant in product.variants %}
-              {% if variant.option1 != blank and variant.option1 != 'Default Title' %}
-                {% assign color_value = variant.option1 %}
-                {% unless color_options contains color_value %}
-                  {% assign color_options = color_options | push: color_value %}
-                {% endunless %}
-              {% endif %}
-            {% endfor %}
+    {% if current_url contains specific_slug %}{% endif %}
+    <div class="color-filter">
+      <h3>Filter by Color:</h3>
+      <ul>
+        {% assign color_options = '' | split: ',' %}
+        {% for product in collections.all.products %}
+          {% for variant in product.variants %}
+            {% if variant.option1 != blank and variant.option1 != 'Default Title' %}
+              {% assign color_value = variant.option1 %}
+              {% unless color_options contains color_value %}
+                {% assign color_options = color_options | push: color_value %}
+              {% endunless %}
+            {% endif %}
           {% endfor %}
+        {% endfor %}
 
-          {% for color in color_options %}
-            <li>
-              <a href="?color={{ color | handleize }}">{{ color }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+        {% for color in color_options %}
+          <li>
+            <a href="?color={{ color | handleize }}">{{ color }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
 
-      <div class="product-color-filter">
-        <ul>
-          <li>
-            <div class="c-checkbox color1">
-              <input type="checkbox">
-              <label></label>
-            </div>
-          </li>
-          <li>
-            <div class="c-checkbox color2">
-              <input type="checkbox">
-              <label></label>
-            </div>
-          </li>
-          <li>
-            <div class="c-checkbox color3">
-              <input type="checkbox">
-              <label></label>
-            </div>
-          </li>
-        </ul>
-      </div>
-    {% endif %}
+    <div class="product-color-filter">
+      <ul>
+        <li>
+          <div class="c-checkbox color1">
+            <input type="checkbox">
+            <label></label>
+          </div>
+        </li>
+        <li>
+          <div class="c-checkbox color2">
+            <input type="checkbox">
+            <label></label>
+          </div>
+        </li>
+        <li>
+          <div class="c-checkbox color3">
+            <input type="checkbox">
+            <label></label>
+          </div>
+        </li>
+      </ul>
+    </div>
 
     <div class="row product-list">
       {%- for product in collection.products -%}
