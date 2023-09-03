@@ -55,7 +55,10 @@
             {% endif %}
             <li>
               <div class="c-checkbox {{color_class}}">
-                <input type="checkbox" name="product_color">
+                <input
+                  type="checkbox"
+                  name="product_color"
+                  value="{{color}}">
                 <label></label>
               </div>
             </li>
@@ -107,9 +110,9 @@
 // Add a change event listener to the checkbox
   checkbox.addEventListener('change', function() {
     if (checkbox.checked) {
-      console.log(checkbox)
+      console.log(this.value)
     } else { // Checkbox is unchecked
-      console.log("uncheck", checkbox)
+      console.log("uncheck", this.value)
     }
   });
 </script>
