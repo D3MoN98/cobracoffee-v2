@@ -31,7 +31,7 @@
       {% endif %}
     {% endfor %}
 
-    {{ request | json }}
+    {{ request.path }}
 
     {% assign colors_array = colors_array | remove: '\' | split: "," %}
 
