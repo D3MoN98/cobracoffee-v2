@@ -18,17 +18,20 @@
       <ul>
         {% assign color_options = '' | split: ',' %}
         {% for product in collections.all.products %}
-          {% for variant in product.variants %}
-            {{ product.variants | json }}
-            {% for option in variant.options %}
-              {% if option == 'color' %}
-                {% assign color_value = variant.option1 %}
-                {% if color_value != blank and color_options contains color_value %}
-                  {% assign color_options = color_options | push: color_value %}
+          {% if product.id == 7406200258756 %}
+
+            {% for variant in product.variants %}
+              {{ product.variants | json }}
+              {% for option in variant.options %}
+                {% if option == 'color' %}
+                  {% assign color_value = variant.option1 %}
+                  {% if color_value != blank and color_options contains color_value %}
+                    {% assign color_options = color_options | push: color_value %}
+                  {% endif %}
                 {% endif %}
-              {% endif %}
+              {% endfor %}
             {% endfor %}
-          {% endfor %}
+          {% endif %}
         {% endfor %}
 
         {% for color in color_options %}
