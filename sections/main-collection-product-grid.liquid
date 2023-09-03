@@ -55,7 +55,7 @@
             {% endif %}
             <li>
               <div class="c-checkbox {{color_class}}">
-                <input type="checkbox">
+                <input type="checkbox" name="product_color">
                 <label></label>
               </div>
             </li>
@@ -97,3 +97,19 @@
     "settings": []
   }
 {% endschema %}
+
+<script>
+  // Get a reference to the checkbox element
+  var checkbox = document.querySelector('input[name="product_color"]')
+
+// Get a reference to the paragraph element where we'll display the state
+
+// Add a change event listener to the checkbox
+  checkbox.addEventListener('change', function() {
+    if (checkbox.checked) {
+      console.log(checkbox)
+    } else { // Checkbox is unchecked
+      console.log("uncheck", checkbox)
+    }
+  });
+</script>
