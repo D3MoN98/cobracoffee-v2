@@ -19,8 +19,8 @@
         {% assign color_options = '' | split: ',' %}
         {% for product in collections.all.products %}
           {% for variant in product.variants %}
+            {{ product.variants | json }}
             {% for option in variant.options %}
-              {{ option | json }}
               {% if option == 'color' %}
                 {% assign color_value = variant.option1 %}
                 {% if color_value != blank and color_options contains color_value %}
