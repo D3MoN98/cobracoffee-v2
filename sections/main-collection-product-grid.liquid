@@ -127,7 +127,11 @@
       }
       return response.json(); // Parse the response as JSON
     }).then(function(data) {
-      var filtered_product = data.products.filter((element) => {
+      var filtered_product = []
+      if(colors.length == 0){
+        filtered_product = data.products
+      }
+      filtered_product = data.products.filter((element) => {
         for (let i = 0; i < element.options.length; i++) {
           let option = element.options[i];
           if (option.name == 'color' && colors.includes(option.values[0])) {
