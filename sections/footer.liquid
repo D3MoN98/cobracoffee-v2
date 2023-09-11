@@ -4,14 +4,7 @@
 
       {%- assign formId = 'Contact_' | append: section.id -%}
       {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
-        {%- if form.posted_successfully? -%}
-          <p
-            class="form-message form-message--success"
-            tabindex="-1"
-            data-form-status>
-            Successfully Subscribed
-          </p>
-        {%- endif -%}
+
         <input
           type="hidden"
           name="contact[tags]"
@@ -38,6 +31,16 @@
             class="btn"
             name="commit">
         </div>
+
+        {%- if form.posted_successfully? -%}
+          <p
+            class="form-message form-message--success"
+            tabindex="-1"
+            data-form-status>
+            Successfully Subscribed
+          </p>
+        {%- endif -%}
+
         {%- if form.errors contains 'email' -%}
           <span id="{{ formId }}-email-error" class="input-error-message">
             {% include 'icon-error' %}
