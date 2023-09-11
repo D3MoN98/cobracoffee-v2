@@ -19,7 +19,7 @@
       <div class="modal-body">
         {% for item in cart.items %}
           <div class="cart-item">
-            <h2>{{ item.product.title }}</h2>
+            <h6>{{ item.product.title }}</h6>
             <p>Quantity: {{ item.quantity }}</p>
             <p>Price: {{ item.price | money }}</p>
             <p>SKU: {{ item.sku }}</p>
