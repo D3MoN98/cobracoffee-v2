@@ -1,40 +1,51 @@
 <footer class="footer">
   <div class="container">
-    {%- assign formId = 'Contact_' | append: section.id -%}
-    {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
-      {%- if form.posted_successfully? -%}
-        <p class="form-message form-message--success" tabindex="-1" data-form-status>
-          Successfully Subscribed
-        </p>
-      {%- endif -%}
-      <input type="hidden" name="contact[tags]" value="newsletter">
-      <div class="input-group {% if form.errors %} input-group--error{% endif %}">
-        <input type="email"
-          name="contact[email]"
-          id="{{ formId }}-email"
-          class="input-group__field{% if form.errors %} input--error{% endif %}"
-          value="{{ form.email }}"
-          placeholder="Enter your email"
-          aria-label="Enter your email"
-          aria-required="true"
-          autocorrect="off"
-          autocapitalize="off"
-          {% if form.errors %}
+    <div class="ftr-frm">
+
+      {%- assign formId = 'Contact_' | append: section.id -%}
+      {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+        {%- if form.posted_successfully? -%}
+          <p
+            class="form-message form-message--success"
+            tabindex="-1"
+            data-form-status>
+            Successfully Subscribed
+          </p>
+        {%- endif -%}
+        <input
+          type="hidden"
+          name="contact[tags]"
+          value="newsletter">
+        <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+          <input
+            type="email"
+            name="contact[email]"
+            id="{{ formId }}-email"
+            class="input-group__field{% if form.errors %} input--error{% endif %}"
+            value="{{ form.email }}"
+            placeholder="Enter your email"
+            aria-label="Enter your email"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            {% if form.errors %}
             aria-invalid="true"
             aria-describedby="{{ formId }}-email-error"
             data-form-status
-          {% endif %}
-          >
-        <input type="submit" class="btn" name="commit" >
-      </div>
-      {%- if form.errors contains 'email' -%}
-        <span id="{{ formId }}-email-error" class="input-error-message">
-          {% include 'icon-error' %}
-          <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
-        </span>
-      {%- endif -%}
-    {% endform %}
-    <!-- End newsletter signup form -->
+            {% endif %}>
+          <input
+            type="submit"
+            class="btn"
+            name="commit">
+        </div>
+        {%- if form.errors contains 'email' -%}
+          <span id="{{ formId }}-email-error" class="input-error-message">
+            {% include 'icon-error' %}
+            <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+          </span>
+        {%- endif -%}
+      {% endform %}
+      <!-- End newsletter signup form -->
     </div>
     <div class="row ftr-content-wrap">
       <div class="col-md-4 left">
