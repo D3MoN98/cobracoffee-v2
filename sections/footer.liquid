@@ -43,7 +43,6 @@
 
         {%- if form.errors contains 'email' -%}
           <span id="{{ formId }}-email-error" class="input-error-message">
-            {% include 'icon-error' %}
             <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
           </span>
         {%- endif -%}
