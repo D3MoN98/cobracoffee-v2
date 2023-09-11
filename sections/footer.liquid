@@ -102,28 +102,19 @@
   
       const email = newsletterForm.querySelector("input[name='email']").value;
   
-      // Perform an AJAX request to subscribe the user to the newsletter
-      fetch('/contact/account', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'X-Requested-With': 'XMLHttpRequest',
-        },
-        body: `email=${encodeURIComponent(email)}&form_type=customer&contact[tags]=newsletter`,
-      })
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        if (data.status === 'success') {
-          responseMessage.textContent = 'Thank you for subscribing!';
-        } else {
-          responseMessage.textContent = 'Subscription failed. Please try again later.';
-        }
-      })
-      .catch(function(error) {
-        responseMessage.textContent = 'Subscription failed. Please try again later.';
-        console.error('Error subscribing to the newsletter:', error);
+      var action  = $('.contact-form').attr('action');
+  
+      $.ajax({
+          type: "POST",
+          async: true,
+          url: action,
+          data: $('.contact-form').serialize(),
+          error: function(jqXHR, textStatus, errorThrown) {
+              //  Request Failed. 
+          },
+          success: function(response) {
+              console.log(response)
+          }
       });
     });
   });
