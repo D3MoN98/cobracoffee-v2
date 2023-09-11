@@ -112,7 +112,7 @@
           url: action,
           contentType: "application/json",
           dataType: "json",
-          data: $('.contact-form').serialize(),
+          data: JSON.stringify($('.contact-form').serialize()),
           error: function(jqXHR, textStatus, errorThrown) {
               //  Request Failed. 
           },
