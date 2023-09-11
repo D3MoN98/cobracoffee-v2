@@ -84,7 +84,7 @@
             <h4>
               <a href="{{ product.url }}">{{ product.title }}</a>
             </h4>
-            <a href="{{ product.url }}" class="btn">ADD {{ product.price | money }}<i class="fas fa-chevron-right"></i>
+            <a class="btn add-to-cart" data-product-id="{{ product.id }}">ADD {{ product.price | money }}<i class="fas fa-chevron-right"></i>
             </a>
           </div>
         </div>
@@ -128,7 +128,7 @@
       return response.json(); // Parse the response as JSON
     }).then(function(data) {
       var filtered_product = []
-      if(colors.length == 0){
+      if (colors.length == 0) {
         filtered_product = data.products
       }
       filtered_product = data.products.filter((element) => {
