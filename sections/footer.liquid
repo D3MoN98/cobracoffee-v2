@@ -103,6 +103,8 @@
       const email = newsletterForm.querySelector("input[name='email']").value;
   
       var action  = $('.contact-form').attr('action');
+
+      console.log(action)
   
       $.ajax({
           type: "POST",
