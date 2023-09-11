@@ -1,6 +1,6 @@
 <section class="world-mission-sec section">
   <div class="container">
-    <a href="#" class="btn">World Mission</a>
+    <a href="{{ section.settings.link_url }}" class="btn">{{ section.settings.link_text }}</a>
     <h3>{{ section.settings.heading_text | safe }}</h3>
   </div>
 </section>
@@ -20,6 +20,16 @@
         "type": "textarea",
         "label": "Heading Text",
         "default": "We <span>Believe</span> in a world without boring coffee. <span>dominate</span> with the undisputed king of <span>Bold</span> coffee... cobras coffee"
+      }, {
+        "type": "text",
+        "label": "World Mission Link Text",
+        "id": "link_text",
+        "default": "Read more"
+      }, {
+        "type": "url",
+        "label": "World Mission Link URL",
+        "id": "link_url",
+        "default": "/pages/mission"
       }
     ],
     "presets": [
