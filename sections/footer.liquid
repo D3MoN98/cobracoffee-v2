@@ -102,26 +102,29 @@
 
       const email = newsletterForm.querySelector("input[name='email']").value;
 
+     /* Build the Shopify Parameters
+      //---------------------------------------*/
       var action  = '/contact?';
-      action += encodeURIComponent('form_type') +'='+ encodeURIComponent('customer');
-      action += '&'+ encodeURIComponent('contact[tags]') +'='+ encodeURIComponent('newsletter');
+      action += encodeURIComponent('form_type') +'='+ encodeURIComponent('contact');
       action += '&'+ encodeURIComponent('utf8') +'='+ encodeURIComponent('✓');
       action += '&'+ encodeURIComponent('contact[email]') +'='+ encodeURIComponent(email);
 
-      fetch(action, {
-        method: 'POST',
-      }).then(function(response) {
-        return response.json();
-      }).then(function(data) {
-        console.log(data)
-        if (data.status === 'success') {
-          responseMessage.textContent = 'Thank you for subscribing!';
-        } else {
-          responseMessage.textContent = 'Subscription failed. Please try again later.';
+      /* Submit the form
+      //---------------------------------------*/
+      $.ajax({
+        type: "POST",
+        async: true,
+        url: action,
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR, textStatus, errorThrown)
+
+            //  Request Failed. 
+        },
+        success: function(response) {
+            // Assume Success. 'response' is the complete HTML page of the 
+            // contact success form, so likely won't be helpful
+            self.submit_thankyou();
         }
-      }).catch(function(error) {
-        responseMessage.textContent = 'Subscription failed. Please try again later.';
-        console.error('Error subscribing to the newsletter:', error);
       });
     });
   });
