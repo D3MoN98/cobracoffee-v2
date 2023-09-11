@@ -1,13 +1,7 @@
 <section class="world-mission-sec section">
   <div class="container">
     <a href="#" class="btn">World Mission</a>
-    <h3>We
-      <span>Believe</span>
-      in a world without boring coffee.
-      <span>dominate</span>
-      with the undisputed king of
-      <span>Bold</span>
-      coffee... cobras coffee</h3>
+    <h3>{{ section.settings.heading_text | safe }}</h3>
   </div>
 </section>
 
@@ -20,7 +14,14 @@
     "disabled_on": {
       "groups": ["header", "footer"]
     },
-    "settings": [],
+    "settings": [
+      {
+        "id": "heading_text",
+        "type": "textarea",
+        "label": "Heading Text",
+        "default": "We <span>Believe</span> in a world without boring coffee. <span>dominate</span> with the undisputed king of <span>Bold</span> coffee... cobras coffee"
+      }
+    ],
     "presets": [
       {
         "name": "World Mission Section"
