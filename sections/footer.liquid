@@ -110,6 +110,8 @@
           type: "POST",
           async: true,
           url: action,
+          contentType: "application/json",
+          dataType: "json",
           data: $('.contact-form').serialize(),
           error: function(jqXHR, textStatus, errorThrown) {
               //  Request Failed. 
