@@ -24,6 +24,8 @@
 
 // Handle the success response here, e.g., show a success message.
           console.log('Product added to cart:', data);
+          var cartModal = new bootstrap.Modal(document.getElementById('cartModal'))
+          cartModal.show()
 
 // You can also update the cart icon or cart page here.
         }).catch(function(error) {

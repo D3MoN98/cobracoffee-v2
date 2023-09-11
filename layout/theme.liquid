@@ -169,8 +169,6 @@
       <!-- <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script> -->
     {%- endif -%}
 
-    {% include 'cart-script' %}
-
     <script async src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
 
     <script async src="{{ 'bootstrap.bundle.min.js' | asset_url }}"></script>
@@ -179,5 +177,7 @@
     <script async src="{{ 'jquery.fancybox.min.js' | asset_url }}"></script>
 
     <script async src="{{ 'common.js' | asset_url }}"></script>
+
+    {% include 'cart-script' %}
   </body>
 </html>
