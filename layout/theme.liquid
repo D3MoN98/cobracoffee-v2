@@ -178,6 +178,51 @@
 
     <script async src="{{ 'common.js' | asset_url }}"></script>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll(".section");
+        let currentSectionIndex = 0;
+        let isScrolling = false;
+
+        function scrollToSection(index) {
+          if (index < 0 || index >= sections.length) 
+            return;
+          
+
+
+          isScrolling = true;
+
+          sections[index].scrollIntoView({behavior: "smooth"});
+
+          setTimeout(() => {
+            isScrolling = false;
+          }, 1000); // Adjust the delay as needed
+        }
+
+// Listen for scroll events
+        window.addEventListener("wheel", (e) => {
+          if (isScrolling) 
+            return;
+          
+
+
+          if (e.deltaY > 0) { // Scrolling down
+            currentSectionIndex++;
+          } else { // Scrolling up
+            currentSectionIndex--;
+          }
+
+// Ensure the index stays within bounds
+          currentSectionIndex = Math.max(0, Math.min(currentSectionIndex, sections.length - 1));
+
+          scrollToSection(currentSectionIndex);
+        });
+
+// Set initial scroll position to the top
+        window.scrollTo(0, 0);
+      });
+    </script>
+
     {% include 'cart-script' %}
 
     {% include 'cart-modal' %}
