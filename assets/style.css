@@ -2778,5 +2778,8 @@ h4 {
     }
     .product-details-slider {
         width: calc(100% + 300px);
+        color: #000;
       }
 }
+
+
