@@ -178,48 +178,33 @@
 
     <script async src="{{ 'common.js' | asset_url }}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const sections = document.querySelectorAll(".section");
-        let currentSectionIndex = 0;
-        let isScrolling = false;
-
-        function scrollToSection(index) {
-          if (index < 0 || index >= sections.length) 
-            return;
-          
-
-
-          isScrolling = true;
-
-          sections[index].scrollIntoView({behavior: "smooth"});
-
-          setTimeout(() => {
-            isScrolling = false;
-          }, 1000); // Adjust the delay as needed
-        }
-
-// Listen for scroll events
-        window.addEventListener("wheel", (e) => {
-          if (isScrolling) 
-            return;
-          
-
-
-          if (e.deltaY > 0) { // Scrolling down
-            currentSectionIndex++;
-          } else { // Scrolling up
-            currentSectionIndex--;
-          }
-
-// Ensure the index stays within bounds
-          currentSectionIndex = Math.max(0, Math.min(currentSectionIndex, sections.length - 1));
-
-          scrollToSection(currentSectionIndex);
+      $(function() {
+        $.scrollify({
+          section: ".scroll-section",
+          interstitialSection: "",
+          scrollSpeed: 600,
+          offset: 0,
+          scrollbars: true,
+          standardScrollElements: "",
+          setHeights: true,
+          overflowScroll: true,
+          updateHash: false,
+          touchScroll: true,
+          before: function() {},
+          after: function() {},
+          afterResize: function() {},
+          afterRender: function() {}
         });
 
-// Set initial scroll position to the top
-        window.scrollTo(0, 0);
+        var controller = new ScrollMagic.Controller();
+
+// build scene
+        var scene = new ScrollMagic.Scene({triggerHook: 1, triggerElement: "#fixed-target", pushFollowers: false}).setPin("#fixed-footer").addTo(controller);
       });
     </script>
 

@@ -162,11 +162,6 @@ jQuery(document).ready(function ($) {
     $(this).parent("li").addClass("active");
   });
 
-  // const scroller = new LocomotiveScroll({
-  //   el: document.querySelector('[data-scroll-container]'),
-  //   smooth: true
-  // })
-
   $(window).resize(function () {
     if ($(window).width() < 767) {
       $(".product-details-col2").appendTo(".product-details-col ul");
