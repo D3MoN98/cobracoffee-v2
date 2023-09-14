@@ -2812,6 +2812,12 @@ h4 {
       #shopify-section-template--15937846214852__main h1 {
         font-size: 50px;
     }
+    #cartModal .cart-item h6, #cartModal h1{
+        font-size: 20px;
+    } 
+    #cartModal .cart-item p{
+        font-size: 16px;
+    }
 }
 @media (max-width: 479px) {
     body {
@@ -2908,6 +2914,9 @@ h4 {
     .product-details-slider {
         width: calc(100% + 300px);
       }
+      #cartModal .modal-dialog {
+        margin: 15px;
+    }
 }
 
 
