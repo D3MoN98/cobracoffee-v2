@@ -1812,9 +1812,21 @@ font-weight: 400;
     display: flex;
     font-family: 'source-sans-pro';
     font-size: 24px;
+    text-transform: none;
 }
 .form__message h2 svg{
     width: 30px;
+    margin-right: 10px;
+}
+.form-status-list li a{
+    font-family: 'source-sans-pro';
+    font-size: 24px;
+    text-transform: none;
+}
+.form-status-list{
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 15px;
 }
 /* =====body css end===== */
 
