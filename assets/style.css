@@ -1834,6 +1834,10 @@ font-weight: 400;
     padding: 10px;
     list-style-type: none;
 }
+#cartModal .modal-dialog {
+    max-width: 600px;
+    margin: 20px 20px 0px auto;
+}
 /* =====body css end===== */
 
 /*desktop & big screen container size*/
