@@ -1851,6 +1851,15 @@ font-weight: 400;
     font-size: 20px;
     text-transform: capitalize;
 }
+.btn-close {
+    opacity: 1;
+    filter: brightness(1) invert(1);
+}
+#cartModal .btn {
+        color: #000;
+        background-color: white;
+}
+
 /* =====body css end===== */
 
 /*desktop & big screen container size*/
