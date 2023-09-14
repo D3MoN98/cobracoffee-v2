@@ -2593,6 +2593,9 @@ h4 {
     font-size: 65px;
     margin-bottom: 30px;
 }
+#cartModal .modal-dialog {
+    max-width: 450px;
+}
 }
 @media (max-width: 767px){
     .sec-2 h2, .ftr-big-text h2 {
