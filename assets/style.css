@@ -1810,6 +1810,8 @@ font-weight: 400;
 }
 .form__message h2{
     display: flex;
+    font-family: 'source-sans-pro';
+    font-size: 24px;
 }
 .form__message h2 svg{
     width: 30px;
