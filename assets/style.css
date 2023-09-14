@@ -2062,6 +2062,9 @@ font-weight: 400;
     .product-details-slider {
         width: calc(100% + 120px);
     }
+    #shopify-section-template--15937846214852__main h1 {
+        font-size: 76px;
+    }
 
 }
 @media(max-width:1024px) {
