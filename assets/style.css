@@ -1745,6 +1745,31 @@ font-weight: 400;
 }
 
 
+#shopify-section-template--15937846214852__main{
+    padding-top: 70px;
+}
+#shopify-section-template--15937846214852__main .page-width--narrow{
+    max-width: 1395px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+#shopify-section-template--15937846214852__main h1{
+    text-align: center;
+}
+#ContactForm label{
+    display: none;
+}
+#ContactForm input[type="text"], 
+#ContactForm input[type="email"],
+#ContactForm input[type="tel"], 
+#ContactForm textarea{
+    border: 1px solid #000;
+    outline: 0;
+    border-radius: 50px;
+    height: 70px;
+    padding: 15px 20px;
+} 
+
 
 /* =====body css end===== */
 
