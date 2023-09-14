@@ -1756,6 +1756,10 @@ font-weight: 400;
 #shopify-section-template--15937846214852__main h1{
     text-align: center;
 }
+#ContactForm{
+    max-width: 900px;
+    margin: 0 auto;
+}
 #ContactForm label{
     display: none;
 }
