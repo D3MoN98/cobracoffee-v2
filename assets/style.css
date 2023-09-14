@@ -1769,6 +1769,14 @@ font-weight: 400;
     height: 70px;
     padding: 15px 20px;
 } 
+#ContactForm input[type="text"]::placeholder, 
+#ContactForm input[type="email"]::placeholder,
+#ContactForm input[type="tel"]::placeholder, 
+#ContactForm textarea::placeholder{
+    color: #000;
+    opacity: 1;
+    text-transform: capitalize;
+}
 #ContactForm textarea{
     height: 150px;
 }
