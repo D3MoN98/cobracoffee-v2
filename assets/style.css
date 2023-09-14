@@ -1769,7 +1769,12 @@ font-weight: 400;
     height: 70px;
     padding: 15px 20px;
 } 
-
+#ContactForm textarea{
+    height: 150px;
+}
+.contact-form-sec{
+    padding: 50px 0 70px 0;
+}
 
 /* =====body css end===== */
 
