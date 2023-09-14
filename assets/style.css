@@ -1809,7 +1809,9 @@ font-weight: 400;
     padding: 10px;
     margin-bottom: 1rem;
     display: block;
-    margin-top: 10px
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: none;
 }
 .form__message h2{
     display: flex;
