@@ -1838,6 +1838,9 @@ font-weight: 400;
     max-width: 600px;
     margin: 20px 20px 0px auto;
 }
+#cartModal .modal-content {
+    background-color: #000;
+}
 /* =====body css end===== */
 
 /*desktop & big screen container size*/
