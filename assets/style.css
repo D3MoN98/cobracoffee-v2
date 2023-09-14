@@ -1842,7 +1842,7 @@ font-weight: 400;
     background-color: #000;
     color: #fff;
 }
-#cartModal .cart-item h6{
+#cartModal .cart-item h6, #cartModal h1{
     color: #fff;
     font-size: 24px;
 } 
