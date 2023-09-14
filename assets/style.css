@@ -1780,14 +1780,14 @@ font-weight: 400;
 }
 #ContactForm .contact__button button[type="submit"]{
     height: 70px;
-    padding: 15px 50px;
+    padding: 15px 100px;
     border: 1px solid #000;
     outline: 0;
     border-radius: 50px;
     color: #000;
     background-color: transparent;
 }
-#ContactForm .contact__button button[type="submit"]{
+#ContactForm .contact__button button[type="submit"]:hover{
     color: #fff;
     background-color: #000000;
 }
