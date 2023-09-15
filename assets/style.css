@@ -2675,6 +2675,9 @@ h4 {
 table.cart-items{
     width: 1080px;
 }
+.section-template--15937845821636__cart-items-padding h1.title{
+    font-size: 65px;
+}
 }
 @media (max-width: 767px){
     .sec-2 h2, .ftr-big-text h2 {
