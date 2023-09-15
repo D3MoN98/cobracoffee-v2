@@ -1874,6 +1874,9 @@ font-weight: 400;
 .underlined-link{
     text-decoration: underline !important;
 }
+.underlined-link:hover{
+    color: #3a3939 !important;
+}
 table.cart-items thead th{
     font-weight: 700;
     border-bottom: 1px solid #000;
@@ -1887,7 +1890,7 @@ table.cart-items tr td a{
 }
 table.cart-items tr td a:hover{
     text-decoration: underline !important;
-    color: #3a3939;
+    color: #3a3939 !important;
 }
 
 /* =====body css end===== */
