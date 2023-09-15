@@ -1860,6 +1860,14 @@ font-weight: 400;
         background-color: white;
 }
 
+#shopify-section-template--15937846214852__main {
+    padding-top: 70px;
+}
+#shopify-section-template--15937846214852__main h1.title{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
 /* =====body css end===== */
 
 /*desktop & big screen container size*/
