@@ -1876,8 +1876,9 @@ font-weight: 400;
 }
 table.cart-items thead th{
     font-weight: 700;
+    border-bottom: 1px solid #000;
 }
-table.cart-items tr{
+table.cart-items tr td{
     border-bottom: 1px solid #000;
 }
 
