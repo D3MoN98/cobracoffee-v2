@@ -2192,6 +2192,9 @@ table.cart-items tr td a:hover{
     #shopify-section-template--15937846214852__main h1 {
         font-size: 76px;
     }
+    .section-template--15937845821636__cart-items-padding h1.title {
+        font-size: 76px;
+    }
 
 }
 @media(max-width:1024px) {
