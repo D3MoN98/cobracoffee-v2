@@ -1918,6 +1918,13 @@ table.cart-items tr td a:hover{
     margin: 0 auto;
     text-align: center;
 }
+.shopify-cleanslate .p28_J2fRvZNDqyZkZ2H9{
+    justify-content: center;
+}
+.cart__footer .totals__total {
+    text-align: left;
+    font-family: 'source-sans-pro';
+}
 
 /* =====body css end===== */
 
