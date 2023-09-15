@@ -2923,6 +2923,9 @@ table.cart-items{
     #cartModal .cart-item p{
         font-size: 16px;
     }
+    .totals__total-value{
+        font-size: 20px;
+    }
 }
 @media (max-width: 479px) {
     body {
@@ -3021,6 +3024,10 @@ table.cart-items{
       }
       #cartModal .modal-dialog {
         margin: 15px;
+    }
+    .section-template--15937845821636__cart-items-padding h1.title {
+        font-size: 30px;
+        margin-bottom: 2rem;
     }
 }
 
