@@ -2812,6 +2812,8 @@ table.cart-items{
     }
     table.cart-items thead{
         border-bottom: 1px solid #000;
+    }
+    table.cart-items thead tr{
         margin-bottom: 0rem !important;
     }
 }
