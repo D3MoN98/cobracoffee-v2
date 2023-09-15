@@ -26,6 +26,7 @@
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
+<div class="container2">
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
@@ -465,6 +466,7 @@
     </p>
   </form>
 </cart-items>
+</div>
 
 {% schema %}
 {
