@@ -2808,7 +2808,7 @@ table.cart-items{
         align-items: center;
     }
     table.cart-items td, table.cart-items th{
-        border: 0;
+        border-bottom: 0;
     }
     table.cart-items thead{
         border-bottom: 1px solid #000;
