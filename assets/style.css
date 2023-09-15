@@ -1914,6 +1914,10 @@ table.cart-items tr td a:hover{
   -webkit-appearance: none;
   margin: 0;
 }
+.cart__footer .cart__blocks{
+    margin: 0 auto;
+    text-align: center;
+}
 
 /* =====body css end===== */
 
