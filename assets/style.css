@@ -1892,6 +1892,15 @@ table.cart-items tr td a:hover{
     text-decoration: underline !important;
     color: #615b5b !important;
 }
+.quantity{
+    display: flex;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.quantity button, .quantity input{
+    border: 0;
+    width: 33.33% !important;
+}
 
 /* =====body css end===== */
 
