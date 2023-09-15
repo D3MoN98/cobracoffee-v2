@@ -2676,7 +2676,8 @@ table.cart-items{
     width: 1080px;
 }
 .section-template--15937845821636__cart-items-padding h1.title{
-    font-size: 65px;
+    font-size: 50px;
+    margin-bottom: 3rem;
 }
 }
 @media (max-width: 767px){
@@ -2801,6 +2802,17 @@ table.cart-items{
       .product-details-slider .slick-next {
         right: 42%;
       }
+      table.cart-items .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    table.cart-items td, table.cart-items th{
+        border: 0;
+    }
+    table.cart-items thead{
+        border-bottom: 1px solid #000;
+    }
 
 }
 @media (max-width: 575px) {
