@@ -2819,6 +2819,11 @@ table.cart-items{
     .cart-item {
         margin-bottom: 1rem !important;
     }
+    .section-template--15937845821636__cart-footer-padding {
+        padding-top: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 @media (max-width: 575px) {
