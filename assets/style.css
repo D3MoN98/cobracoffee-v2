@@ -1861,8 +1861,7 @@ font-weight: 400;
 }
 
 .section-template--15937845821636__cart-items-padding {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 70px !important;
 }
 .section-template--15937845821636__cart-items-padding h1.title{
     text-align: center;
