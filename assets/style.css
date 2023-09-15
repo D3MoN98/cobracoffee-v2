@@ -1881,8 +1881,8 @@ table.cart-items thead th{
 table.cart-items tr td{
     border-bottom: 1px solid #000;
 }
-table.cart-items .cart-item__name, table.cart-items .product-option{
-    font-weight: 700;
+table.cart-items{
+    font-weight: 500;
 }
 
 /* =====body css end===== */
