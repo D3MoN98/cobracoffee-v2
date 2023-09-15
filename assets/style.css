@@ -1867,6 +1867,19 @@ font-weight: 400;
     text-align: center;
     margin-bottom: 4rem;
 }
+.section-template--15937845821636__cart-items-padding .title-wrapper-with-link{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.underlined-link{
+    text-decoration: underline !important;
+}
+table.cart-items thead th{
+    font-weight: 700;
+}
+table.cart-items tr{
+    border-bottom: 1px solid #000;
+}
 
 /* =====body css end===== */
 
