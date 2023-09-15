@@ -1860,10 +1860,11 @@ font-weight: 400;
         background-color: white;
 }
 
-#shopify-section-template--15937846214852__main {
+.section-template--15937845821636__cart-items-padding {
     padding-top: 70px;
+    padding-bottom: 70px;
 }
-#shopify-section-template--15937846214852__main h1.title{
+.section-template--15937845821636__cart-items-padding h1.title{
     text-align: center;
     margin-bottom: 4rem;
 }
