@@ -2672,6 +2672,9 @@ h4 {
 #shopify-section-template--15937846214852__main h1 {
     font-size: 65px;
 }
+table.cart-items{
+    width: 1080px;
+}
 }
 @media (max-width: 767px){
     .sec-2 h2, .ftr-big-text h2 {
