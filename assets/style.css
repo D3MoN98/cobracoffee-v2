@@ -1880,7 +1880,13 @@ table.cart-items thead th{
 }
 table.cart-items tr td{
     border-bottom: 1px solid #000;
-    font-weight: 500;
+    font-weight: 700 !important;
+}
+table.cart-items tr td a{
+    font-weight: 700 !important;
+}
+table.cart-items tr td a:hover{
+    text-decoration: underline !important;
 }
 
 /* =====body css end===== */
