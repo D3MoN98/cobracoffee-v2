@@ -1906,6 +1906,14 @@ table.cart-items tr td a:hover{
 .quantity button svg{
     width: 22px;
 }
+.quantity input[type=number] {
+    -moz-appearance: textfield;
+}
+.quantity input[type=number]::-webkit-outer-spin-button,
+.quantity input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 /* =====body css end===== */
 
