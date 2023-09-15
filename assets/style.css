@@ -2812,9 +2812,10 @@ table.cart-items{
     }
     table.cart-items thead{
         border-bottom: 1px solid #000;
+        margin-bottom: 0rem !important;
     }
-
 }
+
 @media (max-width: 575px) {
     body {
         font-size: 18px;
