@@ -2807,7 +2807,7 @@ table.cart-items{
         justify-content: space-between;
         align-items: center;
     }
-    table.cart-items td, table.cart-items th{
+    table.cart-items tr td, table.cart-items thead th{
         border-bottom: 0;
     }
     table.cart-items thead{
