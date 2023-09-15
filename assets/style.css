@@ -1887,6 +1887,7 @@ table.cart-items tr td a{
 }
 table.cart-items tr td a:hover{
     text-decoration: underline !important;
+    color: #3a3939;
 }
 
 /* =====body css end===== */
