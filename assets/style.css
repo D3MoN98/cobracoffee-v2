@@ -2816,6 +2816,9 @@ table.cart-items{
     .cart-items thead tr{
         margin-bottom: 0rem !important;
     }
+    .cart-item {
+        margin-bottom: 1rem !important;
+    }
 }
 
 @media (max-width: 575px) {
