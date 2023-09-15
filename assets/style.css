@@ -1924,6 +1924,10 @@ table.cart-items tr td a:hover{
 .cart__footer .totals__total {
     text-align: left;
     font-family: 'source-sans-pro';
+    font-weight: 700;
+}
+.cart__footer .totals {
+    justify-content: space-between;
 }
 
 /* =====body css end===== */
