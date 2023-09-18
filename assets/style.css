@@ -1930,7 +1930,7 @@ table.cart-items tr td a:hover{
     justify-content: space-between;
 }
 .terms-sec{
-    padding: 50px;
+    padding: 50px 0;
 }
 .terms-sec p{
     text-transform: none;
