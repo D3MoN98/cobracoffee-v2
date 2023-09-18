@@ -1932,6 +1932,9 @@ table.cart-items tr td a:hover{
 .terms-sec{
     padding: 50px;
 }
+.terms-sec p{
+    text-transform: none;
+}
 
 
 /* =====body css end===== */
