@@ -1929,10 +1929,10 @@ table.cart-items tr td a:hover{
 .cart__footer .totals {
     justify-content: space-between;
 }
-.terms-sec{
+.terms-sec, .privacy-sec{
     padding: 50px 0;
 }
-.terms-sec p{
+.terms-sec p, .privacy-sec p{
     text-transform: none;
 }
 
