@@ -1929,6 +1929,10 @@ table.cart-items tr td a:hover{
 .cart__footer .totals {
     justify-content: space-between;
 }
+.terms-sec{
+    padding: 50px;
+}
+
 
 /* =====body css end===== */
 
