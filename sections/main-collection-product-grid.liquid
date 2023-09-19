@@ -145,11 +145,9 @@
         }
       });
 
-      console.log(filtered_product)
-
       var html = ''
       for (var i = 0; i < filtered_product.length; i++) {
-        html += ` <div class="col-md-4 item">
+        html += `<div class="col-md-4 item">
         <div class="product-boxx">
           <a href="${
           filtered_product[i].url
@@ -187,6 +185,7 @@
       </div>`
       }
 
+      console.log(html)
       document.getElementById('productList').innerHTML = html
     }).catch(function(error) {
       console.log(error)
