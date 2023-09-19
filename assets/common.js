@@ -177,24 +177,24 @@ jQuery(document).ready(function ($) {
   var homePageUrl = "https://cobrascoffee.com/"; // Replace with your actual home page URL
 
   // Check if the current URL is the same as the home page URL
-  if (currentUrl === homePageUrl) {
-    $.scrollify({
-      section: ".scroll-section",
-      interstitialSection: "",
-      scrollSpeed: 600,
-      offset: 0,
-      scrollbars: true,
-      standardScrollElements: "",
-      setHeights: true,
-      overflowScroll: true,
-      updateHash: false,
-      touchScroll: true,
-      before: function () {},
-      after: function () {},
-      afterResize: function () {},
-      afterRender: function () {},
-    });
-  }
+  // if (currentUrl === homePageUrl) {
+  //   $.scrollify({
+  //     section: ".scroll-section",
+  //     interstitialSection: "",
+  //     scrollSpeed: 600,
+  //     offset: 0,
+  //     scrollbars: true,
+  //     standardScrollElements: "",
+  //     setHeights: true,
+  //     overflowScroll: true,
+  //     updateHash: false,
+  //     touchScroll: true,
+  //     before: function () {},
+  //     after: function () {},
+  //     afterResize: function () {},
+  //     afterRender: function () {},
+  //   });
+  // }
 
   var controller = new ScrollMagic.Controller();
 
