@@ -168,39 +168,5 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  // Get the current URL's host (domain name)
-  var currentHost = window.location.host;
-
-  // Log the host to the console (optional)
-  console.log("Current Host: " + currentHost);
-
-  $.scrollify({
-    section: ".scroll-section",
-    interstitialSection: "",
-    scrollSpeed: 600,
-    offset: 0,
-    scrollbars: true,
-    standardScrollElements: "",
-    setHeights: true,
-    overflowScroll: true,
-    updateHash: false,
-    touchScroll: true,
-    before: function () {},
-    after: function () {},
-    afterResize: function () {},
-    afterRender: function () {},
-  });
-
-  var controller = new ScrollMagic.Controller();
-
-  // build scene
-  var scene = new ScrollMagic.Scene({
-    triggerHook: 1,
-    triggerElement: "#fixed-target",
-    pushFollowers: false,
-  })
-    .setPin("#fixed-footer")
-    .addTo(controller);
-
   // document end
 });
