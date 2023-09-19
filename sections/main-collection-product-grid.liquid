@@ -73,16 +73,13 @@
         <div class="col-md-4 item">
           <div class="product-boxx">
             <a href="{{ product.url }}" class="f-img">
-              {% assign first_image = product.images[0] %}
               <img
                 class="front"
-                src="{{ first_image.src | product_img_url: 'master' }}"
+                src="{{ product.images[0].src | product_img_url: 'master' }}"
                 alt="{{ product.title }}">
-              {% assign second_image = product.images[1] %}
-
               <img
                 class="back"
-                src="{{ second_image.src | product_img_url: 'master' }}"
+                src="{{ product.images[1].src | product_img_url: 'master' }}"
                 alt="{{ product.title }}">
             </a>
             <h4>
