@@ -132,7 +132,6 @@ jQuery(document).ready(function ($) {
     autoplay: false,
     slidesToShow: 2,
     slidesToScroll: 1,
-    centerMode: true,
     variableWidth: true,
     infinite: true,
     dots: false,
