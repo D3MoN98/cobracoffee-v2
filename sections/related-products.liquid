@@ -6,7 +6,6 @@
 
       {% for product in collections.all.products %}
         {% unless current_product.handle == product.handle %}
-          {{ current_product.tags | json }} {{ product.tags | json }}
           {% for tag in product.tags %}
             {% if current_product.tags contains tag %}
               <!-- Display the related product -->
