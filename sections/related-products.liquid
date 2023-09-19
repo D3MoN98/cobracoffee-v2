@@ -5,7 +5,7 @@
       {% for media in product.media %}
         <div>
           <img
-            style="transform: scale(0.5);"
+            style="width: 50%"
             src="{{ media | img_url: 'master'}}"
             alt="{{ product.title }}{{ forloop.index }}">
         </div>
