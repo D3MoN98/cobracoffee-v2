@@ -147,8 +147,9 @@
 
       console.log(filtered_product)
 
+      var html = ''
       for (var i = 0; i < filtered_product.length; i++) {
-        var html = ` <div class="col-md-4 item">
+        html += ` <div class="col-md-4 item">
         <div class="product-boxx">
           <a href="${
           filtered_product[i].url
@@ -156,7 +157,7 @@
             <img
               class="front"
               src="${
-          filtered_product[i].images[1].src
+          filtered_product[i].images[0].src
         }"
               alt="">
             <img
