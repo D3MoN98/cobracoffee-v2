@@ -130,8 +130,9 @@ jQuery(document).ready(function ($) {
 
   $(".product-details-slider").slick({
     autoplay: false,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
+    centerMode: true,
     variableWidth: true,
     infinite: true,
     dots: false,
