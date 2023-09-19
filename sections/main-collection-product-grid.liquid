@@ -68,6 +68,7 @@
     {% endif %}
 
     <div class="row product-list" id="productList">
+      <div class="loading_overlay"></div>
       {%- for product in collection.products -%}
         <div class="col-md-4 item">
           <div class="product-boxx">
@@ -124,6 +125,7 @@
   })
 
   function fetchProduct(colors) {
+    document.getElementsByClassName('loading_overlay')[0].style.display = 'block'
     fetch("/collections/apparel/products.json").then(function(response) {
       if (! response.ok) {
         throw new Error('Network response was not ok');
@@ -185,8 +187,9 @@
       </div>`
       }
 
-      console.log(html)
+
       document.getElementById('productList').innerHTML = html
+      document.getElementsByClassName('loading_overlay')[0].style.display = 'block'
     }).catch(function(error) {
       console.log(error)
     })
