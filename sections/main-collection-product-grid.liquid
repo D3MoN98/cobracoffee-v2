@@ -75,11 +75,11 @@
             <a href="{{ product.url }}" class="f-img">
               <img
                 class="front"
-                src="{{ product | img_url: 'master' }}"
+                src="{{ product.images[0].src }}"
                 alt="">
               <img
                 class="back"
-                src="{{ product | img_url: 'master' }}"
+                src="{{ product.images[1].src }}"
                 alt="">
             </a>
             <h4>
