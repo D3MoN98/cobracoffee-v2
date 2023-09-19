@@ -1,15 +1,7 @@
 <!-- product details slider section start -->
 <product-recommendations class="product-details-slider-sec related-products" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">
   <div class="container-fluid">
-    <div class="product-details-slider slick-carousel">
-      {%- for product in recommendations.products -%}
-        <div>
-          <div class="product-details-sbox">
-            <a href="{{ product.url }}"><img src="{{ product | img_url: 'master' }}" alt="{{ product.title }}"></a>
-          </div>
-        </div>
-      {%- endfor -%}
-    </div>
+    <div class="product-details-slider slick-carousel"></div>
   </div>
 </product-recommendations>
 
