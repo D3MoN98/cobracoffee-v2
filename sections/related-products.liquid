@@ -4,6 +4,7 @@
     <div class="product-details-slider slick-carousel">
       {% assign current_product = product %}
 
+      {{ current_product.handle | json }}
       {% for product in all_products %}
         {% unless current_product.handle == product.handle %}
           {% for tag in product.tags %}
