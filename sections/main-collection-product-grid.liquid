@@ -76,12 +76,14 @@
               {% assign first_image = product.images[0] %}
               <img
                 class="front"
-                src="{{ first_image.src | product_img_url: 'large' }}"
+                src="{{ first_image.src | product_img_url: 'master' }}"
                 alt="{{ product.title }}">
+              {% assign second_image = product.images[1] %}
+
               <img
                 class="back"
-                src="{{ product.images[1].src }}"
-                alt="">
+                src="{{ second_image.src | product_img_url: 'master' }}"
+                alt="{{ product.title }}">
             </a>
             <h4>
               <a href="{{ product.url }}">{{ product.title }}</a>
