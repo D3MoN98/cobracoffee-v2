@@ -4,9 +4,9 @@
     <div class="product-details-slider slick-carousel">
       {% assign current_product = product %}
 
-      {{ current_product.handle | json }}
+      {{ current_product.tags | json }}
       {% for product in all_products %}
-        {{ product.handle | json }}
+        {{ product.tags | json }}
         {% unless current_product.handle == product.handle %}
           {% for tag in product.tags %}
             {% if current_product.tags contains tag %}
