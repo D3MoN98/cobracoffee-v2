@@ -5,8 +5,21 @@
       {% assign current_product = product %}
 
       {% for product in collections.all.products %}
-        {{ current_product.handle }} {{ product.handle }}
-
+        {% unless current_product.handle == product.handle %}
+          {{ current_product.handle }} {{ product.handle }}
+          {{ current_product.tags }} {{ product.tags }}
+          {% for tag in product.tags %}
+            {% if current_product.tags contains tag %}
+              <!-- Display the related product -->
+              <div>
+                <div class="product-details-sbox">
+                  <a href="{{ product.url }}"><img src="{{ product | img_url: 'master' }}" alt="{{ product.title }}"></a>
+                </div>
+              </div>
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endunless %}
       {% endfor %}
     </div>
   </div>
