@@ -128,16 +128,14 @@ jQuery(document).ready(function ($) {
     ],
   });
 
-  setTimeout(() => {
-    $(".product-details-slider").slick({
-      autoplay: true,
-      autoplaySpeed: 1500,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      dots: false,
-      navs: true,
-    });
-  }, 2000);
+  $(".product-details-slider").slick({
+    autoplay: true,
+    autoplaySpeed: 1500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    dots: false,
+    navs: true,
+  });
 
   $(".product-thumb-slider").slick({
     slidesToShow: 1,
