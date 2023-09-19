@@ -192,18 +192,17 @@ jQuery(document).ready(function ($) {
       afterResize: function () {},
       afterRender: function () {},
     });
-
-    var controller = new ScrollMagic.Controller();
-
-    // build scene
-    var scene = new ScrollMagic.Scene({
-      triggerHook: 1,
-      triggerElement: "#fixed-target",
-      pushFollowers: false,
-    })
-      .setPin("#fixed-footer")
-      .addTo(controller);
   }
 
+  var controller = new ScrollMagic.Controller();
+
+  // build scene
+  var scene = new ScrollMagic.Scene({
+    triggerHook: 1,
+    triggerElement: "#fixed-target",
+    pushFollowers: false,
+  })
+    .setPin("#fixed-footer")
+    .addTo(controller);
   // document end
 });
