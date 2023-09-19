@@ -6,12 +6,21 @@
 
       {{ current_product.tags | json }}
       {% for product in collections.all.products %}
-        <div class="product">
-          <h2>{{ product.title }}</h2>
-          <p>{{ product.description }}</p>
-          <p>Price: {{ product.price | money }}</p>
-          <!-- Add more product details as needed -->
-        </div>
+        {{ product.tags | json }}
+        {{ product.handle | json }}
+        {% unless current_product.handle == product.handle %}
+          {% for tag in product.tags %}
+            {% if current_product.tags contains tag %}
+              <!-- Display the related product -->
+              <div>
+                <div class="product-details-sbox">
+                  <a href="{{ product.url }}"><img src="{{ product | img_url: 'master' }}" alt="{{ product.title }}"></a>
+                </div>
+              </div>
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endunless %}
       {% endfor %}
     </div>
   </div>
