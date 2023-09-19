@@ -2,28 +2,36 @@
 <section class="recent-product">
   <div class="container2">
     <div class="row product-list">
-      {%- assign recent_collections = section.settings.collection.products -%}
+      {% assign current_product = product %}
 
-      {% for product in recent_collections %}
-        <div class="col-md-4 item">
-          <div class="product-boxx">
-            <a href="{{ product.url }}" class="f-img">
-              <img
-                class="front"
-                src="{{ product | img_url: 'master' }}"
-                alt="">
-              <img
-                class="back"
-                src="{{ product | img_url: 'master' }}"
-                alt="">
-            </a>
-            <h4>
-              <a href="#">{{ product.title }}</a>
-            </h4>
-            <a href="#" class="btn">ADD {{ product.price | money }}<i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        </div>
+      {% for product in collections.all.products %}
+        {% unless current_product.handle == product.handle %}
+          {% for tag in product.tags %}
+            {% if current_product.tags contains tag %}
+              <!-- Display the related product -->
+              <div class="col-md-4 item">
+                <div class="product-boxx">
+                  <a href="{{ product.url }}" class="f-img">
+                    <img
+                      class="front"
+                      src="{{ product | img_url: 'master' }}"
+                      alt="">
+                    <img
+                      class="back"
+                      src="{{ product | img_url: 'master' }}"
+                      alt="">
+                  </a>
+                  <h4>
+                    <a href="#">{{ product.title }}</a>
+                  </h4>
+                  <a href="#" class="btn">ADD {{ product.price | money }}<i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endunless %}
       {% endfor %}
     </div>
   </div>
