@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="product-details-slider slick-carousel">
       {% for media in product.media %}
-        <div>
+        <div style="width: 400px;">
           <img src="{{ media | img_url: 'master'}}" alt="{{ product.title }}{{ forloop.index }}">
         </div>
       {% endfor %}
