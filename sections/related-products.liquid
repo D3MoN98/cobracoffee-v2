@@ -6,9 +6,17 @@
 
       {{ current_product.tags | json }}
       {% for product in collections.all.products %}
-        {{ product.tags | json }}
-        {{ product.handle | json }}
-
+        {% for tag in product.tags %}
+          {% if current_product.tags contains tag %}
+            <!-- Display the related product -->
+            <div>
+              <div class="product-details-sbox">
+                <a href="{{ product.url }}"><img src="{{ product | img_url: 'master' }}" alt="{{ product.title }}"></a>
+              </div>
+            </div>
+            {% break %}
+          {% endif %}
+        {% endfor %}
       {% endfor %}
     </div>
   </div>
