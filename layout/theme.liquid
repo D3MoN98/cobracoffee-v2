@@ -168,9 +168,10 @@
     {%- if settings.predictive_search_enabled -%}
       <!-- <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script> -->
     {%- endif -%}
-
-    <script async src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
-
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
     <script async src="{{ 'bootstrap.bundle.min.js' | asset_url }}"></script>
     <script async src="{{ 'slick.min.js' | asset_url }}"></script>
     <script async src="{{ 'all.min.js' | asset_url }}"></script>
