@@ -135,17 +135,18 @@
       var filtered_product = []
       if (colors.length == 0) {
         filtered_product = data.products
-      }
-      filtered_product = data.products.filter((element) => {
-        for (let i = 0; i < element.options.length; i++) {
-          let option = element.options[i];
-          if (option.name == 'color' && colors.includes(option.values[0])) {
-            return true
-          } else {
-            return false
+      } else {
+        filtered_product = data.products.filter((element) => {
+          for (let i = 0; i < element.options.length; i++) {
+            let option = element.options[i];
+            if (option.name == 'color' && colors.includes(option.values[0])) {
+              return true
+            } else {
+              return false
+            }
           }
-        }
-      });
+        });
+      }
 
       var html = '<div class="loading_overlay"></div>'
       for (var i = 0; i < filtered_product.length; i++) {
