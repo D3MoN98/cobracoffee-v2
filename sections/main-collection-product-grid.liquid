@@ -67,7 +67,7 @@
       </div>
     {% endif %}
 
-    <div class="row product-list">
+    <div class="row product-list" id="productList">
       {%- for product in collection.products -%}
         <div class="col-md-4 item">
           <div class="product-boxx">
@@ -147,6 +147,46 @@
 
       console.log(filtered_product)
 
+      for (var i = 0; i < filtered_product.length; i++) {
+        var html = ` <div class="col-md-4 item">
+        <div class="product-boxx">
+          <a href="${
+          filtered_product[i].url
+        }" class="f-img">
+            <img
+              class="front"
+              src="${
+          filtered_product[i].images[1].src
+        }"
+              alt="">
+            <img
+              class="back"
+              src="${
+          filtered_product[i].images[1].src
+        }"
+              alt="">
+          </a>
+          <h4>
+            <a href="${
+          filtered_product[i].url
+        }">${
+          filtered_product[i].title
+        }</a>
+          </h4>
+          <a
+            class="btn"
+            href="${
+          filtered_product[i].url
+        }"
+            >View More ${
+          filtered_product[i].variants[0].price
+        }<i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>`
+      }
+
+      document.getElementById('productList').innerHTML = html
     }).catch(function(error) {
       console.log(error)
     })
