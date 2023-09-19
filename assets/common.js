@@ -168,6 +168,12 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  // Get the current URL's host (domain name)
+  var currentHost = window.location.host;
+
+  // Log the host to the console (optional)
+  console.log("Current Host: " + currentHost);
+
   $.scrollify({
     section: ".scroll-section",
     interstitialSection: "",
