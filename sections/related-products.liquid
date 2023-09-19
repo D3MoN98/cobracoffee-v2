@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="product-details-slider slick-carousel">
       {% for media in product.media %}
-        <div>
+        <div style="width: fit-content">
           <img
             style="width: 50%"
             src="{{ media | img_url: 'master'}}"
