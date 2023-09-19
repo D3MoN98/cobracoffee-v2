@@ -2,22 +2,10 @@
 <section class="product-details-slider-sec related-products" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">
   <div class="container-fluid">
     <div class="product-details-slider slick-carousel">
-      {% assign current_product = product %}
-
-      {% for product in collections.all.products %}
-        {% unless current_product.handle == product.handle %}
-          {% for tag in product.tags %}
-            {% if current_product.tags contains tag %}
-              <!-- Display the related product -->
-              <div>
-                <div class="product-details-sbox">
-                  <a href="{{ product.url }}"><img src="{{ product | img_url: 'master' }}" alt="{{ product.title }}"></a>
-                </div>
-              </div>
-              {% break %}
-            {% endif %}
-          {% endfor %}
-        {% endunless %}
+      {% for media in product.media %}
+        <div>
+          <img src="{{ media | img_url: 'master'}}" alt="{{ product.title }}{{ forloop.index }}">
+        </div>
       {% endfor %}
     </div>
   </div>
