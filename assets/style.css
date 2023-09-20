@@ -3136,3 +3136,6 @@ table.cart-items{
   .cart-modal .modal-body{
     position: relative;
   }
+  .shopify-section-cart-total{
+    display: inline;
+  }
