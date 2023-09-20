@@ -46,6 +46,7 @@
         return response.json();
       }).then(function(data) {
         console.log(data)
+        document.getElementById("cartModal").innerHTML = data['ajax-cart']
       }).catch(function(error) {
         console.error('Error adding product to cart:', error);
       });

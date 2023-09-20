@@ -3054,3 +3054,54 @@ table.cart-items{
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
   }
+
+
+  .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .cart-quantity-minus,
+  .cart-quantity-plus {
+    display: block;
+    width: 22px;
+    height: 23px;
+    margin: 0;
+    background: #dee0ee;
+    text-decoration: none;
+    text-align: center;
+    line-height: 23px;
+  }
+  .cart-quantity-minus:hover,
+  .cart-quantity-plus:hover {
+    background: #575b71;
+    color: #fff;
+  } 
+  .cart-quantity-minus {
+    border-radius: 3px 0 0 3px;
+  }
+  .cart-quantity-plus {
+    border-radius: 0 3px 3px 0;
+  }
+  .cart-quantity-input {
+    width: 32px;
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-top: 2px solid #dee0ee;
+    border-bottom: 2px solid #dee0ee;
+    border-left: 1px solid #dee0ee;
+    border-right: 2px solid #dee0ee;
+    background: #fff;
+    color: #8184a1;
+  }
+  .cart-quantity-minus:link,
+  .cart-quantity-plus:link {
+    color: #8184a1;
+  } 
+  .cart-quantity-minus:visited,
+  .cart-quantity-plus:visited {
+    color: #fff;
+  }
