@@ -80,7 +80,7 @@
 
     function fetchCartHTML() {
 
-      fetch('/?sections=ajax-cart', {
+      fetch('/?sections=ajax-cart,cart-total', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -91,6 +91,7 @@
       }).then(function(data) {
         console.log(data)
         document.getElementById("cartModal").innerHTML = data['ajax-cart']
+        document.getElementById("cartTotalItems").innerHTML = data['cart-total']
       }).catch(function(error) {
         console.error('Error adding product to cart:', error);
       });
