@@ -48,36 +48,6 @@
 </section>
 <!-- recent product section end -->
 
-<script>
-  var products = [{% for product in collections.all.products %}{
-        "title": "{{ product.title | escape }}",
-        "url": "{{ product.url | escape }}",
-
-// Add other product properties as needed
-      },{% endfor %}];
-</script>
-<script>
-  function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-  }
-
-// Shuffle the products array
-  shuffleArray(products);
-</script>
-
-{% for product in products %}
-  <div>
-    <a href="{{ product.url }}">{{ product.title }}</a>
-    <!-- Add other product information as needed -->
-  </div>
-{% endfor %}
-
-
 {% schema %}
   {
     "name": "Recent Product",
