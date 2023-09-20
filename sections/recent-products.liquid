@@ -7,8 +7,29 @@
       <!-- Set the desired limit for products -->
       {% assign product_count = 0 %}
 
+      {% assign collections_count = collections.all.products | size %}
+      {% assign random_collections = '[]' | json %}
 
-      {% for product in collections.all.products %}
+      {% for collection in collections.all.products %}
+        {% assign random_index = 'random' | random: collections_count %}
+        {% assign random_collection = collections[random_index] %}
+        {% assign collections_count = collections_count | minus: 1 %}
+
+        {% capture random_collection_json %}
+          {{ random_collection }}
+        {% endcapture %}
+
+        {% assign random_collections = random_collections | append: random_collection_json | append: "," %}
+
+        {% if collections_count <= 0 %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign random_collections = random_collections | strip | replace_last: ',', ']' %}
+      {% assign random_collections = random_collections | prepend: '[' %}
+
+      {% for product in random_collections %}
         {% unless current_product.handle == product.handle %}
           {% for tag in product.tags %}
             {% if current_product.tags contains tag %}
