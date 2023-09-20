@@ -3133,3 +3133,6 @@ table.cart-items{
     color: #fff;
     font-size: 14px;
   }
+  .cart-modal .modal-body{
+    position: relative;
+  }

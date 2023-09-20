@@ -68,7 +68,7 @@
     {% endif %}
 
     <div class="row product-list" id="productList">
-      <div class="loading_overlay"></div>
+      <div class="loading_overlay product_grid_overlay"></div>
       {%- for product in collection.products -%}
         <div class="col-md-4 item">
           <div class="product-boxx">
@@ -130,7 +130,7 @@
   })
 
   function fetchProduct(colors) {
-    document.getElementsByClassName('loading_overlay')[0].style.display = 'block'
+    document.getElementsByClassName('product_grid_overlay')[0].style.display = 'block'
     fetch("/collections/apparel/products.json").then(function(response) {
       if (! response.ok) {
         throw new Error('Network response was not ok');
@@ -153,7 +153,7 @@
         });
       }
 
-      var html = '<div class="loading_overlay"></div>'
+      var html = '<div class="loading_overlay product_grid_overlay"></div>'
       for (var i = 0; i < filtered_product.length; i++) {
         html += `<div class="col-md-4 item">
         <div class="product-boxx">
@@ -214,7 +214,7 @@
 
 
       document.getElementById('productList').innerHTML = html
-      document.getElementsByClassName('loading_overlay')[0].style.display = 'none'
+      document.getElementsByClassName('product_grid_overlay')[0].style.display = 'none'
     }).catch(function(error) {
       console.log(error)
     })

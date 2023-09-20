@@ -9,6 +9,7 @@
         aria-label="Close"></button>
     </div>
     <div class="modal-body" id="cartItems">
+      <div class="loading_overlay cart_overlay"></div>
       {% for item in cart.items %}
         <div class="cart-item">
           <div class="cart-item-img">
@@ -16,13 +17,19 @@
           </div>
           <div class="cart-item-details">
             <div class="cart-item-title">{{ item.product.title }}
-              <a href="#" class="cart-quantity-delete">Delete</a>
+              <a
+                href="#"
+                class="cart-quantity-delete"
+                data-item-id="{{ item.id }}">Delete</a>
             </div>
             <hr>
             <div class="cart-item-quantity">
               Quantity
               <div class="quantity">
-                <a href="#" class="cart-quantity-minus">
+                <a
+                  href="#"
+                  class="cart-quantity-minus"
+                  data-item-id="{{ item.id }}">
                   <span>-</span>
                 </a>
                 <input
@@ -30,7 +37,10 @@
                   type="text"
                   class="cart-quantity-input"
                   value="{{ item.quantity }}">
-                <a href="#" class="cart-quantity-plus">
+                <a
+                  href="#"
+                  class="cart-quantity-plus"
+                  data-item-id="{{ item.id }}">
                   <span>+</span>
                 </a>
               </div>
