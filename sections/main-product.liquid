@@ -34,7 +34,9 @@
               </span>
             </div>
             {{ product.metafields.arena.product_key_details }}
-            <div class="d-flex justify-content-between">GROUND COFFEE 250G</div>
+            {% if product.type == 'Coffee' %}
+              <div class="d-flex justify-content-between">GROUND COFFEE 250G</div>
+            {% endif %}
             <a href="#" class="btn btn2">ADD {{ product.price | money }}
               <i class="fas fa-chevron-right"></i>
             </a>
