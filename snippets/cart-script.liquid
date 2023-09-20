@@ -23,29 +23,32 @@
         return response.json();
       }).then(function(data) {
 
-// Handle the success response here, e.g., show a success message.
         console.log('Product added to cart:', data);
         var cartModal = new bootstrap.Modal(document.getElementById('cartModal'))
         cartModal.show()
-
-// You can also update the cart icon or cart page here.
+        fetchCartHTML()
       }).catch(function(error) {
 
-// Handle the error response here, e.g., display an error message.
         console.error('Error adding product to cart:', error);
       });
     })
 
-    function handleResponse() {
-      JSON.parse(this.responseText);
+
+    function fetchCartHTML() {
+
+      fetch('/?sections=ajax-cart', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        }
+      }).then(function(response) {
+        return response.json();
+      }).then(function(data) {
+        console.log(data)
+      }).catch(function(error) {
+        console.error('Error adding product to cart:', error);
+      });
     }
-
-    const request = new XMLHttpRequest();
-
-    request.addEventListener('load', handleResponse);
-    request.open('GET', '/?sections=main-password-header,ajax-cart', true);
-    request.send();
-
-
   });
 </script>
