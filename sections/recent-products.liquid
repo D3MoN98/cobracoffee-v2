@@ -49,7 +49,7 @@
 <!-- recent product section end -->
 
 <script>
-  var products = [{% for product in collection.products %}{
+  var products = [{% for product in collections.all.products %}{
         "title": "{{ product.title | escape }}",
         "url": "{{ product.url | escape }}",
 
