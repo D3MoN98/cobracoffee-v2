@@ -44,14 +44,16 @@
       .on('click', '.cart-quantity-minus', function(e) {
         e.preventDefault();
         var itemId = this.getAttribute('data-item-id');
-        updateCartItemQuantity(itemId, -1)
+        var quantity = parseInt(this.getAttribute('data-quantity-id') - 1);
+        updateCartItemQuantity(itemId, quantity)
       })
 
       $(document)
       .on('click', '.cart-quantity-plus', function(e) {
         e.preventDefault();
         var itemId = this.getAttribute('data-item-id');
-        updateCartItemQuantity(itemId, 1)
+        var quantity = parseInt(this.getAttribute('data-quantity-id') - 1);
+        updateCartItemQuantity(itemId, quantity)
       })
 
     function updateCartItemQuantity(itemId, quantityChange) {
