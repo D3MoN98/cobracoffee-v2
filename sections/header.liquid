@@ -56,7 +56,7 @@
           data-bs-toggle="modal"
           data-bs-target="#cartModal"
           class="btn cart-btn">Cart
-          <span id="cartTotalItems">{% section 'cart-total' %}</span>
+          <span id="cartTotalItems">{{ cart.item_count }}</span>
         </a>
       </div>
     </div>
