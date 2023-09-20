@@ -44,7 +44,7 @@
       .on('click', '.cart-quantity-minus', function(e) {
         e.preventDefault();
         var itemId = this.getAttribute('data-item-id');
-        var quantity = parseInt(this.getAttribute('data-quantity-id') - 1);
+        var quantity = parseInt(this.getAttribute('data-item-quantity') - 1);
         updateCartItemQuantity(itemId, quantity)
       })
 
@@ -52,7 +52,7 @@
       .on('click', '.cart-quantity-plus', function(e) {
         e.preventDefault();
         var itemId = this.getAttribute('data-item-id');
-        var quantity = parseInt(this.getAttribute('data-quantity-id') + 1);
+        var quantity = parseInt(this.getAttribute('data-item-quantity') + 1);
         updateCartItemQuantity(itemId, quantity)
       })
 
