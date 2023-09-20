@@ -58,11 +58,14 @@
         {% endfor %}
       {% endif %}
     </div>
-    <div class="modal-footer">
-      <a href="/checkout" class="btn btn-primary checkout-btn">Checkout
-        <span>{{ cart.total_price | money }}</span>
-      </a>
-    </div>
+    {% if cart.item_count > 0 %}
+      <div class="modal-footer">
+        <a href="/checkout" class="btn btn-primary checkout-btn">Checkout
+          <span>{{ cart.total_price | money }}</span>
+        </a>
+      </div>
+    {% endif %}
+
   </div>
 </div>
 
