@@ -3105,3 +3105,31 @@ table.cart-items{
   .cart-quantity-plus:visited {
     color: #fff;
   }
+
+  .cart-modal *{
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .cart-modal .cart-item{
+    display: flex;
+  }  
+  .cart-modal .cart-item .cart-item-img{
+    flex: 0 0 25%;
+  }
+  .cart-modal .cart-item .cart-item-img img{
+    width: 100%;
+  }
+  .cart-modal .cart-item .cart-item-details{
+    flex: 0 0 75%;
+  }
+  .cart-modal .checkout-btn{
+    flex: 1 1 100%;
+  }
+  .cart-modal .checkout-btn span{
+    margin-left: auto;
+  }
+  .cart-modal .cart-quantity-delete{
+    text-decoration: underline;
+    color: #fff;
+    font-size: 14px;
+  }

@@ -1,7 +1,7 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
-      <h1 class="modal-title fs-5" id="cartModalLabel">YOUR CART [{{ cart.item_count }}]</h1>
+      <div class="modal-title fs-5" id="cartModalLabel">YOUR CART [{{ cart.item_count }}]</div>
       <button
         type="button"
         class="btn-close"
@@ -12,15 +12,15 @@
       {% for item in cart.items %}
         <div class="cart-item">
           <div class="cart-item-img">
-            <img src="{{item.featured_image.src}}" alt="{{item.featured_image.alt}}">
+            <img src="{{ item.product.featured_image.src | img_url: 'medium' }}" alt="{{item.product.title}}">
           </div>
           <div class="cart-item-details">
-            <h6>{{ item.product.title }}
-              <a href="#" class="cart-quantity-delete">
-                <span>Delete</span>
-              </a>
-            </h6>
-            <p>Quantity: {{ item.quantity }}
+            <div class="cart-item-title">{{ item.product.title }}
+              <a href="#" class="cart-quantity-delete">Delete</a>
+            </div>
+            <hr>
+            <div class="cart-item-quantity">
+              Quantity
               <div class="quantity">
                 <a href="#" class="cart-quantity-minus">
                   <span>-</span>
@@ -34,16 +34,18 @@
                   <span>+</span>
                 </a>
               </div>
-            </p>
-            <p>Price: {{ item.price | money }}</p>
-            <p>SKU: {{ item.sku }}</p>
+            </div>
+            <hr>
+            <div class="cart-item-price">Price: {{ item.price | money }}</div>
           </div>
         </div>
         <hr>
       {% endfor %}
     </div>
     <div class="modal-footer">
-      <a href="/checkout" class="btn btn-primary d-block">Checkout {{ cart.total_price | money }}</a>
+      <a href="/checkout" class="btn btn-primary checkout-btn">Checkout
+        <span>{{ cart.total_price | money }}</span>
+      </a>
     </div>
   </div>
 </div>
