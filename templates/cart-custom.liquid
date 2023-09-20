@@ -1,0 +1,20 @@
+{% comment %}
+Custom Cart Template
+This is where you can customize the display of cart details.
+Modify this template to match your design and requirements.
+{% endcomment %}
+
+{% if cart.item_count == 0 %}
+  <p>Your cart is empty.</p>
+{% else %}
+  <h2>Your Cart</h2>
+  <ul>
+    {% for item in cart.items %}
+      <li>
+        {{ item.title }} - Quantity: {{ item.quantity }}
+        Price: {{ item.price | money }}
+      </li>
+    {% endfor %}
+  </ul>
+  <p>Total: {{ cart.total_price | money }}</p>
+{% endif %}
