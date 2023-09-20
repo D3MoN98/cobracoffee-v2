@@ -20,13 +20,11 @@
         {% for item in cart.items %}
           <div class="cart-item">
             <div class="cart-item-img">
-              <img src="{{item.featured_image.src}}" alt="{{item.featured_image.alt}}">
+              <img src="{{ item.product.featured_image.src | img_url: 'medium' }}" alt="{{item.product.title}}">
             </div>
             <div class="cart-item-details">
               <div class="cart-item-title">{{ item.product.title }}
-                <a href="#" class="cart-quantity-delete">
-                  <span>Delete</span>
-                </a>
+                <a href="#" class="cart-quantity-delete">Delete</a>
               </div>
               <hr>
               <div class="cart-item-quantity">
@@ -59,4 +57,5 @@
       </div>
     </div>
   </div>
+
 </div>
