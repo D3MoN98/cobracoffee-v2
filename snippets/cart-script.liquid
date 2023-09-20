@@ -37,14 +37,15 @@
     })
 
     function handleResponse() {
-      console.log(this.responseText)
+      JSON.parse(this.responseText);
     }
 
     const request = new XMLHttpRequest();
 
     request.addEventListener('load', handleResponse);
-    request.open('GET', '/?section=ajax-cart', true);
+    request.open('GET', '/?sections=main-password-header', true);
     request.send();
+
 
   });
 </script>
