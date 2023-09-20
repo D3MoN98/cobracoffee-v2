@@ -37,7 +37,10 @@
             {% if product.type == 'Coffee' %}
               <div class="d-flex justify-content-between">GROUND COFFEE 250G (8.8OZ)</div>
             {% endif %}
-            <a href="#" class="btn btn2">ADD {{ product.price | money }}
+            <a
+              class="btn btn2 add-to-cart"
+              data-product-id="{{ product.id }}"
+              data-variant-id="{{product.variants[0].id }}">ADD {{ product.price | money }}
               <i class="fas fa-chevron-right"></i>
             </a>
           </div>
