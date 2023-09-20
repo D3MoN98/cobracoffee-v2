@@ -49,10 +49,9 @@
 <!-- recent product section end -->
 
 <script>
-  var products = [{% for product in collection.products %}
-      {{product}},{% endfor %}];
+  var products = [{% for product in collections.all.products %}{{product}},{% endfor %}];
 
-  console.log(product)
+  console.log(products)
 </script>
 
 
