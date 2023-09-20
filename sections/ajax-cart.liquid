@@ -1,18 +1,9 @@
-{% layout none %}
-{% capture cart_details %}
-  {% if cart.item_count == 0 %}
-    <p>Your cart is empty.</p>
-  {% else %}
-    <h2>Your Cart</h2>
-    <ul>
-      {% for item in cart.items %}
-        <li>
-          {{ item.title }} - Quantity: {{ item.quantity }}
-          Price: {{ item.price | money }}
-        </li>
-      {% endfor %}
-    </ul>
-    <p>Total: {{ cart.total_price | money }}</p>
-  {% endif %}
-{% endcapture %}
-{{ cart_details | json }}
+{% for item in cart.items %}
+  <div class="cart-item">
+    <h6>{{ item.product.title }}</h6>
+    <p>Quantity: {{ item.quantity }}</p>
+    <p>Price: {{ item.price | money }}</p>
+    <p>SKU: {{ item.sku }}</p>
+  </div>
+  <hr>
+{% endfor %}
