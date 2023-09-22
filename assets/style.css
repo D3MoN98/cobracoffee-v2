@@ -1935,6 +1935,17 @@ table.cart-items tr td a:hover{
 .terms-sec p, .privacy-sec p{
     text-transform: none;
 }
+.cart-modal .cart-item .cart-item-details .cart-item-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-modal .cart-item .cart-item-details .cart-item-title a{
+    text-decoration: underline;
+}
+.cart-modal .cart-item .cart-item-details{
+    padding-left: 20px;
+}
 
 
 /* =====body css end===== */
