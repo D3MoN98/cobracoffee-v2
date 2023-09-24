@@ -2861,6 +2861,9 @@ table.cart-items{
         padding-left: 15px;
         padding-right: 15px;
     }
+    .product-details-col ul li{
+        width: 100%;
+    }
 }
 
 @media (max-width: 575px) {
