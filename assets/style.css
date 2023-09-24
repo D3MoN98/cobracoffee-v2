@@ -581,7 +581,7 @@ transition: all 0.3s ease-in-out;
 }
 .navbar-nav>li.current-menu-item a:after,
 .navbar-nav>li>a:hover:after,
-.navbar-nav>li>a.active{
+.navbar-nav>li>a.active:after{
     opacity: 1;
 }
 .navbar-nav>li.current-menu-item a,
