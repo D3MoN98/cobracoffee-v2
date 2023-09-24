@@ -580,11 +580,13 @@ transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 .navbar-nav>li.current-menu-item a:after,
-.navbar-nav>li>a:hover:after{
+.navbar-nav>li>a:hover:after,
+.navbar-nav>li>a.active{
     opacity: 1;
 }
 .navbar-nav>li.current-menu-item a,
-.navbar-nav>li>a:hover{
+.navbar-nav>li>a:hover,
+.navbar-nav>li>a.active{
     padding-left: 30px;
     padding-right: 0px;
 }
@@ -1941,12 +1943,14 @@ table.cart-items tr td a:hover{
     justify-content: space-between;
 }
 .cart-modal .cart-item .cart-item-details .cart-item-title a{
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 .cart-modal .cart-item .cart-item-details{
     padding-left: 20px;
 }
-
+.cart-item-quantity .quantity input[type="text"]{
+    color: #fff;
+}
 
 /* =====body css end===== */
 
