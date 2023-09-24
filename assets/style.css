@@ -1951,6 +1951,9 @@ table.cart-items tr td a:hover{
 .cart-item-quantity .quantity input[type="text"]{
     color: #fff;
 }
+.cart-modal .modal-content{
+    border-radius: 30px;
+}
 
 /* =====body css end===== */
 
