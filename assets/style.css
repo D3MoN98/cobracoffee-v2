@@ -2011,6 +2011,9 @@ table.cart-items tr td a:hover{
     font-size: 16px;
     line-height: 1.2;
 }
+.form-status-list li a:hover{
+    color: red;
+}
 
 /* =====body css end===== */
 
