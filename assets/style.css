@@ -1980,6 +1980,16 @@ table.cart-items tr td a:hover{
     font-size: 50px;
     letter-spacing: 0.1em;
 }
+.shopify-challenge__container {
+    padding: 50px 0;
+}
+.shopify-challenge__container .btn{
+    border: 1px solid #000;
+    line-height: 1;
+}
+.shopify-challenge__container .btn:hover{
+   color: #fff;
+}
 
 /* =====body css end===== */
 
