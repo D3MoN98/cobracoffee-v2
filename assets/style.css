@@ -1991,6 +1991,18 @@ table.cart-items tr td a:hover{
 .shopify-challenge__container .btn:hover{
    color: #fff;
 }
+.form__message h2 {
+    font-size: 16px;
+    line-height: 1.2;
+}
+.form__message {
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1.2;
+}
+.form__message svg {
+    width: 20px;
+}
 
 /* =====body css end===== */
 
