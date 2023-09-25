@@ -1986,6 +1986,7 @@ table.cart-items tr td a:hover{
 .shopify-challenge__container .btn{
     border: 1px solid #000;
     line-height: 1;
+    margin-top: 30px;
 }
 .shopify-challenge__container .btn:hover{
    color: #fff;
