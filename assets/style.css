@@ -1994,6 +1994,7 @@ table.cart-items tr td a:hover{
 .form__message h2 {
     font-size: 16px;
     line-height: 1.2;
+    outline: 0;
 }
 .form__message {
     padding: 5px;
