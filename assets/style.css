@@ -2004,6 +2004,13 @@ table.cart-items tr td a:hover{
 .form__message svg {
     width: 20px;
 }
+.form-status-list {
+    padding: 5px;
+}
+.form-status-list li a, .form-status-list li{
+    font-size: 16px;
+    line-height: 1.2;
+}
 
 /* =====body css end===== */
 
