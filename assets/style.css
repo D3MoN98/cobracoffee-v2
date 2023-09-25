@@ -1966,6 +1966,20 @@ table.cart-items tr td a:hover{
 .product-details-col ul li{
     width: 50%;
 }
+.template-404{
+    padding: 50px 0;
+    text-align: center;
+    min-height: calc(100vh - 109px);
+}
+.text404{
+    font-size: 300px;
+    font-weight: 700;
+    line-height: 1;
+}
+.template-404 h1 {
+    font-size: 50px;
+    letter-spacing: 0.1em;
+}
 
 /* =====body css end===== */
 
