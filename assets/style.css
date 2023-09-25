@@ -2000,6 +2000,7 @@ table.cart-items tr td a:hover{
     padding: 5px;
     font-size: 16px;
     line-height: 1.2;
+    font-family: source-sans-pro;
 }
 .form__message svg {
     width: 20px;
