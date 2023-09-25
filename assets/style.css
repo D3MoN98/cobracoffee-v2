@@ -2174,6 +2174,9 @@ table.cart-items tr td a:hover{
     .product-details-slider .slick-next {
         right: 17%;
     }
+    .template-404{
+        min-height: calc(100vh - 93px);
+    }
 
 }
 @media (max-width: 1199px){
@@ -2245,6 +2248,12 @@ table.cart-items tr td a:hover{
     }
     .section-template--15937845821636__cart-items-padding h1.title {
         font-size: 76px;
+    }
+    .text404 {
+        font-size: 225px;
+    }
+    .template-404 h1 {
+        font-size: 35px;
     }
 
 }
@@ -2730,6 +2739,12 @@ table.cart-items{
     font-size: 50px;
     margin-bottom: 3rem;
 }
+.text404 {
+    font-size: 165px;
+}
+.template-404 h1 {
+    font-size: 30px;
+}
 }
 @media (max-width: 767px){
     .sec-2 h2, .ftr-big-text h2 {
@@ -2979,6 +2994,12 @@ table.cart-items{
     }
     .totals__total-value{
         font-size: 20px;
+    }
+    .text404 {
+        font-size: 140px;
+    }
+    .template-404 h1 {
+        font-size: 24px;
     }
 }
 @media (max-width: 479px) {
