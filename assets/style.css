@@ -2893,6 +2893,9 @@ table.cart-items{
     .product-details-col ul li{
         width: 100%;
     }
+    .template-404{
+        min-height: calc(100vh - 82px);
+    }
 }
 
 @media (max-width: 575px) {
@@ -3001,6 +3004,9 @@ table.cart-items{
     .template-404 h1 {
         font-size: 24px;
     }
+    .template-404{
+        min-height: calc(100vh - 75px);
+    }
 }
 @media (max-width: 479px) {
     body {
@@ -3103,6 +3109,9 @@ table.cart-items{
     .section-template--15937845821636__cart-items-padding h1.title {
         font-size: 30px;
         margin-bottom: 2rem;
+    }
+    .template-404{
+        min-height: calc(100vh - 67px);
     }
 }
 
