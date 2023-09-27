@@ -206,5 +206,25 @@ jQuery(document).ready(function ($) {
   })
     .setPin("#fixed-footer")
     .addTo(controller);
+
+
+
+
+    // if ($(window).width() < 768){
+      
+    // }
+  $('.res-tbs-btn').click(function(){
+    $('.faq-tbs-content .accordion').css('display', 'none');
+    $(this).parrent('.tab-pane').find('.accordion').css('display', 'block');
+  })
+
+
+
+
+
+
+
+
+
   // document end
 });
