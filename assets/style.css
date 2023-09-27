@@ -2793,6 +2793,7 @@ table.cart-items{
     }
     .faq-tbs-content .tab-pane{
         display: block !important;
+        opacity: 1 !important;
     }
     .faq-tbs-content .tab-pane .faq-accordion{
         display: none !important;

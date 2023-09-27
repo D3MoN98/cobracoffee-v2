@@ -213,9 +213,11 @@ jQuery(document).ready(function ($) {
     // if ($(window).width() < 768){
       
     // }
-  $('.res-tbs-btn').click(function(){
+  $('.res-tbs-btn').click(function(e){
+    e.preventDefault();
+    
     $('.faq-tbs-content .faq-accordion').removeClass('active');
-    $(this).parrent('.tab-pane').find('.faq-accordion').addClass('active');
+    $(this).parent('.tab-pane').find('.faq-accordion').addClass('active');
   })
 
 
