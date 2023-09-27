@@ -2792,10 +2792,13 @@ table.cart-items{
         display: block;
     }
     .faq-tbs-content .tab-pane{
-        display: none;
+        display: block !important;
     }
-    .faq-tbs-content .tab-pane.active{
-        display: block;
+    .faq-tbs-content .tab-pane .faq-accordion{
+        display: none !important;
+    }
+    .faq-tbs-content .tab-pane .faq-accordion.active{
+        display: block !important;
     }
     .sec-2 h2, .ftr-big-text h2 {
         font-size: 73px;
