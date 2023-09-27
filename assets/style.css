@@ -2015,6 +2015,9 @@ table.cart-items tr td a:hover{
 .form-status-list li a:hover{
     color: red;
 }
+.res-tbs-btn{
+    display: none;
+}
 
 /* =====body css end===== */
 
@@ -2782,6 +2785,18 @@ table.cart-items{
 }
 }
 @media (max-width: 767px){
+    .faq-nav{
+        display: none;
+    }
+    .res-tbs-btn{
+        display: block;
+    }
+    .faq-tbs-content .tab-pane{
+        display: none;
+    }
+    .faq-tbs-content .tab-pane.active{
+        display: block;
+    }
     .sec-2 h2, .ftr-big-text h2 {
         font-size: 73px;
     }

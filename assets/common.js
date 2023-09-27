@@ -214,8 +214,8 @@ jQuery(document).ready(function ($) {
       
     // }
   $('.res-tbs-btn').click(function(){
-    $('.faq-tbs-content .accordion').css('display', 'none');
-    $(this).parrent('.tab-pane').find('.accordion').css('display', 'block');
+    $('.faq-tbs-content .tab-pane').removeClass('active');
+    $(this).parrent('.tab-pane').addClass('active');
   })
 
 
