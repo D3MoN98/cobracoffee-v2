@@ -208,14 +208,10 @@ jQuery(document).ready(function ($) {
     .addTo(controller);
 
 
-
-
-    // if ($(window).width() < 768){
-      
-    // }
+  //responsive tabs
   $('.res-tbs-btn').click(function(e){
     e.preventDefault();
-    
+
     $('.faq-tbs-content .faq-accordion').removeClass('active');
     $(this).parent('.tab-pane').find('.faq-accordion').addClass('active');
   })
