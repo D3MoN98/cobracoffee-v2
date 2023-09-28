@@ -216,8 +216,8 @@ jQuery(document).ready(function ($) {
     $(this).parent('.tab-pane').find('.faq-accordion').addClass('active');
   })
 
-
-
+//AOS animation
+  AOS.init();
 
 
 
