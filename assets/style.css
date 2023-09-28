@@ -2805,6 +2805,7 @@ table.cart-items{
     }
     .faq-tbs-content .tab-pane .faq-accordion{
         display: none !important;
+        transition: all 0.3s ease-in-out;
     }
     .faq-tbs-content .tab-pane .faq-accordion.active{
         display: block !important;
