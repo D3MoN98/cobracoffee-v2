@@ -1537,6 +1537,10 @@ transition: all 0.3s ease-in-out;
     padding: 11px 30px;
     width: 100%;
 }
+.faq-nav ul li .btn.active{
+    background-color: #000;
+    color: #fff;
+}
 .faq-nav ul li.active .btn{
    background-color: #000;
    color: #fff;
