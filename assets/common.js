@@ -213,7 +213,7 @@ jQuery(document).ready(function ($) {
     e.preventDefault();
 
     $('.faq-tbs-content .faq-accordion').removeClass('active');
-    $(this).parent('.tab-pane').find('.faq-accordion').toggleClass('active');
+    $(this).parent('.tab-pane').find('.faq-accordion').addClass('active');
   })
 
 
