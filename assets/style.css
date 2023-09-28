@@ -2809,6 +2809,7 @@ table.cart-items{
     }
     .faq-tbs-content .tab-pane .faq-accordion.active{
         display: block !important;
+        transition: all 0.3s ease-in-out;
     }
     .sec-2 h2, .ftr-big-text h2 {
         font-size: 73px;
