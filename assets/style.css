@@ -2793,6 +2793,10 @@ table.cart-items{
 }
 }
 @media (max-width: 767px){
+    .faq-accordion .accordion-button:after {
+        width: 20px;
+        height: 20px;
+    }
     .faq-nav{
         display: none;
     }
