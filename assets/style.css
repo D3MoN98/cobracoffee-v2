@@ -2024,6 +2024,7 @@ table.cart-items tr td a:hover{
 .res-tbs-btn{
     display: none;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 /* =====body css end===== */
