@@ -1526,6 +1526,7 @@ transition: all 0.3s ease-in-out;
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
+    border: 0;
 }
 .faq-nav ul li{
     width: calc(100% / 4);
@@ -1534,6 +1535,7 @@ transition: all 0.3s ease-in-out;
 .faq-nav ul li .btn{
     display: block;
     padding: 11px 30px;
+    width: 100%;
 }
 .faq-nav ul li.active .btn{
    background-color: #000;
