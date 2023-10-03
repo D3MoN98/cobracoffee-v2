@@ -1725,7 +1725,7 @@ transition: all 0.3s ease-in-out;
     left: 0;
     top: 0;
     background: url(arrow.svg) center center no-repeat;
-    background-size: 100%;
+    background-size: contain;
     transform: rotate(180deg);
 }
 .product-details-slider .slick-next{
