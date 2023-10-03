@@ -572,7 +572,7 @@ transition: all 0.3s ease-in-out;
     width: 20px;
     height: 15px;
     opacity: 1;
-    background: url(./right-arrows.png) center no-repeat;
+    background: url(./arrow.svg) center no-repeat;
     background-size: 100%;
     opacity: 0;
     -webkit-transition: all 0.3s ease-in-out;
