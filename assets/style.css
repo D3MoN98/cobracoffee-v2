@@ -2450,6 +2450,9 @@ table.cart-items tr td a:hover{
     #shopify-section-template--15937846214852__main h1 {
         font-size: 80px;
     }
+    .product-details-col .btn:hover svg{
+        margin-left: 60px;
+      }
 
 }
 @media(max-width:1024px) {
