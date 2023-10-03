@@ -573,7 +573,7 @@ transition: all 0.3s ease-in-out;
     height: 15px;
     opacity: 1;
     background: url(./arrow.svg) center no-repeat;
-    background-size: 100%;
+    background-size: contain;
     opacity: 0;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
