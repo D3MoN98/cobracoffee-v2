@@ -2049,6 +2049,21 @@ table.cart-items tr td a:hover{
 .field--with-error select{
     border-color: red !important;
 }
+.form__message{
+    display: none;
+}
+.input-error-message{
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: source-sans-pro;
+    border: 1px solid red;
+    border-radius: 15px;
+    display: block;
+    margin-top: 5px;
+    color: red;
+    text-align: center;
+}
 
 /* =====body css end===== */
 
@@ -2815,13 +2830,7 @@ table.cart-items{
     font-size: 30px;
 }
 .form-message.form-message--success{
-    padding: 5px 10px;
-    border: 1px solid green;
-    border-radius: 50px;
-    color: #fff;
-    text-align: center;
-    color: green;
-    height: 83px;
+    height: 55px;
 }
 }
 @media (max-width: 767px){
