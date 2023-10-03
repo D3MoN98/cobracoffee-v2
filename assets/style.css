@@ -2085,6 +2085,8 @@ table.cart-items tr td a:hover{
 .pro-details-btn-wrap{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 40px;
+    align-items: center;
 }
 
 .custom-select {
