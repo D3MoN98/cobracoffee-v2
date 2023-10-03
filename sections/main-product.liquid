@@ -19,11 +19,17 @@
             <div class="ratting">
               {% assign n = product.metafields.arena.product_rating %}
 
-              {% for i in (1..n) %}
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-              {% endfor %}
+              {% if n < 1 %}
+                <p>Not rated yet</p>
+              {% else %}
+
+                {% for i in (1..n) %}
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                {% endfor %}
+              {% endif %}
+
 
             </div>
             {{ product.metafields.arena.product_key_details }}
