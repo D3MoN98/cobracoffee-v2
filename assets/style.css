@@ -2074,6 +2074,14 @@ table.cart-items tr td a:hover{
     text-align: center;
 }
 
+#shopify-section-template--15937846214852__main h1 {
+    font-size: 128px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: source-sans-pro;
+}
+
 /* =====body css end===== */
 
 /*desktop & big screen container size*/
