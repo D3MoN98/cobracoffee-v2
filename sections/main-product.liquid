@@ -17,7 +17,7 @@
             <h4 class="product-details-stitle">{{ product.metafields.arena.product_category_type }}</h4>
             <h3>{{ product.title }}</h3>
             <div class="ratting">
-              {% assign n = product.metafields.arena.product_rating %} // Set the number of times you want to loop
+              {% assign n = product.metafields.arena.product_rating %}
 
               {% for i in (1..n) %}
                 <span>
