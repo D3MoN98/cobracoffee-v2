@@ -2082,7 +2082,10 @@ table.cart-items tr td a:hover{
     font-family: source-sans-pro;
 }
 
-
+.pro-details-btn-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .custom-select {
     position: relative;
