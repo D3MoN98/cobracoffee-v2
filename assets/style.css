@@ -3212,7 +3212,7 @@ table.cart-items{
         margin-bottom: 35px;
     }
     .faq-accordion .accordion-button {
-        padding: 25px 10px;
+        padding: 25px 50px 25px 10px;
         font-size: 18px;
     }
     .faq-accordion .accordion-body {
@@ -3221,9 +3221,9 @@ table.cart-items{
     .faq-accordion .accordion-body p {
         font-size: 16px;
     }
-    .faq-accordion .accordion-button::after {
-        width: 16px;
-        height: 16px;
+    .faq-accordion .accordion-button:after {
+        right: 0;
+        position: absolute;
     }
     .btn, input[type="submit"] {
         font-size: 18px;
