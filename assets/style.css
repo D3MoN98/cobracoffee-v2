@@ -2100,7 +2100,7 @@ table.cart-items tr td a:hover{
   }
   
   .select-selected {
-    background-color: DodgerBlue;
+    background-color: transparent;
   }
   
   /*style the arrow inside the select element:*/
@@ -2135,7 +2135,7 @@ table.cart-items tr td a:hover{
   /*style items (options):*/
   .select-items {
     position: absolute;
-    background-color: transparent;
+    background-color: DodgerBlue;
     top: 100%;
     left: 0;
     right: 0;
