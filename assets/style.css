@@ -2141,6 +2141,7 @@ table.cart-items tr td a:hover{
     left: 0;
     right: 0;
     z-index: 99;
+    padding-top: 5px;
   }
   
   /*hide the items when the select box is closed:*/
@@ -2155,6 +2156,7 @@ table.cart-items tr td a:hover{
   .select-items div:not(:last-child){
     margin-bottom: 5px;
   }
+
 
 /* =====body css end===== */
 
