@@ -2026,6 +2026,24 @@ table.cart-items tr td a:hover{
     width: 100%;
     margin-bottom: 10px;
 }
+.form-message.form-message--success{
+    padding: 5px 10px;
+    border: 1px solid green;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    color: green;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    z-index: 9;
+}
 
 /* =====body css end===== */
 
