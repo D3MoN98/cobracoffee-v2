@@ -2052,6 +2052,9 @@ table.cart-items tr td a:hover{
 .form__message{
     display: none;
 }
+.form-status-list{
+    display: none;
+}
 .input-error-message{
     padding: 5px;
     font-size: 16px;
