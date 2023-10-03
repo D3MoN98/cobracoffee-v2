@@ -2044,7 +2044,9 @@ table.cart-items tr td a:hover{
     background: #000;
     z-index: 9;
 }
-.field.field--with-error input{
+.field--with-error input,
+.field--with-error textarea,
+.field--with-error select{
     border-color: red !important;
 }
 
