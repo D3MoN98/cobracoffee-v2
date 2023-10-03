@@ -2185,6 +2185,9 @@ table.cart-items tr td a:hover{
     .product-details-sbox{
         height: 630px;
     }
+    #shopify-section-template--15937846214852__main h1 {
+        font-size: 110px;
+    }
 }
 @media (max-width: 1440px){
     .logo a img{
@@ -2278,6 +2281,9 @@ table.cart-items tr td a:hover{
     .template-404{
         min-height: calc(100vh - 93px);
     }
+    #shopify-section-template--15937846214852__main h1 {
+        font-size: 100px;
+    }
 
 }
 @media (max-width: 1199px){
@@ -2355,6 +2361,9 @@ table.cart-items tr td a:hover{
     }
     .template-404 h1 {
         font-size: 35px;
+    }
+    #shopify-section-template--15937846214852__main h1 {
+        font-size: 80px;
     }
 
 }
@@ -2849,6 +2858,9 @@ table.cart-items{
 .form-message.form-message--success{
     height: 55px;
 }
+#shopify-section-template--15937846214852__main h1 {
+    font-size: 70px;
+}
 }
 @media (max-width: 767px){
     .faq-accordion .accordion-button:after {
@@ -3241,6 +3253,9 @@ table.cart-items{
     }
     .template-404 h1 {
         font-size: 20px;
+    }
+    #shopify-section-template--15937846214852__main h1 {
+        font-size: 55px;
     }
 }
 
