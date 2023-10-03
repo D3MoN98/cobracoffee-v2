@@ -17,21 +17,14 @@
             <h4 class="product-details-stitle">{{ product.metafields.arena.product_category_type }}</h4>
             <h3>{{ product.title }}</h3>
             <div class="ratting">
-              <span>
-                <i class="fa-solid fa-star"></i>
-              </span>
-              <span>
-                <i class="fa-solid fa-star"></i>
-              </span>
-              <span>
-                <i class="fa-solid fa-star"></i>
-              </span>
-              <span>
-                <i class="fa-solid fa-star"></i>
-              </span>
-              <span>
-                <i class="fa-solid fa-star"></i>
-              </span>
+              {% assign n = product.metafields.arena.product_rating %} // Set the number of times you want to loop
+
+              {% for i in (1..n) %}
+                <span>
+                  <i class="fa-solid fa-star"></i>
+                </span>
+              {% endfor %}
+
             </div>
             {{ product.metafields.arena.product_key_details }}
             {% if product.type == 'Coffee' %}
