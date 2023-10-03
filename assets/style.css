@@ -1658,7 +1658,7 @@ transition: all 0.3s ease-in-out;
     margin-bottom: 15px;
 }
 .product-details-col h3{
-    font-size: 90px;
+    font-size: 60px;
     line-height: 1;
     font-weight: 400;
     margin-bottom: 15px;
@@ -2052,9 +2052,6 @@ table.cart-items tr td a:hover{
 .form__message{
     display: none;
 }
-.form-status-list{
-    display: none;
-}
 .input-error-message{
     padding: 5px;
     font-size: 16px;
@@ -2319,7 +2316,7 @@ table.cart-items tr td a:hover{
         height: 600px;
     }
     .product-details-col h3 {
-        font-size: 70px;
+        font-size: 55px;
     }
     .product-details-col ul li {
         font-size: 25px;
@@ -2776,7 +2773,7 @@ h4 {
     bottom: -30px;
 }
 .product-details-col h3 {
-    font-size: 50px;
+    font-size: 40px;
 }
 .product-details-col ul li {
     font-size: 20px;
