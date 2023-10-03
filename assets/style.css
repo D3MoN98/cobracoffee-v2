@@ -3348,6 +3348,9 @@ table.cart-items{
     #shopify-section-template--15937846214852__main h1 {
         font-size: 55px;
     }
+    .acc-head .ratting {
+        width: 50%;
+    }
 }
 
 .product-list{
