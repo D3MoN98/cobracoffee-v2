@@ -2152,6 +2152,9 @@ table.cart-items tr td a:hover{
     background-color: #000;
     color: #fff !important;
   }
+  .select-items div:not(:last-child){
+    margin-bottom: 5px;
+  }
 
 /* =====body css end===== */
 
