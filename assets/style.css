@@ -2157,6 +2157,15 @@ table.cart-items tr td a:hover{
     margin-bottom: 5px;
   }
 
+  .product-details-col .btn svg{
+    margin-left: 30px;
+    transition: all 04s ease-in-out;
+  }
+  .product-details-col .btn:hover svg{
+    margin-left: 70px;
+    transition: all 04s ease-in-out;
+  }
+
 
 /* =====body css end===== */
 
