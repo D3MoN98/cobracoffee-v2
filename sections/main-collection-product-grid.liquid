@@ -67,6 +67,63 @@
       </div>
     {% endif %}
 
+
+    {% if current_url contains "gear" %}
+
+      {% assign colors_array = "" %}
+
+      {% for product in collections.all.products %}
+        {% if product.type == 'Gear' %}
+          {% if product.variants.size > 1 %}
+            {% for option in product.options %}
+              {% if option == 'color' %}
+                {% assign index = forloop.index0 %}
+                {% for variant in product.variants %}
+                  {% assign colors_array = colors_array | append: variant.options[index] | append: "," %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+
+
+      {% assign colors_array = colors_array | remove: '\' | split: "," %}
+
+      {% assign unique_array = colors_array[0] %}
+
+      {% for item in colors_array %}
+        {% unless unique_array contains item %}
+          {% assign unique_array = unique_array | join: "," | append: "," | append: item | split: "," %}
+        {% endunless %}
+      {% endfor %}
+
+      <div class="product-color-filter">
+        <ul>
+          {% for color in unique_array %}
+            {% assign color_class = "color1" %}
+            {% if color == "Black" %}
+              {% assign color_class = "color1" %}
+            {% elsif color == "Camel" %}
+              {% assign color_class = "color2" %}
+            {% elsif color == "White" %}
+              {% assign color_class = "color3" %}
+            {% endif %}
+            <li>
+              <div class="c-checkbox {{color_class}}">
+                <input
+                  type="checkbox"
+                  name="product_color"
+                  value="{{color}}">
+                <label></label>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
     <div class="row product-list" id="productList">
       <div class="loading_overlay product_grid_overlay"></div>
       {%- for product in collection.products -%}
