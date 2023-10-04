@@ -50,13 +50,19 @@
       <div class="product-color-filter">
         {% if current_url contains "apparel" %}
           {% assign type_check = 'Clothes' %}
+          {% assign collection_url = '"/collections/apparel/products.json"' %}
         {% elsif current_url contains "gear" %}
           {% assign type_check = 'Gear' %}
+          {% assign collection_url = '"/collections/gear/products.json"' %}
         {% endif %}
         <input
           type="hidden"
           name="product_type"
           value="{{type_check}}">
+        <input
+          type="hidden"
+          name="collection_url"
+          value="{{collection_url}}">
         <ul>
           {% for color in unique_array %}
             {% assign color_class = "color1" %}
@@ -155,11 +161,13 @@
 
   function fetchProduct(colors) {
     document.getElementsByClassName('product_grid_overlay')[0].style.display = 'block'
-    var type_check = document
-      .querySelector('input[name="product_type"]')
+    var type_check = document.querySelector('input[name="product_type"]').value
+
+    var collection_url = document
+      .querySelector('input[name="collection_url"]')
       .value
 
-      fetch("/collections/apparel/products.json")
+      fetch(collection_url)
       .then(function(response) {
         if (! response.ok) {
           throw new Error('Network response was not ok');
