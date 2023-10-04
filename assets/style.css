@@ -2172,6 +2172,9 @@ table.cart-items tr td a:hover{
   .end-sub {
     margin-left: 50px;
   }
+  .pro-accordion .quantity{
+    border: 0;
+  }
 
 /* =====body css end===== */
 
@@ -3250,6 +3253,13 @@ table.cart-items{
     }
     .template-404{
         min-height: calc(100vh - 75px);
+    }
+    .acc-head .ratting{
+        width: 100%;
+    }
+    .acc-head .quantity {
+        width: 70%;
+        justify-content: start;
     }
 }
 @media (max-width: 479px) {
