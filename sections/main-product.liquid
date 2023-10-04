@@ -37,25 +37,28 @@
               <div class="d-flex justify-content-between">GROUND COFFEE 250G (8.8OZ)</div>
             {% endif %}
             <div class="pro-details-btn-wrap">
-              <div class="custom-select">
-                <select>
-                  <option value="black">Black</option>
-                  <option value="silver">Silver</option>
-                  <option value="White">White</option>
-                  <option value="Yellow">Yellow</option>
-                  <option value="orrange">Orrange</option>
-                  <option value="purple">Purple</option>
-                </select>
-              </div>
-              <div class="custom-select">
-                <select>
-                  <option value="0">S</option>
-                  <option value="1">M</option>
-                  <option value="2">L</option>
-                  <option value="3">XL</option>
-                  <option value="4">2XL</option>
-                </select>
-              </div>
+              {% if product.variants.size > 1 %}
+                <div class="custom-select">
+
+                  <select>
+                    <option value="black">Black</option>
+                    <option value="silver">Silver</option>
+                    <option value="White">White</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="orrange">Orrange</option>
+                    <option value="purple">Purple</option>
+                  </select>
+                </div>
+                <div class="custom-select">
+                  <select>
+                    <option value="0">S</option>
+                    <option value="1">M</option>
+                    <option value="2">L</option>
+                    <option value="3">XL</option>
+                    <option value="4">2XL</option>
+                  </select>
+                </div>
+              {% endif %}
               <a
                 class="btn btn2 add-to-cart"
                 data-product-id="{{ product.id }}"
