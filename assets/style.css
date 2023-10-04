@@ -1373,6 +1373,9 @@ transition: all 0.3s ease-in-out;
 .c-checkbox.color3 label{
     background-color: #f3f3f3;
 }
+.c-checkbox.color4 label{
+    background-color: #882123;
+}
 .c-checkbox label:after{
     content: '';
     display: block;
