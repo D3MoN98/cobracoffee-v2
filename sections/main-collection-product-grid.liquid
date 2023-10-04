@@ -50,10 +50,10 @@
       <div class="product-color-filter">
         {% if current_url contains "apparel" %}
           {% assign type_check = 'Clothes' %}
-          {% assign collection_url = '"/collections/apparel/products.json"' %}
+          {% assign collection_url = '/collections/apparel/products.json' %}
         {% elsif current_url contains "gear" %}
           {% assign type_check = 'Gear' %}
-          {% assign collection_url = '"/collections/gear/products.json"' %}
+          {% assign collection_url = '/collections/gear/products.json' %}
         {% endif %}
         <input
           type="hidden"
