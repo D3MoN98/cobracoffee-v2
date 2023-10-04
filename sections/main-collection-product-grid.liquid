@@ -11,12 +11,17 @@
     </div>
     {% assign current_url = request.host | append: request.path %}
 
-    {% if current_url contains "apparel" %}
+    {% if current_url contains "apparel" or current_url contains "gear" %}
 
       {% assign colors_array = "" %}
 
       {% for product in collections.all.products %}
-        {% if product.type == 'Clothes' %}
+        {% if current_url contains "apparel" %}
+          {% assign type_check = 'Clothes' %}
+        {% elsif current_url contains "gear" %}
+          {% assign type_check = 'Gear' %}
+        {% endif %}
+        {% if product.type == type_check %}
           {% if product.variants.size > 1 %}
             {% for option in product.options %}
               {% if option == 'color' %}
@@ -43,6 +48,15 @@
       {% endfor %}
 
       <div class="product-color-filter">
+        {% if current_url contains "apparel" %}
+          {% assign type_check = 'Clothes' %}
+        {% elsif current_url contains "gear" %}
+          {% assign type_check = 'Gear' %}
+        {% endif %}
+        <input
+          type="hidden"
+          name="product_type"
+          value="{{type_check}}">
         <ul>
           {% for color in unique_array %}
             {% assign color_class = "color1" %}
@@ -50,61 +64,6 @@
               {% assign color_class = "color1" %}
             {% elsif color == "Camel" %}
               {% assign color_class = "color2" %}
-            {% elsif color == "White" %}
-              {% assign color_class = "color3" %}
-            {% endif %}
-            <li>
-              <div class="c-checkbox {{color_class}}">
-                <input
-                  type="checkbox"
-                  name="product_color"
-                  value="{{color}}">
-                <label></label>
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
-
-    {% if current_url contains "gear" %}
-
-      {% assign colors_array = "" %}
-
-      {% for product in collections.all.products %}
-        {% if product.type == 'Gear' %}
-          {% if product.variants.size > 0 %}
-            {% for option in product.options %}
-              {% if option == 'Color' %}
-                {% assign index = forloop.index0 %}
-                {% for variant in product.variants %}
-                  {% assign colors_array = colors_array | append: variant.options[index] | append: "," %}
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-
-
-
-      {% assign colors_array = colors_array | remove: '\' | split: "," %}
-
-      {% assign unique_array = colors_array[0] %}
-
-      {% for item in colors_array %}
-        {% unless unique_array contains item %}
-          {% assign unique_array = unique_array | join: "," | append: "," | append: item | split: "," %}
-        {% endunless %}
-      {% endfor %}
-
-      <div class="product-color-filter">
-        <ul>
-          {% for color in unique_array %}
-            {% assign color_class = "color1" %}
-            {% if color == "Black" %}
-              {% assign color_class = "color1" %}
             {% elsif color == "Maroon" %}
               {% assign color_class = "color4" %}
             {% elsif color == "White" %}
@@ -123,6 +82,7 @@
         </ul>
       </div>
     {% endif %}
+
 
     <div class="row product-list" id="productList">
       <div class="loading_overlay product_grid_overlay"></div>
@@ -195,92 +155,100 @@
 
   function fetchProduct(colors) {
     document.getElementsByClassName('product_grid_overlay')[0].style.display = 'block'
-    fetch("/collections/apparel/products.json").then(function(response) {
-      if (! response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json(); // Parse the response as JSON
-    }).then(function(data) {
-      var filtered_product = []
-      if (colors.length == 0) {
-        filtered_product = data.products
-      } else {
-        filtered_product = data.products.filter((element) => {
-          for (let i = 0; i < element.options.length; i++) {
-            let option = element.options[i];
-            if (option.name == 'color' && colors.includes(option.values[0])) {
-              return true
-            } else {
-              return false
+    var type_check = document
+      .querySelector('input[name="product_type"]')
+      .value
+      console
+      .log(type_check)
+      fetch("/collections/apparel/products.json")
+      .then(function(response) {
+        if (! response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse the response as JSON
+      })
+      .then(function(data) {
+        var filtered_product = []
+        if (colors.length == 0) {
+          filtered_product = data.products
+        } else {
+          filtered_product = data.products.filter((element) => {
+            for (let i = 0; i < element.options.length; i++) {
+              let option = element.options[i];
+              if (element.type == element && option.name == 'color' && colors.includes(option.values[0])) {
+                return true
+              } else {
+                return false
+              }
             }
-          }
-        });
-      }
+          });
+        }
 
-      var html = '<div class="loading_overlay product_grid_overlay"></div>'
-      for (var i = 0; i < filtered_product.length; i++) {
-        html += `<div class="col-md-4 item">
+        var html = '<div class="loading_overlay product_grid_overlay"></div>'
+        for (var i = 0; i < filtered_product.length; i++) {
+          html += `<div class="col-md-4 item">
         <div class="product-boxx">
           <a href="/products/${
-          filtered_product[i].handle
-        }" class="f-img">
+            filtered_product[i].handle
+          }" class="f-img">
             <img
               class="front"
               src="${
-          filtered_product[i].images[0].src
-        }"
+            filtered_product[i].images[0].src
+          }"
               alt="">
             <img
               class="back"
               src="${
-          filtered_product[i].images[1].src
-        }"
+            filtered_product[i].images[1].src
+          }"
               alt="">
           </a>
           <h4>
             <a href="${
-          filtered_product[i].url
-        }">${
-          filtered_product[i].title
-        }`;
+            filtered_product[i].url
+          }">${
+            filtered_product[i].title
+          }`;
 
-        if (filtered_product[i].variants.length > 1) {
-          html += `</a>
+          if (filtered_product[i].variants.length > 1) {
+            html += `</a>
             </h4>
             <a
               class="btn"
               href="${
-            filtered_product[i].url
-          }"
+              filtered_product[i].url
+            }"
               >VIEW MORE ${
-            filtered_product[i].variants[0].price
-          }<i class="fas fa-chevron-right"></i>
+              filtered_product[i].variants[0].price
+            }<i class="fas fa-chevron-right"></i>
             </a>`;
-        } else {
-          html += `</a>
+          } else {
+            html += `</a>
         </h4>
         <a
           class="btn add-to-cart"
           data-product-id="${
-            filtered_product[i].id
-          }"
+              filtered_product[i].id
+            }"
                 data-variant-id="${
-            filtered_product[i].variants[0].id
-          }"
+              filtered_product[i].variants[0].id
+            }"
           >ADD TO ${
-            filtered_product[i].variants[0].price
-          }<i class="fas fa-chevron-right"></i>
+              filtered_product[i].variants[0].price
+            }<i class="fas fa-chevron-right"></i>
         </a>`;
-        } html += `
+          } html += `
         </div>
       </div>`;
-      }
+        }
 
 
-      document.getElementById('productList').innerHTML = html
-      document.getElementsByClassName('product_grid_overlay')[0].style.display = 'none'
-    }).catch(function(error) {
-      console.log(error)
-    })
+        document.getElementById('productList').innerHTML = html
+        document.getElementsByClassName('product_grid_overlay')[0].style.display = 'none'
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
   }
 </script>
