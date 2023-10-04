@@ -158,8 +158,7 @@
     var type_check = document
       .querySelector('input[name="product_type"]')
       .value
-      console
-      .log(type_check)
+
       fetch("/collections/apparel/products.json")
       .then(function(response) {
         if (! response.ok) {
@@ -175,7 +174,8 @@
           filtered_product = data.products.filter((element) => {
             for (let i = 0; i < element.options.length; i++) {
               let option = element.options[i];
-              if (element.type == type_check && option.name == 'color' && colors.includes(option.values[0])) {
+              console.log(element)
+              if (option.name == 'color' && colors.includes(option.values[0])) {
                 return true
               } else {
                 return false
