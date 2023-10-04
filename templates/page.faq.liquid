@@ -1,7 +1,5 @@
 {% assign faq_data = page.metafields.arena.faqs %}
 
-{{ faq_data | json }}
-
 <section class="faq-sec">
   <div class="container">
     <h1 class="title">FAQ</h1>
@@ -108,31 +106,31 @@
           {% assign orders_index = 0 %}
 
           {% for faq in faq_data %}
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="heading{{faq.type}}{{orders_index}}">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse{{faq.type}}{{orders_index}}"
-                  aria-expanded="false"
-                  aria-controls="collapse{{faq.type}}{{orders_index}}">
-                  {{ faq.title }}
-                </button>
-              </h2>
-              <div
-                id="collapse{{faq.type}}{{orders_index}}"
-                class="accordion-collapse collapse"
-                aria-labelledby="heading{{faq.type}}{{orders_index}}"
-                data-bs-parent="#accordionOrders">
-                <div class="accordion-body">
-                  {{ faq.content }}
+            {% if faq.type == 'orders' %}
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{faq.type}}{{orders_index}}">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{faq.type}}{{orders_index}}"
+                    aria-expanded="false"
+                    aria-controls="collapse{{faq.type}}{{orders_index}}">
+                    {{ faq.title }}
+                  </button>
+                </h2>
+                <div
+                  id="collapse{{faq.type}}{{orders_index}}"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading{{faq.type}}{{orders_index}}"
+                  data-bs-parent="#accordionOrders">
+                  <div class="accordion-body">
+                    {{ faq.content }}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {% assign orders_index = orders_index | plus: 1 %}
-
+              {% assign orders_index = orders_index | plus: 1 %}
+            {% endif %}
           {% endfor %}
         </div>
       </div>
@@ -147,30 +145,31 @@
           {% assign shipping_index = 0 %}
 
           {% for faq in faq_data %}
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="heading{{faq.type}}{{shipping_index}}">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse{{faq.type}}{{shipping_index}}"
-                  aria-expanded="false"
-                  aria-controls="collapse{{faq.type}}{{shipping_index}}">
-                  {{ faq.title }}
-                </button>
-              </h2>
-              <div
-                id="collapse{{faq.type}}{{shipping_index}}"
-                class="accordion-collapse collapse"
-                aria-labelledby="heading{{faq.type}}{{shipping_index}}"
-                data-bs-parent="#accordionShipping">
-                <div class="accordion-body">
-                  {{ faq.content }}
+            {% if faq.type == 'shipping' %}
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{faq.type}}{{shipping_index}}">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{faq.type}}{{shipping_index}}"
+                    aria-expanded="false"
+                    aria-controls="collapse{{faq.type}}{{shipping_index}}">
+                    {{ faq.title }}
+                  </button>
+                </h2>
+                <div
+                  id="collapse{{faq.type}}{{shipping_index}}"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading{{faq.type}}{{shipping_index}}"
+                  data-bs-parent="#accordionShipping">
+                  <div class="accordion-body">
+                    {{ faq.content }}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {% assign shipping_index = shipping_index | plus: 1 %}
+              {% assign shipping_index = shipping_index | plus: 1 %}
+            {% endif %}
 
           {% endfor %}
         </div>
@@ -186,31 +185,31 @@
           {% assign coffee_index = 0 %}
 
           {% for faq in faq_data %}
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="heading{{faq.type}}{{coffee_index}}">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse{{faq.type}}{{coffee_index}}"
-                  aria-expanded="false"
-                  aria-controls="collapse{{faq.type}}{{coffee_index}}">
-                  {{ faq.title }}
-                </button>
-              </h2>
-              <div
-                id="collapse{{faq.type}}{{coffee_index}}"
-                class="accordion-collapse collapse"
-                aria-labelledby="heading{{faq.type}}{{coffee_index}}"
-                data-bs-parent="#accordionCoffee">
-                <div class="accordion-body">
-                  {{ faq.content }}
+            {% if faq.type == 'coffee' %}
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{faq.type}}{{coffee_index}}">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{faq.type}}{{coffee_index}}"
+                    aria-expanded="false"
+                    aria-controls="collapse{{faq.type}}{{coffee_index}}">
+                    {{ faq.title }}
+                  </button>
+                </h2>
+                <div
+                  id="collapse{{faq.type}}{{coffee_index}}"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading{{faq.type}}{{coffee_index}}"
+                  data-bs-parent="#accordionCoffee">
+                  <div class="accordion-body">
+                    {{ faq.content }}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {% assign coffee_index = coffee_index | plus: 1 %}
-
+              {% assign coffee_index = coffee_index | plus: 1 %}
+            {% endif %}
           {% endfor %}
         </div>
       </div>
