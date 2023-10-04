@@ -1,3 +1,48 @@
+{% assign faq_data = '[
+ {
+ "title" : "WHEN DOES MY COFFEE GET ROASTED?",
+ "type" : "coffee",
+ "content" : "We roast your coffee to order. Fresh roasted 100% of the time."
+ },
+ {
+ "title" : "WHERE DO YOU SOURCE YOUR COFFEE FROM?",
+ "type" : "coffee",
+ "content" : "We source from every corner of the globe. We consistently search for the best coffee in the world."
+ },
+ {
+ "title" : "WHEN WILL MY ORDER SHIP?",
+ "type" : "shipping",
+ "content" : "We ship orders 1-2 business days after your order is received."
+ },
+ {
+ "title" : "DO YOU SHIP INTERNATIONAL?",
+ "type" : "shipping",
+ "content" : "Yes! Should you have any questions related to global orders, please contact our team at support@cobrascoffee.com. <br> Please note, the recipient of the international order will be responsible to pay any applicable import tariffs or fees as deemed necessary by the shipping provider."
+ },
+ {
+ "title" : "HOW DO I RECEIVE FREE SHIPPING?",
+ "type" : "shipping",
+ "content" : "We offer free shipping on US orders of $75 and above."
+ },
+ {
+ "title" : "MY ORDER SHIPPED BUT THERE ARE NO TRACKING UPDATES. IS MY ORDER LOST?",
+ "type" : "orders",
+ "content" : "Tracking numbers originate when we create shipping labels. Occasionally, delivery of the order might be delayed while being processed by either USPS or FedEx. <br> Please allow at least 7 days for the tracking to update before contacting our support team."
+ },
+ {
+ "title" : "WHAT IS YOUR RETURN POLICY?",
+ "type" : "orders",
+ "content" : "WE BELIEVE IN A WORLD WITHOUT BORING COFFEE. DOMINATE WITH THE UNDISPUTED KING OF BOLD COFFEE. COBRAS COFFEE...<br> While we cannot accept returns on coffee itself due to its perishable nature, we stand by our products. If there was an error with your order or you're dissatisfied with the quality, our customer support team is here to help.Please contact us at support@cobrascoffee.com within 7 days of your purchase to resolve any errors or dissatisfaction.< br > For non-coffee items, we offer assistance if you're unsatisfied with your order. Contact our customer support team at support@cobrascoffee.com within 7 days of your purchase. We cannot accept returns on items that have come into contact with perishable goods, such as grinders, kettles, or other brew-oriented products. However, we are more than happy to exchange apparel products or provide store credit for your next purchase."
+ },
+ {
+ "title" : "I PLACED AN ORDER. CAN I ADD ITEMS, MODIFY, OR CANCEL THE ORDER?",
+ "type" : "orders",
+ "content" : "Unfortunately, no. We apologize for any inconvenience this may have caused, but we are unable to accommodate modifications or cancellations."
+ }
+ ]' | json %}
+
+
+
 <section class="faq-sec">
   <div class="container">
     <h1 class="title">FAQ</h1>
@@ -61,193 +106,36 @@
         role="tabpanel"
         aria-labelledby="tab1">
         <button type="button" class="res-tbs-btn btn">All</button>
-        <div class="accordion faq-accordion active" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="false"
-                aria-controls="collapseOne">
-                When does my coffee get roasted?
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>We roast to order. Which means your coffee is roasted fresh.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo">
-                Where do you source your coffee from?
-              </button>
-            </h2>
+        <div class="accordion faq-accordion active" id="accordionAll">
+          {% assign all_index = 0 %}
 
-            <div
-              id="collapseTwo"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>We source from all around the world. Always searching for the best coffee in the world.</p>
+          {% for faq in faq_data %}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingAll{{all_index}}">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseAll{{all_index}}"
+                  aria-expanded="false"
+                  aria-controls="collapseAll{{all_index}}">
+                  {{ faq.title }}
+                </button>
+              </h2>
+              <div
+                id="collapseAll{{all_index}}"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingAll{{all_index}}"
+                data-bs-parent="#accordionAll">
+                <div class="accordion-body">
+                  {{ faq.content }}
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree">
-                When will my order ship?
-              </button>
-            </h2>
-            <div
-              id="collapseThree"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>We ship orders 2-3 business days after we receive your order.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFour">
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseFour"
-                aria-expanded="true"
-                aria-controls="collapseFour">
-                Do you ship international?
-              </button>
-            </h2>
-            <div
-              id="collapseFour"
-              class="accordion-collapse collapse show"
-              aria-labelledby="headingFour"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>Yes, we do. Should you have further questions please contact our team at
-                  <a href="hello@bigfacebrand.com">hello@bigfacebrand.com</a>
-                </p>
-                <p>Please note, the recipient of the international order will be responsible to pay any applicable import tariffs or fees as deemed necessary by the shipping provider.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFive">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseFive"
-                aria-expanded="false"
-                aria-controls="collapseFive">
-                HOW DO I RECEIVE FREE SHIPPING?
-              </button>
-            </h2>
-            <div
-              id="collapseFive"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingFive"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>We always offer free shipping on US orders of $75 and above.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingSix">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseSix"
-                aria-expanded="false"
-                aria-controls="collapseSix">
-                MY ORDER SHIPPED BUT THERE ARE NO TRACKING UPDATES. IS MY ORDER LOST?
-              </button>
-            </h2>
-            <div
-              id="collapseSix"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingSix"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>Tracking numbers are generated when we create shipping labels, at which point you are alerted. There are times when it may take a few days for the order to be handed off and then scanned by USPS or FEDEX. Please wait a week for this to update before contacting support.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingSeven">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseSeven"
-                aria-expanded="false"
-                aria-controls="collapseSeven">
-                WHAT IS YOUR RETURN POLICY?
-              </button>
-            </h2>
-            <div
-              id="collapseSeven"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingSeven"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>Our vision is a world with better coffee, big dreams, and bigger smiles! If you aren’t satisfied with your order we are happy to help! Please note the following details to our return policy before reaching out:
-                  <br>
-                  <b>Coffee</b>
-                  - Coffee is perishable and is roasted to order, so we're unable to accept returns on coffee. However, if there was an error with your order, or if you were dissatisfied with the quality of your coffee, our expert customer service crew is here to help. Please email hello@bigfacebrand.com within 14 days of your purchase to seek a resolution.
-                  <br>
-                  <b>Not Coffee</b>
-                  - If you are dissatisfied with your order in any way, don’t hesitate to reach out to our Customer Experience team at hello@bigfacebrand.com within 14 days of your purchase. We do not accept returns on items that have come in contact with perishable goods. This includes grinders, kettles, or other brew oriented products. We do not give refunds but we can exchange apparel products or give you store credit for your next purchase.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingEight">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseEight"
-                aria-expanded="false"
-                aria-controls="collapseEight">
-                I PLACED AN ORDER. CAN I ADD ITEMS, MODIFY, OR CANCEL THE ORDER?
-              </button>
-            </h2>
-            <div
-              id="collapseEight"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingEight"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>Unfortunately, no. Your order is committed to our system almost immediately after placing the order.</p>
-              </div>
-            </div>
-          </div>
+
+            {% assign all_index = all_index | plus: 1 %}
+
+          {% endfor %}
         </div>
       </div>
 
@@ -257,103 +145,36 @@
         role="tabpanel"
         aria-labelledby="tab2">
         <button type="button" class="res-tbs-btn btn">My orders</button>
-        <div class="accordion faq-accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="false"
-                aria-controls="collapseOne">
-                When will my order ship?
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>We ship orders 2-3 business days after we receive your order.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo">
-                My order shipped but there are no tracking updates. Is my order lost?
-              </button>
-            </h2>
+        <div class="accordion faq-accordion" id="accordionOrders">
+          {% assign orders_index = 0 %}
 
-            <div
-              id="collapseTwo"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>Tracking numbers are generated when we create shipping labels, at which point you are alerted. There are times when it may take a few days for the order to be handed off and then scanned by USPS or FEDEX. Please wait a week for this to update before contacting support.</p>
+          {% for faq in faq_data %}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading{{faq.type}}{{orders_index}}">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse{{faq.type}}{{orders_index}}"
+                  aria-expanded="false"
+                  aria-controls="collapse{{faq.type}}{{orders_index}}">
+                  {{ faq.title }}
+                </button>
+              </h2>
+              <div
+                id="collapse{{faq.type}}{{orders_index}}"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading{{faq.type}}{{orders_index}}"
+                data-bs-parent="#accordionOrders">
+                <div class="accordion-body">
+                  {{ faq.content }}
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree">
-                What is your return policy?
-              </button>
-            </h2>
-            <div
-              id="collapseThree"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>Our vision is a world with better coffee, big dreams, and bigger smiles! If you aren’t satisfied with your order we are happy to help! Please note the following details to our return policy before reaching out:
-                  <br>
-                  <b>Coffee</b>
-                  - Coffee is perishable and is roasted to order, so we're unable to accept returns on coffee. However, if there was an error with your order, or if you were dissatisfied with the quality of your coffee, our expert customer service crew is here to help. Please email hello@bigfacebrand.com within 14 days of your purchase to seek a resolution.
-                  <br>
-                  <b>Not Coffee</b>
-                  - If you are dissatisfied with your order in any way, don’t hesitate to reach out to our Customer Experience team at hello@bigfacebrand.com within 14 days of your purchase. We do not accept returns on items that have come in contact with perishable goods. This includes grinders, kettles, or other brew oriented products. We do not give refunds but we can exchange apparel products or give you store credit for your next purchase.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFour">
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseFour"
-                aria-expanded="true"
-                aria-controls="collapseFour">
-                I placed an order. Can I add items, modify, or cancel the order?
-              </button>
-            </h2>
-            <div
-              id="collapseFour"
-              class="accordion-collapse collapse show"
-              aria-labelledby="headingFour"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>Unfortunately, no. Your order is committed to our system almost immediately after placing the order.</p>
-              </div>
-            </div>
-          </div>
 
+            {% assign orders_index = orders_index | plus: 1 %}
+
+          {% endfor %}
         </div>
       </div>
 
@@ -363,111 +184,75 @@
         role="tabpanel"
         aria-labelledby="tab3">
         <button type="button" class="res-tbs-btn btn">Shipping</button>
-        <div class="accordion faq-accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="false"
-                aria-controls="collapseOne">
-                Do you ship international?
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>Yes, we do. Should you have further questions please contact our team at
-                  <a href="hello@bigfacebrand.com">hello@bigfacebrand.com</a>
-                </p>
-                <p>Please note, the recipient of the international order will be responsible to pay any applicable import tariffs or fees as deemed necessary by the shipping provider.</p>
+        <div class="accordion faq-accordion" id="accordionShipping">
+          {% assign shipping_index = 0 %}
+
+          {% for faq in faq_data %}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading{{faq.type}}{{shipping_index}}">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse{{faq.type}}{{shipping_index}}"
+                  aria-expanded="false"
+                  aria-controls="collapse{{faq.type}}{{shipping_index}}">
+                  {{ faq.title }}
+                </button>
+              </h2>
+              <div
+                id="collapse{{faq.type}}{{shipping_index}}"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading{{faq.type}}{{shipping_index}}"
+                data-bs-parent="#accordionShipping">
+                <div class="accordion-body">
+                  {{ faq.content }}
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo">
-                How do I receive free shipping?
-              </button>
-            </h2>
 
-            <div
-              id="collapseTwo"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>We always offer free shipping on US orders of $75 and above.</p>
-              </div>
-            </div>
-          </div>
+            {% assign shipping_index = shipping_index | plus: 1 %}
 
+          {% endfor %}
         </div>
       </div>
+
       <div
         class="tab-pane fade"
         id="tab-content4"
         role="tabpanel"
         aria-labelledby="tab4">
         <button type="button" class="res-tbs-btn btn">Coffee</button>
-        <div class="accordion faq-accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="false"
-                aria-controls="collapseOne">
-                When does my coffee get roasted?
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>We roast to order. Which means your coffee is roasted fresh.</p>
+        <div class="accordion faq-accordion" id="accordionCoffee">
+          {% assign coffee_index = 0 %}
+
+          {% for faq in faq_data %}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading{{faq.type}}{{coffee_index}}">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse{{faq.type}}{{coffee_index}}"
+                  aria-expanded="false"
+                  aria-controls="collapse{{faq.type}}{{coffee_index}}">
+                  {{ faq.title }}
+                </button>
+              </h2>
+              <div
+                id="collapse{{faq.type}}{{coffee_index}}"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading{{faq.type}}{{coffee_index}}"
+                data-bs-parent="#accordionCoffee">
+                <div class="accordion-body">
+                  {{ faq.content }}
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo">
-                Where do you source your coffee from?
-              </button>
-            </h2>
 
-            <div
-              id="collapseTwo"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>We source from all around the world. Always searching for the best coffee in the world.</p>
-              </div>
-            </div>
-          </div>
+            {% assign coffee_index = coffee_index | plus: 1 %}
 
+          {% endfor %}
         </div>
       </div>
 
