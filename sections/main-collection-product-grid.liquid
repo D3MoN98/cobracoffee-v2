@@ -73,6 +73,7 @@
       {% assign colors_array = "" %}
 
       {% for product in collections.all.products %}
+        {{ product.type }}
         {% if product.type == 'Gear' %}
           {% if product.variants.size > 1 %}
             {% for option in product.options %}
