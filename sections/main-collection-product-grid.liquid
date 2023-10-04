@@ -175,7 +175,7 @@
           filtered_product = data.products.filter((element) => {
             for (let i = 0; i < element.options.length; i++) {
               let option = element.options[i];
-              if (element.type == element && option.name == 'color' && colors.includes(option.values[0])) {
+              if (element.type == type_check && option.name == 'color' && colors.includes(option.values[0])) {
                 return true
               } else {
                 return false
