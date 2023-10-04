@@ -85,7 +85,6 @@ jQuery(document).ready(function ($) {
     infinite: true,
     centerMode: true,
     centerPadding: "250px",
-    pauseOnHover: true,
     dots: false,
     navs: false,
     responsive: [
