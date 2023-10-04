@@ -179,13 +179,13 @@ jQuery(document).ready(function ($) {
   // var controller = new ScrollMagic.Controller();
 
   // // build scene
-  // var scene = new ScrollMagic.Scene({
-  //   triggerHook: 1,
-  //   triggerElement: "#fixed-target",
-  //   pushFollowers: false,
-  // })
-  //   .setPin("#fixed-footer")
-  //   .addTo(controller);
+  var scene = new ScrollMagic.Scene({
+    triggerHook: 1,
+    triggerElement: "#fixed-target",
+    pushFollowers: false,
+  })
+    .setPin("#fixed-footer")
+    .addTo(controller);
 
   // const scroller = new LocomotiveScroll({
   //   el: document.querySelector("[data-scroll-container]"),
