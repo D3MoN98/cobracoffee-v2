@@ -192,6 +192,9 @@ jQuery(document).ready(function ($) {
     smooth: true,
   });
 
+  //AOS animation
+  AOS.init();
+
   //responsive tabs
   $(".res-tbs-btn").click(function (e) {
     e.preventDefault();
