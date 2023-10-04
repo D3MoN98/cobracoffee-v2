@@ -176,16 +176,16 @@ jQuery(document).ready(function ($) {
   // Define the URL of your home page
   var homePageUrl = "https://cobrascoffee.com/"; // Replace with your actual home page URL
 
-  var controller = new ScrollMagic.Controller();
+  // var controller = new ScrollMagic.Controller();
 
-  // build scene
-  var scene = new ScrollMagic.Scene({
-    triggerHook: 1,
-    triggerElement: "#fixed-target",
-    pushFollowers: false,
-  })
-    .setPin("#fixed-footer")
-    .addTo(controller);
+  // // build scene
+  // var scene = new ScrollMagic.Scene({
+  //   triggerHook: 1,
+  //   triggerElement: "#fixed-target",
+  //   pushFollowers: false,
+  // })
+  //   .setPin("#fixed-footer")
+  //   .addTo(controller);
 
   const scroller = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
