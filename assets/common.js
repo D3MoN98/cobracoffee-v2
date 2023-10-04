@@ -127,7 +127,13 @@ jQuery(document).ready(function ($) {
     ],
   });
 
-  
+  $(".product-slider")
+    .on("mouseenter", function () {
+      $(".product-slider").slick("slickPause");
+    })
+    .on("mouseleave", function () {
+      $(".slider").slick("slickPlay");
+    });
 
   $(".product-details-slider").slick({
     autoplay: false,
