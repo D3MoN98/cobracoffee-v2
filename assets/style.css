@@ -3464,3 +3464,7 @@ table.cart-items{
   .product-slider .btn{
     cursor: pointer;
   }
+  .product-slider .slick-list.dragging, .slick-list.draggable:active:hover
+  {
+    cursor: grabbing;
+  }
