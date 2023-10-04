@@ -73,17 +73,17 @@
         <div class="col-md-4 item">
           <div class="product-boxx">
             <a href="{{ product.url }}" class="f-img">
+              {% assign front_img = product.images[0].src %}
+              {% assign back_img = product.images[1].src %}
+
               {% if current_url contains "coffee" %}
                 {% assign front_img = product.images[1].src %}
                 {% assign back_img = product.images[0].src %}
-              {% else %}
-                {% assign front_img = product.images[0].src %}
-                {% assign back_img = product.images[1].src %}
               {% endif %}
               <img
                 class="front"
                 src="{{ front_img | product_img_url: 'master' }}"
-                alt="{{ product.title }}">
+                alt="{{ product.type }}">
               <img
                 class="back"
                 src="{{ back_img | product_img_url: 'master' }}"
