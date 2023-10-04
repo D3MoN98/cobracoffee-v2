@@ -3458,3 +3458,9 @@ table.cart-items{
   #shopify-section-cart-total{
     display: inline;
   }
+  .product-slider{
+    cursor: grab;
+  }
+  .product-slider .btn{
+    cursor: pointer;
+  }

@@ -127,6 +127,8 @@ jQuery(document).ready(function ($) {
     ],
   });
 
+  
+
   $(".product-details-slider").slick({
     autoplay: false,
     slidesToShow: 1,
