@@ -187,10 +187,10 @@ jQuery(document).ready(function ($) {
   //   .setPin("#fixed-footer")
   //   .addTo(controller);
 
-  const scroller = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-  });
+  // const scroller = new LocomotiveScroll({
+  //   el: document.querySelector("[data-scroll-container]"),
+  //   smooth: true,
+  // });
 
   //AOS animation
   AOS.init();
