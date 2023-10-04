@@ -102,7 +102,7 @@
     </script>
   </head>
 
-  <body>
+  <body data-scroll-container>
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
@@ -113,8 +113,7 @@
       id="MainContent"
       class="content-for-layout focus-none main-sec"
       role="main"
-      tabindex="-1"
-      data-scroll-container>
+      tabindex="-1">
       {{ content_for_layout }}
     </main>
 
