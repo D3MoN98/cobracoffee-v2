@@ -76,14 +76,14 @@
               {% assign front_img = product.images[0].src %}
               {% assign back_img = product.images[1].src %}
 
-              {% if current_url contains "coffee" %}
+              {% if product.type == "Coffee" %}
                 {% assign front_img = product.images[1].src %}
                 {% assign back_img = product.images[0].src %}
               {% endif %}
               <img
                 class="front"
                 src="{{ front_img | product_img_url: 'master' }}"
-                alt="{{ product.type }}">
+                alt="{{ product.title }}">
               <img
                 class="back"
                 src="{{ back_img | product_img_url: 'master' }}"
