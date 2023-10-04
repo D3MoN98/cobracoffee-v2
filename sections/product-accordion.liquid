@@ -24,21 +24,21 @@
                   <h2>{{ product.title }}</h2>
                 </div>
                 <div class="ratting">
-                  <span>
-                    <i class="fa-solid fa-star"></i>
-                  </span>
-                  <span>
-                    <i class="fa-solid fa-star"></i>
-                  </span>
-                  <span>
-                    <i class="fa-solid fa-star"></i>
-                  </span>
-                  <span>
-                    <i class="fa-solid fa-star"></i>
-                  </span>
-                  <span>
-                    <i class="fa-solid fa-star"></i>
-                  </span>
+                  {% assign n = product.metafields.arena.product_rating %}
+
+                  {% if n < 1 %}
+                    <p>Not rated yet</p>
+                  {% else %}
+
+                    {% for i in (1..n) %}
+                      <span>
+                        <i class="fa-solid fa-star"></i>
+                      </span>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+                <div class="quantity">
+                  <h4>{{ product.metafields.arena.product_origin }}</h4>
                 </div>
                 <div class="color" style="margin-left: auto;">
                   <span style="background-color: {{product.metafields.arena.product_color_scheme}}"></span>
@@ -61,7 +61,7 @@
               <div class="right">
                 <div class="acc-body-content">
                   {{ product.metafields.arena.product_key_details }}
-                  <h4>GROUND COFFEE</h4>
+                  <h4>GROUND COFFEE (250G (8.8OZ))</h4>
                   <a
                     class="btn add-to-cart"
                     data-product-id="{{ product.id }}"
