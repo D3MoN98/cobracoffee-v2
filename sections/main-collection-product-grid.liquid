@@ -22,7 +22,7 @@
           {% assign type_check = 'Gear' %}
         {% endif %}
         {% if product.type == type_check %}
-          {% if product.variants.size > 1 %}
+          {% if product.variants.size > 0 %}
             {% for option in product.options %}
               {% if option == 'color' %}
                 {% assign index = forloop.index0 %}
