@@ -76,7 +76,7 @@
         {% if product.type == 'Gear' %}
           {% if product.variants.size > 1 %}
             {% for option in product.options %}
-              {% if option == 'color' %}
+              {% if option == 'Color' %}
                 {% assign index = forloop.index0 %}
                 {% for variant in product.variants %}
                   {% assign colors_array = colors_array | append: variant.options[index] | append: "," %}
@@ -99,6 +99,7 @@
         {% endunless %}
       {% endfor %}
 
+      {{ unique_array }}
       <div class="product-color-filter">
         <ul>
           {% for color in unique_array %}
