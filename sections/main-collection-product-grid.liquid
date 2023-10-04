@@ -73,13 +73,20 @@
         <div class="col-md-4 item">
           <div class="product-boxx">
             <a href="{{ product.url }}" class="f-img">
+              {% if current_url contains "coffee" %}
+                {% assign front_img = product.images[1].src %}
+                {% assign back_img = product.images[0].src %}
+              {% else %}
+                {% assign front_img = product.images[0].src %}
+                {% assign back_img = product.images[1].src %}
+              {% endif %}
               <img
                 class="front"
-                src="{{ product.images[0].src | product_img_url: 'master' }}"
+                src="{{ front_img | product_img_url: 'master' }}"
                 alt="{{ product.title }}">
               <img
                 class="back"
-                src="{{ product.images[1].src | product_img_url: 'master' }}"
+                src="{{ back_img | product_img_url: 'master' }}"
                 alt="{{ product.title }}">
             </a>
             <h4>
