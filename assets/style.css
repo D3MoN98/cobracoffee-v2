@@ -2169,7 +2169,9 @@ table.cart-items tr td a:hover{
     margin-left: 70px;
     transition: all 0.4s ease-in-out;
   }
-
+  .end-sub {
+    margin-left: 50px;
+  }
 
 /* =====body css end===== */
 
@@ -2958,6 +2960,9 @@ table.cart-items{
 }
 }
 @media (max-width: 767px){
+    .end-sub {
+        margin-left: 0px;
+      }
     .faq-accordion .accordion-button:after {
         width: 20px;
         height: 20px;
