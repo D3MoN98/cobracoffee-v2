@@ -80,7 +80,6 @@
                 {% assign index = forloop.index0 %}
                 {% for variant in product.variants %}
                   {% assign colors_array = colors_array | append: variant.options[index] | append: "," %}
-                  {{ colors_array }}
                 {% endfor %}
               {% endif %}
             {% endfor %}
