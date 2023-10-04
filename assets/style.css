@@ -2963,6 +2963,9 @@ table.cart-items{
     .end-sub {
         margin-left: 0px;
       }
+      .categori-wrap .categori-col:not(:last-child){
+        margin-bottom: 15px;
+      }
     .faq-accordion .accordion-button:after {
         width: 20px;
         height: 20px;
