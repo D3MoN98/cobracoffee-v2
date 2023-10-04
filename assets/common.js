@@ -176,26 +176,6 @@ jQuery(document).ready(function ($) {
   // Define the URL of your home page
   var homePageUrl = "https://cobrascoffee.com/"; // Replace with your actual home page URL
 
-  // Check if the current URL is the same as the home page URL
-  // if (currentUrl === homePageUrl) {
-  //   $.scrollify({
-  //     section: ".scroll-section",
-  //     interstitialSection: "",
-  //     scrollSpeed: 600,
-  //     offset: 0,
-  //     scrollbars: true,
-  //     standardScrollElements: "",
-  //     setHeights: true,
-  //     overflowScroll: true,
-  //     updateHash: false,
-  //     touchScroll: true,
-  //     before: function () {},
-  //     after: function () {},
-  //     afterResize: function () {},
-  //     afterRender: function () {},
-  //   });
-  // }
-
   var controller = new ScrollMagic.Controller();
 
   // build scene
@@ -206,6 +186,11 @@ jQuery(document).ready(function ($) {
   })
     .setPin("#fixed-footer")
     .addTo(controller);
+
+  const scroller = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  });
 
   //responsive tabs
   $(".res-tbs-btn").click(function (e) {
