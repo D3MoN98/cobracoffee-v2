@@ -1,9 +1,9 @@
-<section class="product-sec scroll-section">
+<section
+  class="product-sec scroll-section"
+  data-aos="fade-up"
+  data-aos-duration="3000">
   <div class="container-fluid">
-    <div
-      class="product-slider slick-carousel"
-      data-aos="fade-up"
-      data-aos-duration="3000">
+    <div class="product-slider slick-carousel">
       {%- assign slider_collections = section.settings.collection.products -%}
       {% for product in slider_collections %}
         <div>
