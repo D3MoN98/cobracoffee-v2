@@ -201,6 +201,7 @@ jQuery(document).ready(function ($) {
 
   // Create scenes for each section
   var sections = document.querySelectorAll("section");
+  console.log(sections);
   sections.forEach(function (section, index) {
     new ScrollMagic.Scene({
       triggerElement: section,
