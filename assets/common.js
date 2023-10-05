@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
 
   /*testimonial*/
   $(".product-slider").slick({
-    speed: 4000,
+    speed: 3000,
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: "linear",
@@ -85,6 +85,7 @@ jQuery(document).ready(function ($) {
     infinite: true,
     centerMode: true,
     centerPadding: "250px",
+    pauseOnHover: false,
     dots: false,
     navs: false,
     responsive: [
@@ -129,9 +130,11 @@ jQuery(document).ready(function ($) {
 
   $(".product-slider")
     .on("mouseenter", function () {
+      console.log("ok");
       $(".product-slider").slick("slickPause");
     })
     .on("mouseleave", function () {
+      console.log("ol");
       $(".product-slider").slick("slickPlay");
     });
 
