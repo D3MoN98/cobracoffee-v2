@@ -303,6 +303,7 @@ then close all select boxes:*/
   // document end
 });
 
+Aos.init();
 let observer = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
