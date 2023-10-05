@@ -102,22 +102,14 @@
 
   <body>
     <div class="main-container-otr" data-scroll-container>
-      {%- if settings.cart_type == 'drawer' -%}
-        {%- render 'cart-drawer' -%}
-      {%- endif -%}
-
-      {% sections 'header-group' %}
-
-      <main
-        id="MainContent"
-        class="content-for-layout focus-none main-sec"
-        role="main"
-        tabindex="-1">
-        {{ content_for_layout }}
-      </main>
-
-
-      {% sections 'footer-group' %}
+      <div data-scroll-section>
+        <h1 data-scroll>Hey</h1>
+        <p data-scroll>👋</p>
+      </div>
+      <div data-scroll-section>
+        <h2 data-scroll data-scroll-speed="1">What's up?</h2>
+        <p data-scroll data-scroll-speed="2">😬</p>
+      </div>
     </div>
 
     <ul hidden>
