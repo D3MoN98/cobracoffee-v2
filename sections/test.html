@@ -184,16 +184,21 @@ html.has-scroll-dragging * {
         <div class="top-description">
           <h1 data-scroll data-scroll-speed="3">An absolute <span class="gold">blank</span> Section!</h1>
           <p class="disappear" data-scroll data-scroll-class="appear" data-scroll-repeat="true">except for the texts atleast</p>
-           <svg  width="449" height="157" viewBox="0 0 549 157" fill="none" xmlns="http://www.w3.org/2000/svg" >
-    <path d="M9.55568 33.819C105.754 212.873 467.187 -29.5023 542.273 101.507" stroke="#FDC65D" stroke-width="5"/>
-    </svg>
+          
+      </section>
+      
+      <section class="top">
+        <div  id="scroll-direction">
+          <div class="top-description">
+            <h1 data-move-x="-200px" data>absolute</h1>
+          </div>
         </div>
       </section>
      
       <section class="bottom" id="pin" data-scroll-section>
         <div class="container">
           <div class="sign-in">
-            <h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3">Find & hire the <br>best <span class="gold">talent<span></h1>
+            <h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="1">Find & hire the <br>best <span class="gold">talent<span></h1>
     
               <p>Lorem ipsum dolor <span class="grey">sit epicurus in animis nostres <br>inesse notionem ut voluptates</span></p>
     
@@ -317,7 +322,11 @@ html.has-scroll-dragging * {
       </section>
     </div>
 
+    <!-- jQuery from Google CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+
 
     <script>
       const scroll = new LocomotiveScroll({
