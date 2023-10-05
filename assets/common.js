@@ -303,7 +303,7 @@ ScrollTrigger.create({
   onUpdate: (self) => {
     const scrollY =
       self.progress * (document.body.scrollHeight - window.innerHeight);
-    gsap.to(window, { scrollTo: scrollY, duration: 0.5, ease: "power2.inOut" });
+    gsap.to(window, { scrollTo: scrollY, duration: 2, ease: "power2.inOut" });
   },
 });
 
