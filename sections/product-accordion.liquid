@@ -10,7 +10,7 @@
       {%- assign slider_collections = section.settings.collection.products -%}
 
       {% for product in slider_collections %}
-        <div class="accordion-item">
+        <div class="accordion-item transition-animation" data-scroll>
           <h2 class="accordion-header" id="heading{{forloop.index}}">
             <button
               class="accordion-button collapsed"
