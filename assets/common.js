@@ -129,12 +129,10 @@ jQuery(document).ready(function ($) {
 
   $(".product-slider")
     .on("mouseenter", function () {
-      console.log("ok");
       $(".product-slider").slick("slickPause");
     })
     .on("mouseleave", function () {
-      console.log("ol");
-      $(".slider").slick("slickPlay");
+      $(".product-slider").slick("slickPlay");
     });
 
   $(".product-details-slider").slick({
