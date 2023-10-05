@@ -3492,4 +3492,8 @@ table.cart-items{
 
   .flip-animation{
     transition-delay: .4s;
+    transform: translateY(100%) rotateX(-80deg);
+    transform-origin: center top;
+    transform-style: preserve-3d;
+    transition: opacity .8s cubic-bezier(.215,.61,.355,1),transform .8s cubic-bezier(.215,.61,.355,1);
   }
