@@ -207,19 +207,6 @@ jQuery(document).ready(function ($) {
     },
   });
 
-  //AOS animation
-  AOS.init();
-  let observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        Aos.refresh();
-      }
-    });
-  });
-  document.querySelectorAll("[data-aos]").forEach((aosElem) => {
-    observer.observe(aosElem);
-  });
-
   //responsive tabs
   $(".res-tbs-btn").click(function (e) {
     e.preventDefault();
@@ -314,4 +301,11 @@ then close all select boxes:*/
   document.addEventListener("click", closeAllSelect);
 
   // document end
+});
+
+$(window).on("load", function () {
+  AOS.refresh();
+});
+$(function () {
+  AOS.init();
 });
