@@ -319,9 +319,7 @@ $(".scroll-section").each(function () {
   var scene = new ScrollMagic.Scene({
     triggerElement: $this[0],
     duration: $thisHeight,
-  })
-    .addIndicators()
-    .addTo(controller);
+  }).addTo(controller);
 
   scene.triggerHook(0.3);
 
