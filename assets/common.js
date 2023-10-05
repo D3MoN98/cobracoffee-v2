@@ -322,12 +322,16 @@ function startScrollAnimation(speed) {
 }
 
 // Event listener for mousewheel scrolling
-window.addEventListener("mousewheel", function (e) {
-  e.preventDefault();
-  const deltaY = e.deltaY;
-  const speed = deltaY * sensitivity;
+window.addEventListener(
+  "mousewheel",
+  function (e) {
+    e.preventDefault();
+    const deltaY = e.deltaY;
+    const speed = deltaY * sensitivity;
 
-  if (!isScrolling) {
-    startScrollAnimation(speed);
-  }
-});
+    if (!isScrolling) {
+      startScrollAnimation(speed);
+    }
+  },
+  { passive: false }
+);
