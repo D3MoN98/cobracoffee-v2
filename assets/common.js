@@ -198,7 +198,7 @@ jQuery(document).ready(function ($) {
 
   // Initialize ScrollMagic controller
   // Initialize the first section as active when the page loads
-  document.querySelector(".scroll-section").classList.add("active");
+  document.querySelector(".section").classList.add("active");
 
   // Smooth scroll function with a specified duration
   function smoothScroll(target, duration) {
@@ -232,10 +232,10 @@ jQuery(document).ready(function ($) {
     const direction = e.deltaY > 0 ? 1 : -1; // Determine scroll direction
 
     // Get the currently active section
-    const currentSection = document.querySelector(".scroll-section.active");
+    const currentSection = document.querySelector(".section.active");
 
     // Calculate the target section based on the current section
-    const sections = document.querySelectorAll(".scroll-section");
+    const sections = document.querySelectorAll(".section");
     const currentIndex = [...sections].indexOf(currentSection);
     const targetIndex = Math.max(
       0,
