@@ -208,7 +208,7 @@ jQuery(document).ready(function ($) {
   });
 
   //AOS animation
-  // AOS.init();
+  AOS.init();
   let observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
