@@ -185,6 +185,10 @@ jQuery(document).ready(function ($) {
   // Define the URL of your home page
   var homePageUrl = "https://cobrascoffee.com/"; // Replace with your actual home page URL
 
+  // init scrollbar
+  var elem = document.querySelector("#scroll-container");
+  var scrollbar = Scrollbar.init(elem);
+
   var controller = new ScrollMagic.Controller();
 
   // // build scene
@@ -195,14 +199,6 @@ jQuery(document).ready(function ($) {
   })
     .setPin("#fixed-footer")
     .addTo(controller);
-
-  // const scroller = new LocomotiveScroll({
-  //   el: document.querySelector("[data-scroll-container]"),
-  //   smooth: true,
-  //   tablet: {
-  //     breakpoint: 0, // <---- Fixes The Issue 🎉
-  //   },
-  // });
 
   //AOS animation
   // AOS.init();
@@ -301,38 +297,4 @@ then close all select boxes:*/
   document.addEventListener("click", closeAllSelect);
 
   // document end
-});
-
-// init controller
-var controller = new ScrollMagic.Controller({
-  refreshInterval: 0,
-});
-// init scrollbar
-var elem = document.querySelector("#scroll-container");
-var scrollbar = Scrollbar.init(elem);
-
-// animate each
-$(".scroll-section").each(function () {
-  var $this = $(this);
-  var $thisHeight = $(this).height();
-
-  var scene = new ScrollMagic.Scene({
-    triggerElement: $this[0],
-    duration: $thisHeight,
-  }).addTo(controller);
-
-  scene.triggerHook(0.3);
-
-  scene.on("enter", function () {
-    $this.addClass("active");
-  });
-
-  scene.on("leave", function (event) {
-    $this.removeClass("active");
-    // console.log(event.scrollDirection);
-  });
-
-  scrollbar.addListener(() => {
-    scene.refresh();
-  });
 });
