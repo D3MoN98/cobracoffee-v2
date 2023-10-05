@@ -185,11 +185,12 @@ jQuery(document).ready(function ($) {
   // Define the URL of your home page
   var homePageUrl = "https://cobrascoffee.com/"; // Replace with your actual home page URL
 
-  Aos.init();
+  AOS.init();
+
   let observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        Aos.refresh();
+        AOS.refresh();
       }
     });
   });
