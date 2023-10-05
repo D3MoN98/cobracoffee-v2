@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
 
   /*testimonial*/
   $(".product-slider").slick({
-    speed: 1000,
+    speed: 2500,
     autoplay: true,
     pauseOnHover: true,
     autoplaySpeed: 0,
