@@ -196,6 +196,14 @@ jQuery(document).ready(function ($) {
   //   .setPin("#fixed-footer")
   //   .addTo(controller);
 
+  const scroller = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    tablet: {
+      breakpoint: 0, // <---- Fixes The Issue 🎉
+    },
+  });
+
   //AOS animation
   // AOS.init();
 
@@ -293,15 +301,4 @@ then close all select boxes:*/
   document.addEventListener("click", closeAllSelect);
 
   // document end
-});
-
-const scroller = new LocomotiveScroll({
-  el: document.querySelector("[data-scroll-container]"),
-  smooth: true,
-  mobile: {
-    smooth: true,
-  },
-  tablet: {
-    smooth: true,
-  },
 });
