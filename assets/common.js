@@ -78,14 +78,14 @@ jQuery(document).ready(function ($) {
   $(".product-slider").slick({
     speed: 3000,
     autoplay: true,
+    pauseOnHover: true,
     autoplaySpeed: 0,
     cssEase: "linear",
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 0.1,
     infinite: true,
     centerMode: true,
     centerPadding: "250px",
-    pauseOnHover: false,
     dots: false,
     navs: false,
     responsive: [
@@ -128,15 +128,15 @@ jQuery(document).ready(function ($) {
     ],
   });
 
-  $(".product-slider")
-    .on("mouseenter", function () {
-      console.log("ok");
-      $(".product-slider").slick("slickPause");
-    })
-    .on("mouseleave", function () {
-      console.log("ol");
-      $(".product-slider").slick("slickPlay");
-    });
+  // $(".product-slider")
+  //   .on("mouseenter", function () {
+  //     console.log("ok");
+  //     $(".product-slider").slick("slickPause");
+  //   })
+  //   .on("mouseleave", function () {
+  //     console.log("ol");
+  //     $(".product-slider").slick("slickPlay");
+  //   });
 
   $(".product-details-slider").slick({
     autoplay: false,
