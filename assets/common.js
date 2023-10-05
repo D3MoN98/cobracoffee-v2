@@ -185,16 +185,24 @@ jQuery(document).ready(function ($) {
   // Define the URL of your home page
   var homePageUrl = "https://cobrascoffee.com/"; // Replace with your actual home page URL
 
-  var controller = new ScrollMagic.Controller();
+  // var controller = new ScrollMagic.Controller();
 
-  // // build scene
-  var scene = new ScrollMagic.Scene({
-    triggerHook: 1,
-    triggerElement: "#fixed-target",
-    pushFollowers: false,
-  })
-    .setPin("#fixed-footer")
-    .addTo(controller);
+  // // // build scene
+  // var scene = new ScrollMagic.Scene({
+  //   triggerHook: 1,
+  //   triggerElement: "#fixed-target",
+  //   pushFollowers: false,
+  // })
+  //   .setPin("#fixed-footer")
+  //   .addTo(controller);
+
+  const scroller = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    tablet: {
+      breakpoint: 0, // <---- Fixes The Issue 🎉
+    },
+  });
 
   //AOS animation
   // AOS.init();
@@ -294,20 +302,3 @@ then close all select boxes:*/
 
   // document end
 });
-
-// Create a ScrollTrigger for the scrolling container (in this case, the window)
-ScrollTrigger.create({
-  trigger: "body",
-  start: "top top",
-  end: "bottom bottom",
-  onUpdate: (self) => {
-    const scrollY =
-      self.progress * (document.body.scrollHeight - window.innerHeight);
-    gsap.to(window, { scrollTo: scrollY, duration: 2, ease: "power2.inOut" });
-  },
-});
-
-// Add some content to make the page scrollable
-const content = document.createElement("div");
-content.style.height = "2000px"; // Adjust the height as needed
-document.body.appendChild(content);
