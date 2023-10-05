@@ -196,6 +196,22 @@ jQuery(document).ready(function ($) {
     .setPin("#fixed-footer")
     .addTo(controller);
 
+  // Initialize ScrollMagic controller
+  var controller = new ScrollMagic.Controller();
+
+  // Create scenes for each section
+  var sections = document.querySelectorAll("section");
+  sections.forEach(function (section, index) {
+    new ScrollMagic.Scene({
+      triggerElement: section,
+      triggerHook: 0.5, // Trigger the animation when the section is in the center of the viewport
+    })
+      .setTween(
+        TweenMax.to(window, 1, { scrollTo: section, ease: Power1.easeInOut })
+      )
+      .addTo(controller);
+  });
+
   // const scroller = new LocomotiveScroll({
   //   el: document.querySelector("[data-scroll-container]"),
   //   smooth: true,
