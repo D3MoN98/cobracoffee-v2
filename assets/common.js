@@ -200,16 +200,20 @@ jQuery(document).ready(function ($) {
   var controller = new ScrollMagic.Controller();
 
   // Create scenes for each section
-  var sections = document.querySelectorAll("section");
-  console.log(sections);
+  var sections = document.querySelectorAll(".scroll-section");
   sections.forEach(function (section, index) {
     new ScrollMagic.Scene({
       triggerElement: section,
       triggerHook: 0.5, // Trigger the animation when the section is in the center of the viewport
     })
-      .setTween(
-        TweenMax.to(window, 1, { scrollTo: section, ease: Power1.easeInOut })
-      )
+      .on("enter", function (event) {
+        // Smoothly scroll to the section
+        gsap.to(window, {
+          duration: 1,
+          scrollTo: { y: section, autoKill: false },
+          ease: Power1.easeInOut,
+        });
+      })
       .addTo(controller);
   });
 
