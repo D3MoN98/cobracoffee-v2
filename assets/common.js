@@ -187,6 +187,18 @@ jQuery(document).ready(function ($) {
 
   AOS.init();
 
+  let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        AOS.refresh();
+      }
+    });
+  });
+  document.querySelectorAll("[data-aos]").forEach((aosElem) => {
+    observer.observe(aosElem);
+  });
+
   const scroller = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
