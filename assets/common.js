@@ -196,74 +196,10 @@ jQuery(document).ready(function ($) {
     .setPin("#fixed-footer")
     .addTo(controller);
 
-  // Initialize ScrollMagic controller
-  // Initialize the first section as active when the page loads
-  document.querySelector(".section").classList.add("active");
-
-  // Smooth scroll function with a specified duration
-  function smoothScroll(target, duration) {
-    const targetElement = document.querySelector(target);
-    const targetPosition = targetElement.getBoundingClientRect().top;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    let startTime = null;
-
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const scrollProgress = Math.min(timeElapsed / duration, 1);
-      window.scrollTo(0, startPosition + distance * scrollProgress);
-
-      if (scrollProgress < 1) {
-        requestAnimationFrame(animation);
-      }
-    }
-
-    requestAnimationFrame(animation);
-  }
-
-  // Add scroll event listener to trigger smooth scrolling
-  let isScrolling = false;
-
-  window.addEventListener("wheel", (e) => {
-    e.preventDefault(); // Prevent default scroll behavior
-    if (isScrolling) return; // Skip if an animation is already in progress
-
-    const direction = e.deltaY > 0 ? 1 : -1; // Determine scroll direction
-
-    // Get the currently active section
-    const currentSection = document.querySelector(".section.active");
-
-    // Calculate the target section based on the current section
-    const sections = document.querySelectorAll(".section");
-    const currentIndex = [...sections].indexOf(currentSection);
-    const targetIndex = Math.max(
-      0,
-      Math.min(currentIndex + direction, sections.length - 1)
-    );
-    const targetSection = sections[targetIndex];
-
-    if (targetSection !== currentSection) {
-      isScrolling = true;
-
-      // Remove "active" class from the current section and add it to the target section
-      currentSection.classList.remove("active");
-      targetSection.classList.add("active");
-
-      // Call the smoothScroll function with a specified duration
-      smoothScroll(`#${targetSection.id}`, 800); // Adjust the duration as needed
-
-      // Reset the isScrolling flag after the animation completes
-      setTimeout(() => {
-        isScrolling = false;
-      }, 800); // Should match the duration of smoothScroll
-    }
+  const scroller = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
   });
-
-  // const scroller = new LocomotiveScroll({
-  //   el: document.querySelector("[data-scroll-container]"),
-  //   smooth: true,
-  // });
 
   //AOS animation
   AOS.init();
