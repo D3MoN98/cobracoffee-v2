@@ -302,3 +302,39 @@ then close all select boxes:*/
 
   // document end
 });
+
+// init controller
+var controller = new ScrollMagic.Controller({
+  refreshInterval: 0,
+});
+// init scrollbar
+var elem = document.querySelector(".section");
+var scrollbar = Scrollbar.init(elem);
+
+// animate each
+$(".section").each(function () {
+  var $this = $(this);
+  var $thisHeight = $(this).height();
+
+  var scene = new ScrollMagic.Scene({
+    triggerElement: $this[0],
+    duration: $thisHeight,
+  })
+    .addIndicators()
+    .addTo(controller);
+
+  scene.triggerHook(0.3);
+
+  scene.on("enter", function () {
+    $this.addClass("active");
+  });
+
+  scene.on("leave", function (event) {
+    // $this.removeClass('active');
+    // console.log(event.scrollDirection);
+  });
+
+  scrollbar.addListener(() => {
+    scene.refresh();
+  });
+});
