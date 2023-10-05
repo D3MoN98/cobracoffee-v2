@@ -303,9 +303,13 @@ then close all select boxes:*/
   // document end
 });
 
-$(window).on("load", function () {
-  AOS.refresh();
+let observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      Aos.refresh();
+    }
+  });
 });
-$(function () {
-  AOS.init();
+document.querySelectorAll("[data-aos]").forEach((aosElem) => {
+  observer.observe(aosElem);
 });
