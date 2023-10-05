@@ -308,11 +308,11 @@ var controller = new ScrollMagic.Controller({
   refreshInterval: 0,
 });
 // init scrollbar
-var elem = document.querySelector(".section");
+var elem = document.querySelector("#scroll-container");
 var scrollbar = Scrollbar.init(elem);
 
 // animate each
-$(".section").each(function () {
+$(".scroll-section").each(function () {
   var $this = $(this);
   var $thisHeight = $(this).height();
 
@@ -330,7 +330,7 @@ $(".section").each(function () {
   });
 
   scene.on("leave", function (event) {
-    // $this.removeClass('active');
+    $this.removeClass("active");
     // console.log(event.scrollDirection);
   });
 
