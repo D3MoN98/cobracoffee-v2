@@ -76,13 +76,13 @@ jQuery(document).ready(function ($) {
 
   /*testimonial*/
   $(".product-slider").slick({
-    speed: 3500,
+    speed: 3000,
     autoplay: true,
     pauseOnHover: true,
     autoplaySpeed: 0,
     cssEase: "linear",
     slidesToShow: 3,
-    slidesToScroll: 0.1,
+    slidesToScroll: 0.01,
     infinite: true,
     centerMode: true,
     centerPadding: "250px",
