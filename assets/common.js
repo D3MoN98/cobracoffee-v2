@@ -82,7 +82,7 @@ jQuery(document).ready(function ($) {
     autoplaySpeed: 0,
     cssEase: "linear",
     slidesToShow: 3,
-    slidesToScroll: 0.01,
+    slidesToScroll: 0.1,
     infinite: true,
     centerMode: true,
     centerPadding: "250px",
