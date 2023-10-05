@@ -185,10 +185,6 @@ jQuery(document).ready(function ($) {
   // Define the URL of your home page
   var homePageUrl = "https://cobrascoffee.com/"; // Replace with your actual home page URL
 
-  // init scrollbar
-  var elem = document.querySelector("#scroll-container");
-  var scrollbar = Scrollbar.init(elem);
-
   var controller = new ScrollMagic.Controller();
 
   // // build scene
@@ -297,4 +293,41 @@ then close all select boxes:*/
   document.addEventListener("click", closeAllSelect);
 
   // document end
+});
+
+// Constants for controlling the scrolling behavior
+const friction = 0.95; // Friction factor for deceleration
+const sensitivity = 0.1; // Sensitivity to user's scrolling speed
+const scrollSpeedThreshold = 1; // Minimum speed to continue scrolling
+
+// Variables to keep track of scrolling state
+let isScrolling = false;
+let scrollSpeed = 0;
+let scrollInterval;
+
+// Function to start the scroll animation
+function startScrollAnimation(speed) {
+  isScrolling = true;
+  scrollSpeed = speed;
+
+  scrollInterval = setInterval(function () {
+    window.scrollBy(0, scrollSpeed);
+    scrollSpeed *= friction;
+
+    if (Math.abs(scrollSpeed) < scrollSpeedThreshold) {
+      clearInterval(scrollInterval);
+      isScrolling = false;
+    }
+  }, 16); // 60 FPS
+}
+
+// Event listener for mousewheel scrolling
+window.addEventListener("mousewheel", function (e) {
+  e.preventDefault();
+  const deltaY = e.deltaY;
+  const speed = deltaY * sensitivity;
+
+  if (!isScrolling) {
+    startScrollAnimation(speed);
+  }
 });
