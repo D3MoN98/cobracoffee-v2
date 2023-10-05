@@ -102,24 +102,18 @@
 
   <body>
     <div class="main-container-otr" data-scroll-container>
-      {%- if settings.cart_type == 'drawer' -%}
-        {%- render 'cart-drawer' -%}
-      {%- endif -%}
-
-      {% sections 'header-group' %}
-
       <main
         id="MainContent"
         class="content-for-layout focus-none main-sec"
         role="main"
         tabindex="-1"
         data-scroll-section>
+        {% sections 'header-group' %}
+
         {{ content_for_layout }}
 
         {% sections 'footer-group' %}
       </main>
-
-
     </div>
 
     <ul hidden>
