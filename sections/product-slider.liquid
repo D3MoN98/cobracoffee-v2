@@ -1,11 +1,9 @@
 <section class="product-sec scroll-section">
   <div class="container-fluid">
     <h2
-      data-scroll=""
-      data-scroll-direction="horizontal"
-      data-scroll-speed="-2"
-      data-scroll-position="top"
-      data-scroll-target="#header">What's up?</h2>
+      data-scroll
+      data-scroll-speed="2"
+      data-scroll-position="top">What's up?</h2>
     <div class="product-slider slick-carousel">
       {%- assign slider_collections = section.settings.collection.products -%}
       {% for product in slider_collections %}
