@@ -1461,7 +1461,7 @@ transition: all 0.3s ease-in-out;
     position: absolute;
     top: 0;
     left: 0;
-    background: url(./X-.png) center center no-repeat;
+    background: url(./xx.png) center center no-repeat;
     background-size: 100% 100%;
     z-index: -1;
     opacity: 0;
