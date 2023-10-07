@@ -78,7 +78,7 @@
 
   const variantOptionsMap = {
     {% for variant in product.variants %}
-      '{{ variant.options[0] }} - {{ variant.options[1] }}' : '{{ variant.id }}',{% endfor %}
+      "{{ variant.options[0] }} - {{ variant.options[1] }}" : "{{ variant.id }}",{% endfor %}
   };
   console.log(variantOptionsMap)
 
