@@ -99,8 +99,12 @@
     }
   }
 
-  $(document).on('change', 'productVariantOption1', updateVariantSelection())
-  $(document).on('change', 'productVariantOption2', updateVariantSelection())
+  $(document).on('change', 'productVariantOption1', function() {
+    console.log('dasd')
+  })
+  $(document).on('change', 'productVariantOption2', function() {
+    console.log('ol')
+  })
 
   updateVariantSelection();
 </script>
