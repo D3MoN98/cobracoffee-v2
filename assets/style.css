@@ -2378,6 +2378,9 @@ table.cart-items tr td a:hover{
     #shopify-section-template--15937846214852__main h1 {
         font-size: 100px;
     }
+    .product-sec {
+        padding: 10px 0 50px;
+    }
 
 }
 @media (max-width: 1199px){
@@ -2690,7 +2693,7 @@ h4 {
     font-size: 12vh !important;
 }
 .product-box figure {
-    height: 300px;
+    height: 260px;
 }
 .sec-2 {
     padding: 50px 0 50px 0;
