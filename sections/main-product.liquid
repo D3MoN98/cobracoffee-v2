@@ -1,37 +1,4 @@
 <!-- product details section start -->
-<style>
-  /* Styles for the custom select box */
-  .custom-select3 {
-    position: relative;
-    width: 200px;
-    margin: 20px;
-  }
-
-  .select-selected {
-    display: block;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: pointer;
-  }
-
-  .select-items {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-
-  .select-item {
-    padding: 10px;
-    cursor: pointer;
-  }
-
-  /* Style when the select box is open */
-  .custom-select3.open .select-items {
-    display: block;
-  }
-</style>
 <section class="product-details-sec">
   <div class="container2">
     <div class="row">
@@ -72,36 +39,9 @@
             <div class="pro-details-btn-wrap">
               {% if product.variants.size > 1 %}
                 {% unless product.has_only_default_variant %}
-                  <div class="custom-select">
-                    <div class="select-selected">Select an option</div>
-                    <div class="select-items">
-                      <div class="select-item" data-value="option1">Option 1</div>
-                      <div class="select-item" data-value="option2">Option 2</div>
-                      <div class="select-item" data-value="option3">Option 3</div>
-                    </div>
-                  </div>
-
-
                   {% for option in product.options_with_values %}
-                    {% if option.name == 'size' %}
-                      <input
-                        type="hidden"
-                        id="productVariantOption{{ forloop.index }}"
-                        value="{{option.selected_value}}">
-                      <div class="custom-select3">
-                        <div class="select-items">
-                          {% for value in option.values %}
-                            <div
-                              {% if option.selected_value == value %}
-                              class="select-selected"
-                              {% endif %}
-                              class="select-item"
-                              data-value="{{ value | escape }}">{{ value }}</div>
-                          {% endfor %}
-                        </div>
-                      </div>
-                    {% else %}
-                      <select id="productVariantOption{{ forloop.index }}" style="display: none;">
+                    <div class="custom-select">
+                      <select id="productVariantOption{{ forloop.index }}">
                         {% for value in option.values %}
                           <option
                             value="{{ value | escape }}"
@@ -109,7 +49,7 @@
                             {% if option.selected_value == value %}selected="selected"{% endif %}>{{ value }}</option>
                         {% endfor %}
                       </select>
-                    {% endif %}
+                    </div>
                   {% endfor %}
                 {% endunless %}
               {% endif %}
@@ -170,31 +110,117 @@
     updateVariantSelection();
 
 
-    const customSelect = document.querySelector('.custom-select3');
-    const selectedOption = customSelect.querySelector('.select-selected');
-    const selectItems = customSelect.querySelector('.select-items');
 
-    selectedOption.addEventListener('click', function() {
-      customSelect.classList.toggle('open');
-    });
+// /custom select///
+    var x,
+      i,
+      j,
+      l,
+      ll,
+      selElmnt,
+      a,
+      b,
+      c;
 
-    document.addEventListener('click', function(e) {
-      if (! customSelect.contains(e.target)) {
-        customSelect.classList.remove('open');
+/*look for any elements with the class "custom-select":*/
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+
+/*for each element, create a new DIV that will act as the selected item:*/
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+
+/*for each element, create a new DIV that will contain the option list:*/
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < ll; j++) {
+
+/*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function(e) {
+
+/*when an item is clicked, update the original select box,
+        and the selected item:*/
+          var y,
+            i,
+            k,
+            s,
+            h,
+            sl,
+            yl;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          sl = s.length;
+          h = this.parentNode.previousSibling;
+          for (i = 0; i < sl; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              s.selectedIndex = i;
+              h.innerHTML = this.innerHTML;
+              $(s).val($(s).val()).change();
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              yl = y.length;
+              for (k = 0; k < yl; k++) {
+                y[k].removeAttribute("class");
+              }
+              this.setAttribute("class", "same-as-selected");
+              updateVariantSelection()
+              break;
+            }
+          }
+          h.click();
+        });
+        b.appendChild(c);
       }
-    });
+      x[i].appendChild(b);
+      a.addEventListener("click", function(e) {
 
-    selectItems.addEventListener('click', function(e) {
-      if (e.target.classList.contains('select-item')) {
-        const selectedValue = e.target.getAttribute('data-value');
-        selectedOption.textContent = e.target.textContent;
-        customSelect.classList.remove('open');
+/*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.toggle("select-arrow-active");
+      });
+    }
+    function closeAllSelect(elmnt) {
 
-        sizeSelect.value = selectedValue
-        updateVariantSelection();
-        console.log('Selected value:', selectedValue);
+/*a function that will close all select boxes in the document,
+  except the current select box:*/
+      var x,
+        y,
+        i,
+        xl,
+        yl,
+        arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i);
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
       }
-    });
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+    document.addEventListener("click", closeAllSelect);
+
+// document end
   });
 </script>
 
