@@ -72,6 +72,14 @@
             <div class="pro-details-btn-wrap">
               {% if product.variants.size > 1 %}
                 {% unless product.has_only_default_variant %}
+                  <div class="custom-select">
+                    <div class="select-selected">Select an option</div>
+                    <div class="select-items">
+                      <div class="select-item" data-value="option1">Option 1</div>
+                      <div class="select-item" data-value="option2">Option 2</div>
+                      <div class="select-item" data-value="option3">Option 3</div>
+                    </div>
+                  </div>
 
 
                   {% for option in product.options_with_values %}
