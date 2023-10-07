@@ -2469,6 +2469,12 @@ table.cart-items tr td a:hover{
     .product-details-col .btn:hover svg{
         margin-left: 60px;
       }
+      .product-details-col .btn {
+        max-width: 180px;
+    }
+    .product-details-col .btn:hover{
+        max-width: 250px;
+    }
 
 }
 @media(max-width:1024px) {
