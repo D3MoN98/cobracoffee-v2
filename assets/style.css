@@ -1683,7 +1683,7 @@ transition: all 0.3s ease-in-out;
     line-height: 1.2;
 }
 .product-details-col .btn {
-    max-width: 345px;
+    max-width: 250px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1693,6 +1693,9 @@ transition: all 0.3s ease-in-out;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+}
+.product-details-col .btn:hover{
+    max-width: 350px;
 }
 .product-details-col2{
     display: -webkit-box;
