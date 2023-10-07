@@ -251,8 +251,8 @@ jQuery(document).ready(function ($) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
             h.innerHTML = this.innerHTML;
-            console.log($(s).val());
             $(s).trigger("change");
+            console.log($(s).val());
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
             for (k = 0; k < yl; k++) {
