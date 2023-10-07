@@ -2395,6 +2395,9 @@ table.cart-items tr td a:hover{
     .product-sec {
         padding: 10px 0 50px;
     }
+    .mission-sec .sec-2 h2 {
+        font-size: 172px;
+    }
 
 }
 @media (max-width: 1199px){
