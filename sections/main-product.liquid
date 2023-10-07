@@ -55,6 +55,7 @@
                   {% endfor %}
                 {% endunless %}
               {% endif %}
+              {{ product.variants | json }}
               <select name="selected_varaint" style="display: none;">
                 {% for variant in product.variants %}
                   <option
