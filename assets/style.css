@@ -1483,7 +1483,7 @@ transition: all 0.3s ease-in-out;
     text-align: left;
 }
 .product-boxx .btn{
-    max-width:250px;
+    max-width:265px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
