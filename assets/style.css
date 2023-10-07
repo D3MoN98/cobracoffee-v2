@@ -3162,6 +3162,10 @@ table.cart-items{
     .template-404{
         min-height: calc(100vh - 82px);
     }
+    .btn{
+        max-width: unset !important;
+        width: unset !important;
+    }
 }
 
 @media (max-width: 575px) {
