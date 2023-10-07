@@ -2198,6 +2198,13 @@ table.cart-items tr td a:hover{
 .cart-modal hr{
     opacity: 1;
 }
+.cart-modal .quantity {
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+}
+
 
 /* =====body css end===== */
 
