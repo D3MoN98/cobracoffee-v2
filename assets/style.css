@@ -2211,7 +2211,7 @@ table.cart-items tr td a:hover{
     width: 22px;
     height: 23px;
     background: transparent !important;
-    color: #fff;
+    color: #fff !important;
 }
 .cart-modal .cart-item-price span{
     width: 180px;
