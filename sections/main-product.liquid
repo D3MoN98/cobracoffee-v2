@@ -1,37 +1,4 @@
 <!-- product details section start -->
-<style>
-  /* Styles for the custom select box */
-  .custom-select {
-    position: relative;
-    width: 200px;
-    margin: 20px;
-  }
-
-  .select-selected {
-    display: block;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: pointer;
-  }
-
-  .select-items {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-
-  .select-item {
-    padding: 10px;
-    cursor: pointer;
-  }
-
-  /* Style when the select box is open */
-  .custom-select.open .select-items {
-    display: block;
-  }
-</style>
 <section class="product-details-sec">
   <div class="container2">
     <div class="row">
@@ -75,16 +42,24 @@
 
 
                   {% for option in product.options_with_values %}
-                    <input type="hidden" id="productVariantOption{{ forloop.index }}">
                     {% if option.name == 'size' %}
+                      <input type="hidden" id="productVariantOption{{ forloop.index }}">
                       <div class="custom-select">
-                        <div class="select-selected">Select an option</div>
                         <div class="select-items">
                           {% for value in option.values %}
                             <div class="select-item" data-value="{{ value | escape }}">{{ value }}</div>
                           {% endfor %}
                         </div>
                       </div>
+                    {% else %}
+                      <select id="productVariantOption{{ forloop.index }}">
+                        {% for value in option.values %}
+                          <option
+                            value="{{ value | escape }}"
+                            data-og="{{option.selected_value}}"
+                            {% if option.selected_value == value %}selected="selected"{% endif %}>{{ value }}</option>
+                        {% endfor %}
+                      </select>
                     {% endif %}
                   {% endfor %}
                 {% endunless %}
@@ -167,6 +142,7 @@
         customSelect.classList.remove('open');
 
         sizeSelect.value = selectedValue
+        updateVariantSelection();
         console.log('Selected value:', selectedValue);
       }
     });
