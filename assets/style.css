@@ -2491,6 +2491,9 @@ table.cart-items tr td a:hover{
     .product-boxx .btn{
         max-width:210px;
     }
+    .mission-sec .sec-2 h2 {
+        font-size: 142px;
+    }
 
 }
 @media(max-width:1024px) {
@@ -2999,6 +3002,9 @@ table.cart-items{
 .product-details-col ul {
     margin: 0 0 50px;
 }
+.mission-sec .sec-2 h2 {
+    font-size: 105px;
+}
 }
 @media (max-width: 767px){
     .categori-wrap .categori-col{
@@ -3182,6 +3188,9 @@ table.cart-items{
         max-width: unset !important;
         width: unset !important;
     }
+    .mission-sec .sec-2 h2 {
+        font-size: 78px;
+    }
 }
 
 @media (max-width: 575px) {
@@ -3300,6 +3309,9 @@ table.cart-items{
         width: 70%;
         justify-content: start;
     }
+    .mission-sec .sec-2 h2 {
+        font-size: 62px;
+    }
 }
 @media (max-width: 479px) {
     body {
@@ -3414,6 +3426,9 @@ table.cart-items{
     }
     .acc-head .ratting {
         width: 50%;
+    }
+    .mission-sec .sec-2 h2 {
+        font-size: 47px;
     }
 }
 
