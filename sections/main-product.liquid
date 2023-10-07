@@ -80,7 +80,12 @@
                       <div class="custom-select">
                         <div class="select-items">
                           {% for value in option.values %}
-                            <div class="select-item" data-value="{{ value | escape }}">{{ value }}</div>
+                            <div
+                              {% if option.selected_value == value %}
+                              class="select-selected"
+                              {% endif %}
+                              class="select-item"
+                              data-value="{{ value | escape }}">{{ value }}</div>
                           {% endfor %}
                         </div>
                       </div>
