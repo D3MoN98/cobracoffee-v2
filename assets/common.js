@@ -247,12 +247,11 @@ jQuery(document).ready(function ($) {
         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
         input_hidden =
           this.parentNode.parentNode.getElementsByTagName("input")[0];
+        console.log(input_hidden);
         sl = s.length;
         h = this.parentNode.previousSibling;
         for (i = 0; i < sl; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
-            input_hidden.value = $(s).val();
-            $(input_hidden).trigger("change");
             s.selectedIndex = i;
             h.innerHTML = this.innerHTML;
             y = this.parentNode.getElementsByClassName("same-as-selected");

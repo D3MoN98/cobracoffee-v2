@@ -41,8 +41,7 @@
                 {% unless product.has_only_default_variant %}
                   {% for option in product.options_with_values %}
                     <div class="custom-select">
-                      <input type="hidden" id="productVariantOption{{ forloop.index }}">
-                      <select>
+                      <select id="productVariantOption{{ forloop.index }}">
                         {% for value in option.values %}
                           <option
                             value="{{ value | escape }}"
@@ -81,6 +80,7 @@
     {% for variant in product.variants %}
       "{{ variant.options[0] }} - {{ variant.options[1] }}" : "{{ variant.id }}",{% endfor %}
   };
+  console.log(variantOptionsMap)
 
   function updateVariantSelection() {
     const selectedSize = sizeSelect.value;
