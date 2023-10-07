@@ -40,7 +40,7 @@
               {% if product.variants.size > 1 %}
                 {% unless product.has_only_default_variant %}
                   {% for option in product.options_with_values %}
-                    <div class="custom-select">
+                    <div class="custom-select2">
                       <select id="productVariantOption{{ forloop.index }}">
                         {% for value in option.values %}
                           <option
@@ -70,7 +70,6 @@
 </section>
 <!-- product detail section end -->
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
   const colorSelect = document.getElementById('productVariantOption1');
   const sizeSelect = document.getElementById('productVariantOption2');
@@ -100,12 +99,8 @@
     }
   }
 
-  $('body').on('change', '#productVariantOption1', function() {
-    console.log('dasd')
-  })
-  $('body').on('change', '#productVariantOption2', function() {
-    console.log('ol')
-  })
+  sizeSelect.addEventListener('change', updateVariantSelection);
+  colorSelect.addEventListener('change', updateVariantSelection);
 
   updateVariantSelection();
 </script>
