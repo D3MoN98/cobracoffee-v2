@@ -2200,7 +2200,7 @@ table.cart-items tr td a:hover{
 }
 .cart-modal .quantity {
     justify-content: space-between;
-    padding: 5px;
+    padding: 0px 10px;
     border: 1px solid #fff;
     border-radius: 50px;
     color: #fff;
