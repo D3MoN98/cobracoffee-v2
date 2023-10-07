@@ -1483,7 +1483,7 @@ transition: all 0.3s ease-in-out;
     text-align: left;
 }
 .product-boxx .btn{
-    max-width: 345px;
+    /* max-width: 345px; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1493,6 +1493,9 @@ transition: all 0.3s ease-in-out;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+}
+.product-boxx .btn:hover{
+    max-width: 100%;
 }
  /* product section end  */
 /* product gear section star  */
@@ -2178,6 +2181,9 @@ table.cart-items tr td a:hover{
   }
   .pro-accordion .quantity{
     border: 0;
+  }
+  .product-boxx .btn svg{
+    margin-left: 10px;
   }
 
 /* =====body css end===== */
