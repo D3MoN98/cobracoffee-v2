@@ -2200,18 +2200,26 @@ table.cart-items tr td a:hover{
 }
 .cart-modal .quantity {
     justify-content: space-between;
-    padding: 5px;
+    padding: 50px;
     border: 1px solid #fff;
     border-radius: 15px;
     color: #fff;
     background: transparent;
+    width: 180px;
 }
 .cart-quantity-minus, .cart-quantity-plus {
     width: 22px;
     height: 23px;
-    background: transparent;
+    background: transparent !important;
+    color: #fff;
 }
-
+.cart-modal .cart-item-price span{
+    width: 180px;
+    padding: 50px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    text-align: center;
+}
 
 
 /* =====body css end===== */
