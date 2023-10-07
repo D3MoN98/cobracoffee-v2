@@ -1483,7 +1483,7 @@ transition: all 0.3s ease-in-out;
     text-align: left;
 }
 .product-boxx .btn{
-    max-width:max-content;
+    max-width:250px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2481,6 +2481,9 @@ table.cart-items tr td a:hover{
     }
     .product-details-col .btn:hover{
         max-width: 230px;
+    }
+    .product-boxx .btn{
+        max-width:210px;
     }
 
 }
