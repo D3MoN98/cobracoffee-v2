@@ -51,7 +51,10 @@
                 </div>
               </div>
               <hr>
-              <div class="cart-item-price">Price: {{ item.price | money }}</div>
+              <div class="cart-item-price">
+                {{ item.price | money }}
+                <span>L</span>
+              </div>
             </div>
           </div>
           <hr>
