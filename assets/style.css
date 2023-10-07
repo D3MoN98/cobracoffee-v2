@@ -1483,7 +1483,7 @@ transition: all 0.3s ease-in-out;
     text-align: left;
 }
 .product-boxx .btn{
-    width:auto;
+    max-width:max-content;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1495,7 +1495,7 @@ transition: all 0.3s ease-in-out;
             align-items: center;
 }
 .product-boxx .btn:hover{
-    width: 100%;
+    max-width: 100%;
 }
  /* product section end  */
 /* product gear section star  */
