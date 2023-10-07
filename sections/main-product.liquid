@@ -40,35 +40,23 @@
               {% if product.variants.size > 1 %}
                 {% unless product.has_only_default_variant %}
                   {% for option in product.options_with_values %}
-                    {% if option.name == 'size' %}
-                      <div class="custom-select">
-                        <select data-index="option{{ forloop.index }}">
-                          {% for value in option.values %}
-                            <option
-                              value="{{ value | escape }}"
-                              data-og="{{option.selected_value}}"
-                              {% if option.selected_value == value %}selected="selected"{% endif %}>{{ value }}</option>
-                          {% endfor %}
-                        </select>
-                      </div>
-                    {% endif %}
+                    <div class="custom-select">
+                      <select id="productVariantOption{{ forloop.index }}">
+                        {% for value in option.values %}
+                          <option
+                            value="{{ value | escape }}"
+                            data-og="{{option.selected_value}}"
+                            {% if option.selected_value == value %}selected="selected"{% endif %}>{{ value }}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
                   {% endfor %}
                 {% endunless %}
               {% endif %}
-              {{ product.variants | json }}
-              <select name="selected_varaint" style="display: none;">
-                {% for variant in product.variants %}
-                  <option
-                    value="{{ variant.id }}"
-                    {%- if variant == current_variant %}
-                    selected="selected"
-                    {%- endif -%}>
-                    {{ variant.title }}
-                  </option>
-                {% endfor %}
-              </select>
+
               <a
                 class="btn btn2 add-to-cart"
+                id="add-to-cart"
                 data-product-id="{{ product.id }}"
                 data-variant-id="{{product.variants[0].id }}">ADD {{ product.price | money }}
                 <i class="fas fa-chevron-right"></i>
@@ -81,6 +69,39 @@
   </div>
 </section>
 <!-- product detail section end -->
+
+<script>
+  const colorSelect = document.getElementById('productVariantOption1');
+  const sizeSelect = document.getElementById('productVariantOption1');
+  const variantIdSelect = document.getElementById('variant-id');
+  const addToCartButton = document.getElementById('add-to-cart');
+
+  const variantOptionsMap = {
+    {% for variant in product.variants %}
+      '{{ variant.options[0] }} - {{ variant.options[1] }}' : '{{ variant.id }}',{% endfor %}
+  };
+  console.log(variantOptionsMap)
+
+  function updateVariantSelection() {
+    const selectedSize = sizeSelect.value;
+    const selectedColor = colorSelect.value;
+    const selectedVariantOption = `${selectedSize} - ${selectedColor}`;
+    const selectedVariantId = variantOptionsMap[selectedVariantOption];
+
+    addToCartButton.setAttribute('data-variant-id', selectedVariantId);
+
+    if (selectedVariantId) {
+      addToCartButton.removeAttribute('disabled');
+    } else {
+      addToCartButton.setAttribute('disabled', 'true');
+    }
+  }
+
+  sizeSelect.addEventListener('change', updateVariantSelection);
+  colorSelect.addEventListener('change', updateVariantSelection);
+
+  updateVariantSelection();
+</script>
 
 {% schema %}
   {
