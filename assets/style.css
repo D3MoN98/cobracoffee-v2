@@ -2903,7 +2903,7 @@ h4 {
     width: 100%;
 }
 .product-thumb-slider .slick-slide img {
-    height: 540px;
+    height: 450px;
 }
 .product-thumb-slider .slick-dots {
     bottom: -30px;
@@ -2977,6 +2977,12 @@ table.cart-items{
 .categori-wrap .categori-col{
     margin-bottom: 30px;
   }
+  .product-details-col {
+    padding-top: 0;
+}
+.product-details-col ul {
+    margin: 0 0 50px;
+}
 }
 @media (max-width: 767px){
     .categori-wrap .categori-col{
