@@ -3123,7 +3123,7 @@ table.cart-items{
         margin-bottom: 0;
       }
       .product-details-slider {
-        width: calc(100% + 400px);
+        width: 100%;
       }
       .product-details-slider .slick-slide {
         padding: 0 10px;
