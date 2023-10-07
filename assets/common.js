@@ -113,7 +113,7 @@ jQuery(document).ready(function ($) {
         breakpoint: 767,
         settings: {
           slidesToShow: 1,
-          centerPadding: "0px",
+          centerPadding: "150px",
           speed: 2000,
         },
       },
@@ -142,7 +142,7 @@ jQuery(document).ready(function ($) {
     autoplay: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true,
+    //centerMode: true,
     variableWidth: true,
     infinite: true,
     dots: false,
