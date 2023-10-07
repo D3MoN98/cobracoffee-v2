@@ -37,7 +37,15 @@
               <div class="d-flex justify-content-between">GROUND COFFEE 250G (8.8OZ)</div>
             {% endif %}
             <div class="pro-details-btn-wrap">
-              {% if product.variants.size > 1 %}{% endif %}
+              {% if product.variants.size > 1 %}
+                <div class="custom-select">
+                  <select name="product_vairant">
+                    {% for option in product.options_with_values.size %}
+                      <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              {% endif %}
               <a
                 class="btn btn2 add-to-cart"
                 data-product-id="{{ product.id }}"
