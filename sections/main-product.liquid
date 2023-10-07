@@ -45,7 +45,10 @@
                       <div class="custom-select">
                         <select data-index="option{{ forloop.index }}">
                           {% for value in option.values %}
-                            <option value="{{ value | escape }}"{% if option.selected_value == value %}selected="selected"{% endif %}>{{ value }}</option>
+                            <option
+                              value="{{ value | escape }}"
+                              data-og="{{option.selected_value}}"
+                              {% if option.selected_value == value %}selected="selected"{% endif %}>{{ value }}</option>
                           {% endfor %}
                         </select>
                       </div>
@@ -53,6 +56,17 @@
                   {% endfor %}
                 {% endunless %}
               {% endif %}
+              <select name="selected_varaint" style="display: none;">
+                {% for variant in product.variants %}
+                  <option
+                    value="{{ variant.id }}"
+                    {%- if variant == current_variant %}
+                    selected="selected"
+                    {%- endif -%}>
+                    {{ variant.title }}
+                  </option>
+                {% endfor %}
+              </select>
               <a
                 class="btn btn2 add-to-cart"
                 data-product-id="{{ product.id }}"
