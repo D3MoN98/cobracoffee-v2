@@ -1521,6 +1521,7 @@ transition: all 0.3s ease-in-out;
     font-weight: 400;
     font-family: "source-sans-pro";
     margin-bottom: 50px;
+    text-align: center;
 }
 .faq-nav{
     margin-bottom: 100px;
