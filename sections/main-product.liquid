@@ -72,26 +72,20 @@
             <div class="pro-details-btn-wrap">
               {% if product.variants.size > 1 %}
                 {% unless product.has_only_default_variant %}
-                  <div class="custom-select3" id="testop">
-                    <div class="select-selected">Select an option</div>
-                    <div class="select-items">
-                      <div class="select-item" data-value="option1">Option 1</div>
-                      <div class="select-item" data-value="option2">Option 2</div>
-                      <div class="select-item" data-value="option3">Option 3</div>
-                    </div>
-                  </div>
+
 
                   {% for option in product.options_with_values %}
-                    <div class="custom-select2">
-                      <select id="productVariantOption{{ forloop.index }}">
-                        {% for value in option.values %}
-                          <option
-                            value="{{ value | escape }}"
-                            data-og="{{option.selected_value}}"
-                            {% if option.selected_value == value %}selected="selected"{% endif %}>{{ value }}</option>
-                        {% endfor %}
-                      </select>
-                    </div>
+                    <input type="hidden" id="productVariantOption{{ forloop.index }}">
+                    {% if option.name == 'size' %}
+                      <div class="custom-select">
+                        <div class="select-selected">Select an option</div>
+                        <div class="select-items">
+                          {% for value in option.values %}
+                            <div class="select-item" data-value="{{ value | escape }}">{{ value }}</div>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    {% endif %}
                   {% endfor %}
                 {% endunless %}
               {% endif %}
@@ -113,65 +107,66 @@
 <!-- product detail section end -->
 
 <script>
-  const colorSelect = document.getElementById('productVariantOption1');
-  const sizeSelect = document.getElementById('productVariantOption2');
-  const variantIdSelect = document.getElementById('variant-id');
-  const addToCartButton = document.getElementById('add-to-cart');
 
-  const variantOptionsMap = {
-    {% for variant in product.variants %}
-      "{{ variant.options[0] }} - {{ variant.options[1] }}" : "{{ variant.id }}",{% endfor %}
-  };
-  console.log(variantOptionsMap)
-
-  function updateVariantSelection() {
-    const selectedSize = sizeSelect.value;
-    const selectedColor = colorSelect.value;
-    const selectedVariantOption = `${selectedColor} - ${selectedSize}`;
-    console.log(selectedVariantOption)
-    const selectedVariantId = variantOptionsMap[selectedVariantOption];
-    console.log(selectedVariantId)
-
-    addToCartButton.setAttribute('data-variant-id', selectedVariantId);
-
-    if (selectedVariantId) {
-      addToCartButton.removeAttribute('disabled');
-    } else {
-      addToCartButton.setAttribute('disabled', 'true');
-    }
-  }
-
-  sizeSelect.addEventListener('change', updateVariantSelection);
-  colorSelect.addEventListener('change', updateVariantSelection);
-
-  updateVariantSelection();
 
 
   document.addEventListener('DOMContentLoaded', function() {
-    const customSelect = document.querySelector('.custom-select3');
+
+    const colorSelect = document.getElementById('productVariantOption1');
+    const sizeSelect = document.getElementById('productVariantOption2');
+    const variantIdSelect = document.getElementById('variant-id');
+    const addToCartButton = document.getElementById('add-to-cart');
+
+    const variantOptionsMap = {
+      {% for variant in product.variants %}
+        "{{ variant.options[0] }} - {{ variant.options[1] }}" : "{{ variant.id }}",{% endfor %}
+    };
+    console.log(variantOptionsMap)
+
+    function updateVariantSelection() {
+      const selectedSize = sizeSelect.value;
+      const selectedColor = colorSelect.value;
+      const selectedVariantOption = `${selectedColor} - ${selectedSize}`;
+      console.log(selectedVariantOption)
+      const selectedVariantId = variantOptionsMap[selectedVariantOption];
+      console.log(selectedVariantId)
+
+      addToCartButton.setAttribute('data-variant-id', selectedVariantId);
+
+      if (selectedVariantId) {
+        addToCartButton.removeAttribute('disabled');
+      } else {
+        addToCartButton.setAttribute('disabled', 'true');
+      }
+    }
+
+    sizeSelect.addEventListener('change', updateVariantSelection);
+    colorSelect.addEventListener('change', updateVariantSelection);
+
+    updateVariantSelection();
+
+
+    const customSelect = document.querySelector('.custom-select');
     const selectedOption = customSelect.querySelector('.select-selected');
     const selectItems = customSelect.querySelector('.select-items');
 
-// Toggle the dropdown when clicking on the selected option
     selectedOption.addEventListener('click', function() {
       customSelect.classList.toggle('open');
     });
 
-// Close the dropdown when clicking outside of it
     document.addEventListener('click', function(e) {
       if (! customSelect.contains(e.target)) {
         customSelect.classList.remove('open');
       }
     });
 
-// Handle option selection
     selectItems.addEventListener('click', function(e) {
       if (e.target.classList.contains('select-item')) {
         const selectedValue = e.target.getAttribute('data-value');
         selectedOption.textContent = e.target.textContent;
         customSelect.classList.remove('open');
 
-// Do something with the selected value (e.g., update form input)
+        sizeSelect.value = selectedValue
         console.log('Selected value:', selectedValue);
       }
     });
