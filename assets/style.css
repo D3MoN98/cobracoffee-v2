@@ -3348,7 +3348,7 @@ table.cart-items{
         font-size: 62px;
     }
     .cart-modal .quantity, .cart-modal .cart-item-price span{
-        width: 150px;
+        width: 120px;
         height: 35px;
     }
 }
