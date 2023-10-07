@@ -38,6 +38,7 @@
             {% endif %}
             <div class="pro-details-btn-wrap">
               {% if product.variants.size > 1 %}
+                {{ product.variants | json }}
                 {% for variant in product.variants %}
                   {{ variant }}
                 {% endfor %}
