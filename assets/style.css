@@ -2206,6 +2206,12 @@ table.cart-items tr td a:hover{
     color: #fff;
     background: transparent;
 }
+.cart-quantity-minus, .cart-quantity-plus {
+    width: 22px;
+    height: 23px;
+    background: transparent;
+}
+
 
 
 /* =====body css end===== */
