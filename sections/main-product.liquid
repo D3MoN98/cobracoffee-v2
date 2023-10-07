@@ -87,6 +87,7 @@
     const selectedColor = colorSelect.value;
     const selectedVariantOption = `${selectedSize} - ${selectedColor}`;
     const selectedVariantId = variantOptionsMap[selectedVariantOption];
+    console.log(selectedVariantId)
 
     addToCartButton.setAttribute('data-variant-id', selectedVariantId);
 
