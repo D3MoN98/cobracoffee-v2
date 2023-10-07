@@ -3254,7 +3254,7 @@ table.cart-items{
         height: 450px;
     }
     .product-details-slider .slick-next {
-        right: 47%;
+        right: 0;
       }
       #shopify-section-template--15937846214852__main h1 {
         font-size: 50px;
