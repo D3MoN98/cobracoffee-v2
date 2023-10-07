@@ -99,8 +99,8 @@
     }
   }
 
-  sizeSelect.addEventListener('change', updateVariantSelection);
-  colorSelect.addEventListener('change', updateVariantSelection);
+  $(document).on('change', 'productVariantOption1', updateVariantSelection())
+  $(document).on('change', 'productVariantOption2', updateVariantSelection())
 
   updateVariantSelection();
 </script>
