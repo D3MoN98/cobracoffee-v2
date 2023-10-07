@@ -39,6 +39,7 @@
             <div class="pro-details-btn-wrap">
               {% if product.variants.size > 1 %}
                 {% unless product.has_only_default_variant %}
+                  {{ product.options_with_values | json }}
                   {% for option in product.options_with_values %}
                     {% if option.name == 'size' %}
                       <div class="custom-select">
