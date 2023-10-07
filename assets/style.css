@@ -2190,6 +2190,15 @@ table.cart-items tr td a:hover{
     font-size: 205px;
 }
 
+.cart-modal .cart-item-quantity, .cart-modal .cart-item-price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-modal hr{
+    opacity: 1;
+}
+
 /* =====body css end===== */
 
 /*desktop & big screen container size*/
