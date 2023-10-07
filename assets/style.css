@@ -3347,6 +3347,10 @@ table.cart-items{
     .mission-sec .sec-2 h2 {
         font-size: 62px;
     }
+    .cart-modal .quantity, .cart-modal .cart-item-price span{
+        width: 150px;
+        height: 35px;
+    }
 }
 @media (max-width: 479px) {
     body {
