@@ -1,7 +1,7 @@
 <!-- product details section start -->
 <style>
   /* Styles for the custom select box */
-  .custom-select {
+  .custom-select3 {
     position: relative;
     width: 200px;
     margin: 20px;
@@ -28,7 +28,7 @@
   }
 
   /* Style when the select box is open */
-  .custom-select.open .select-items {
+  .custom-select3.open .select-items {
     display: block;
   }
 </style>
@@ -76,8 +76,11 @@
 
                   {% for option in product.options_with_values %}
                     {% if option.name == 'size' %}
-                      <input type="hidden" id="productVariantOption{{ forloop.index }}">
-                      <div class="custom-select">
+                      <input
+                        type="hidden"
+                        id="productVariantOption{{ forloop.index }}"
+                        value="{{option.selected_value}}">
+                      <div class="custom-select3">
                         <div class="select-items">
                           {% for value in option.values %}
                             <div
@@ -159,7 +162,7 @@
     updateVariantSelection();
 
 
-    const customSelect = document.querySelector('.custom-select');
+    const customSelect = document.querySelector('.custom-select3');
     const selectedOption = customSelect.querySelector('.select-selected');
     const selectItems = customSelect.querySelector('.select-items');
 
