@@ -38,24 +38,15 @@
             {% endif %}
             <div class="pro-details-btn-wrap">
               {% if product.variants.size > 1 %}
-              {% assign currentVariant = product.selected_or_first_available_variant %}
-
-              {% if currentVariant %}
-                <p>Selected Variant Options:</p>
-                <ul>
-                  {% for option in currentVariant.options %}
-                    <li>{{ option.name }}: {{ option.value }}</li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-
-                <div class="custom-select">
-                  <select name="product_vairant">
-                    {% for option in product.options_with_values.size %}
-                      <option value="{{ option }}">{{ option }}</option>
+                {% for variant in product.variants %}
+                  <p>Variant Options:</p>
+                  <ul>
+                    {% for option in variant.options %}
+                      <li>{{ option.name }}: {{ option.value }}</li>
                     {% endfor %}
-                  </select>
-                </div>
+                  </ul>
+                {% endfor %}
+
               {% endif %}
               <a
                 class="btn btn2 add-to-cart"
