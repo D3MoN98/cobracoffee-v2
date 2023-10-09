@@ -1968,7 +1968,7 @@ table.cart-items tr td a:hover{
     text-decoration: underline;
 }
 .terms-sec a:hover, .terms-sec a:active, .terms-sec a:focus, .privacy-sec a:hover, .privacy-sec a:active, .privacy-sec a:focus{
-    text-decoration: underline;
+    text-decoration: underline !important;
     color: #000000;
 }
 .cart-modal .cart-item .cart-item-details .cart-item-title{
