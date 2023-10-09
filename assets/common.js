@@ -186,16 +186,16 @@ jQuery(document).ready(function ($) {
   // Define the URL of your home page
   var homePageUrl = "https://cobrascoffee.com/"; // Replace with your actual home page URL
 
-  const scroller = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-    smartphone: {
-      smooth: true,
-    },
-    tablet: {
-      smooth: true,
-    },
-  });
+  // const scroller = new LocomotiveScroll({
+  //   el: document.querySelector("[data-scroll-container]"),
+  //   smooth: true,
+  //   smartphone: {
+  //     smooth: true,
+  //   },
+  //   tablet: {
+  //     smooth: true,
+  //   },
+  // });
 
   //responsive tabs
   $(".res-tbs-btn").click(function (e) {
