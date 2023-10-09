@@ -1,10 +1,6 @@
 <div class="fixed_wrapper">
-  <div class="fixed_target" id="fixed-target"></div>
-  <div
-    class="fixed"
-    data-scroll
-    data-scroll-sticky
-    data-scroll-target="#fixed-target">
+  <div class="fixed_target"></div>
+  <div class="fixed">
     <footer class="footer">
       <div class="container">
         <div class="ftr-frm">
@@ -28,11 +24,7 @@
                 aria-required="true"
                 autocorrect="off"
                 autocapitalize="off"
-                {% if form.errors %}
-                aria-invalid="true"
-                aria-describedby="{{ formId }}-email-error"
-                data-form-status
-                {% endif %}>
+                {% if form.errors %}aria-invalid="true"aria-describedby="{{ formId }}-email-error"data-form-status{% endif %}>
               <input
                 type="submit"
                 class="btn"
