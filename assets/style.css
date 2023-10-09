@@ -699,21 +699,21 @@ transition: all 0.3s ease-in-out;
 .fixed_wrapper {
     position: relative;
     overflow: hidden;
-    height: 100vh;
+    /* height: 100vh; */
   }
   
   .fixed_target {
-    bottom: -100vh;
+    /* bottom: -100vh; */
+    height: 100vh;
   }
-  .fixed,
-  .fixed_target {
-    position: absolute;
-    top: -100vh;
-    right: 0;
-    left: 0;
+  .fixed{
+    position: fixed;
+    top: 0vh;
+    right: 0vw;
+    left: 0vw;
   }
   .fixed {
-    height: 100%;
+    height: 100vh;
   }
 /* header*/
 .main-head{
