@@ -53,7 +53,7 @@
               <hr>
               <div class="cart-item-price">
                 {{ item.price | money }}
-                <span>{{ item.variant_title }}</span>
+                <span>{{ item | json }}</span>
               </div>
             </div>
           </div>
