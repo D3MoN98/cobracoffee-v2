@@ -1049,7 +1049,7 @@ transition: all 0.3s ease-in-out;
     width: 43%;
 }
 .acc-body-content:last-child {
-    width: 57%;
+    width: 100%;
 }
 .acc-body-content .btn{
     max-width: 340px;
@@ -2813,7 +2813,7 @@ h4 {
     width: 100%;
   }
   .acc-body-content{
-    width: 50% !important;
+    width: 100% !important;
   }
   .acc-body-content .btn {
     max-width: 250px;
@@ -3594,3 +3594,10 @@ table.cart-items{
   .transition-animation{
     transition: opacity .8s cubic-bezier(.215,.61,.355,1),transform .8s cubic-bezier(.215,.61,.355,1);
   }
+.acc-body-content ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.acc-body-content ul li{
+    flex: 0 0 50%;
+}
