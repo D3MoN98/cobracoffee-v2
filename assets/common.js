@@ -186,24 +186,24 @@ jQuery(document).ready(function ($) {
   // Define the URL of your home page
   var homePageUrl = "https://cobrascoffee.com/"; // Replace with your actual home page URL
 
-  const scroller = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-    scrollFromAnywhere: true,
-    reloadOnContextChange: true,
-    smartphone: {
-      smooth: true,
-    },
-    tablet: {
-      smooth: true,
-    },
-  });
+  // const scroller = new LocomotiveScroll({
+  //   el: document.querySelector("[data-scroll-container]"),
+  //   smooth: true,
+  //   scrollFromAnywhere: true,
+  //   reloadOnContextChange: true,
+  //   smartphone: {
+  //     smooth: true,
+  //   },
+  //   tablet: {
+  //     smooth: true,
+  //   },
+  // });
 
-  $(".scroll-update-btn").click(function (e) {
-    e.preventDefault();
-    console.log("happy");
-    scroller.update();
-  });
+  // $(".scroll-update-btn").click(function (e) {
+  //   e.preventDefault();
+  //   console.log("happy");
+  //   scroller.update();
+  // });
   //responsive tabs
   $(".res-tbs-btn").click(function (e) {
     e.preventDefault();
@@ -212,3 +212,21 @@ jQuery(document).ready(function ($) {
     $(this).parent(".tab-pane").find(".faq-accordion").addClass("active");
   });
 });
+
+window.addEventListener("load", () => {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    multiplier: 0.75,
+    scrollFromAnywhere: true,
+    smartphone: {
+      smooth: true,
+    },
+    tablet: {
+      smooth: true,
+    },
+  });
+});
+setTimeout(() => {
+  scroll.update();
+}, 5000);
