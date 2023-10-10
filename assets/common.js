@@ -202,7 +202,7 @@ jQuery(document).ready(function ($) {
   $(".scroll-update-btn").click(function (e) {
     e.preventDefault();
     console.log("happy");
-    scroller.update();
+    scroller.stop();
   });
   //responsive tabs
   $(".res-tbs-btn").click(function (e) {
