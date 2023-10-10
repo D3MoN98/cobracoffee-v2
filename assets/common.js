@@ -226,11 +226,18 @@ window.addEventListener("load", () => {
       smooth: true,
     },
   });
-  setInterval(() => {
-    scroll.update();
-    console.log(1);
-  }, 2000);
+  // setInterval(() => {
+  //   scroll.update();
+  // }, 2000);
   document.addEventListener("lazyloaded", function () {
     scroll.update();
+  });
+
+  $(".scroll-update-btn").click(function (e) {
+    e.preventDefault();
+    console.log("happy");
+    setTimeout(() => {
+      scroll.update();
+    }, 1000);
   });
 });
