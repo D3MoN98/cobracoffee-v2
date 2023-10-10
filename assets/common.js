@@ -189,6 +189,8 @@ jQuery(document).ready(function ($) {
   const scroller = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
+    scrollFromAnywhere: true,
+    reloadOnContextChange: true,
     smartphone: {
       smooth: true,
     },
