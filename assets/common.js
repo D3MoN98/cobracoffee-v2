@@ -228,6 +228,7 @@ window.addEventListener("load", () => {
   });
   setInterval(() => {
     scroll.update();
+    console.log(1);
   }, 2000);
   document.addEventListener("lazyloaded", function () {
     scroll.update();
