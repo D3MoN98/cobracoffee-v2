@@ -234,7 +234,6 @@ window.addEventListener("load", () => {
   });
 
   $(".scroll-update-btn").click(function (e) {
-    e.preventDefault();
     console.log("happy");
     setTimeout(() => {
       scroll.update();
