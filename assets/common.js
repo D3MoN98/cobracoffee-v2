@@ -226,8 +226,8 @@ window.addEventListener("load", () => {
       smooth: true,
     },
   });
+  setTimeout(() => {
+    console.log("1");
+    scroll.update();
+  }, 2000);
 });
-setTimeout(() => {
-  console.log("1");
-  scroll.update();
-}, 2000);
