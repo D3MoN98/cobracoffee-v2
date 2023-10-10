@@ -199,13 +199,16 @@ jQuery(document).ready(function ($) {
     },
   });
 
+  $(".scroll-update-btn").click(function (e) {
+    e.preventDefault();
+    console.log("happy");
+    scroller.update();
+  });
   //responsive tabs
   $(".res-tbs-btn").click(function (e) {
     e.preventDefault();
-    console.log("ok");
 
     $(".faq-tbs-content .faq-accordion").removeClass("active");
     $(this).parent(".tab-pane").find(".faq-accordion").addClass("active");
-    scroller.update();
   });
 });
