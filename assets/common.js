@@ -228,5 +228,6 @@ window.addEventListener("load", () => {
   });
 });
 setTimeout(() => {
+  console.log("1");
   scroll.update();
-}, 5000);
+}, 2000);
