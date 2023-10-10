@@ -102,16 +102,16 @@
 
   <body>
     <div class="main-sec-wrap" data-scroll-container>
+      {% sections 'header-group' %}
+
       <main
         id="MainContent"
         class="content-for-layout focus-none main-sec"
         role="main"
         tabindex="-1">
-        {% sections 'header-group' %}
-
         {{ content_for_layout }}
-
       </main>
+
       {% sections 'footer-group' %}
     </div>
 
