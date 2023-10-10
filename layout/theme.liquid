@@ -101,19 +101,18 @@
   </head>
 
   <body>
-    <div class="main-container-otr" data-scroll-container>
+    <div class="main-sec-wrap" data-scroll-container>
       <main
         id="MainContent"
         class="content-for-layout focus-none main-sec"
         role="main"
-        tabindex="-1"
-        data-scroll-section>
+        tabindex="-1">
         {% sections 'header-group' %}
 
         {{ content_for_layout }}
 
-        {% sections 'footer-group' %}
       </main>
+      {% sections 'footer-group' %}
     </div>
 
     <ul hidden>
