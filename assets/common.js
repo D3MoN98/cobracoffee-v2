@@ -205,5 +205,7 @@ jQuery(document).ready(function ($) {
 
     $(".faq-tbs-content .faq-accordion").removeClass("active");
     $(this).parent(".tab-pane").find(".faq-accordion").addClass("active");
+    console.log("ok");
+    scroller.update();
   });
 });
