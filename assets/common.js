@@ -234,7 +234,12 @@ window.addEventListener("load", () => {
   });
 
   $(".scroll-update-btn").click(function (e) {
-    console.log("happy");
+    setTimeout(() => {
+      scroll.update();
+    }, 1000);
+  });
+  $("input[name='product_color']").change(function (e) {
+    console.log("ok");
     setTimeout(() => {
       scroll.update();
     }, 1000);
