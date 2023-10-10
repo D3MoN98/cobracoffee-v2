@@ -8,50 +8,98 @@
     <footer class="footer">
       <div class="container">
         <div class="ftr-frm">
-          <form>
-            <input type="email" placeholder="Enter email" />
-            <input type="submit" value="Submit" />
-          </form>
+
+          {%- assign formId = 'Contact_' | append: section.id -%}
+          {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+
+            <input
+              type="hidden"
+              name="contact[tags]"
+              value="newsletter">
+            <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+              <input
+                type="email"
+                name="contact[email]"
+                id="{{ formId }}-email"
+                class="input-group__field{% if form.errors %} input--error{% endif %}"
+                value="{{ form.email }}"
+                placeholder="Enter your email"
+                aria-label="Enter your email"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                {% if form.errors %}aria-invalid="true"aria-describedby="{{ formId }}-email-error"data-form-status{% endif %}>
+              <input
+                type="submit"
+                class="btn"
+                name="commit">
+            </div>
+
+            {%- if form.posted_successfully? -%}
+              <p
+                class="form-message form-message--success"
+                tabindex="-1"
+                data-form-status>
+                Successfully Subscribed
+              </p>
+            {%- endif -%}
+
+            {%- if form.errors contains 'email' -%}
+              <span id="{{ formId }}-email-error" class="input-error-message">
+                <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+              </span>
+            {%- endif -%}
+          {% endform %}
+          <!-- End newsletter signup form -->
         </div>
         <div class="row ftr-content-wrap">
           <div class="col-md-4 left">
-            <p>THE UNDISPUTED KING <br/>OF BOLD COFFEE</p>
+            <p>THE UNDISPUTED KING <br>OF BOLD COFFEE</p>
           </div>
           <div class="col-auto">
             <ul class="ftr-menu">
-              <li>
-                <a href="">Contact</a>
-              </li>
-              <li>
-                <a href="faq.html">FAQ</a>
-              </li>
+              {% for link in linklists.footer-extra-menu.links %}
+                <li>
+                  <a class="{% if link.current %}active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
             </ul>
           </div>
           <div class="col-md-4 right">
             <p>
-              <a href="index.html">@COBRASCOFFEE</a>
+              <a href="https://www.instagram.com/cobrascoffee/" target="blank">@COBRASCOFFEE</a>
             </p>
           </div>
         </div>
         <div class="ftr-big-text">
-          <h2>COBRAS COFFEE</h2>
+          <h2>COBRAS
+            COFFEE</h2>
         </div>
         <div class="row ftr-content-wrap">
           <div class="col-md-4 left">
             <p>
-              <a href="index.html">©COBRAS COFFEE</a>
-              2023. ALL RIGHTS
-              RESERVED
-            </p>
+              <a href="{{ routes.root_url }}">©COBRAS COFFEE</a>
+              2023. ALL RIGHTS RESERVED</p>
           </div>
           <div class="col-md-4 mid">
-            <a href="#">Terms</a>
+            <a href="/pages/termsofservice">Terms</a>
           </div>
           <div class="col-md-4 right">
-            <a href="#">Privacy</a>
+            <a href="/pages/privacypolicy">Privacy</a>
           </div>
         </div>
       </div>
     </footer>
   </div>
 </div>
+{% schema %}
+  {
+    "name": "t:sections.footer.name",
+    "blocks": [
+      {
+        "type": "@app"
+      }
+    ],
+    "settings": []
+  }
+{% endschema %}
