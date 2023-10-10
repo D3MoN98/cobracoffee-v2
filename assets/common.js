@@ -203,7 +203,18 @@ jQuery(document).ready(function ($) {
     e.preventDefault();
     console.log("happy");
     scroller.destroy();
-    scroller.init();
+    new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      scrollFromAnywhere: true,
+      reloadOnContextChange: true,
+      smartphone: {
+        smooth: true,
+      },
+      tablet: {
+        smooth: true,
+      },
+    });
   });
   //responsive tabs
   $(".res-tbs-btn").click(function (e) {
