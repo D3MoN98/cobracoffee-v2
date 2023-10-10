@@ -202,19 +202,7 @@ jQuery(document).ready(function ($) {
   $(".scroll-update-btn").click(function (e) {
     e.preventDefault();
     console.log("happy");
-    scroller.destroy();
-    new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      scrollFromAnywhere: true,
-      reloadOnContextChange: true,
-      smartphone: {
-        smooth: true,
-      },
-      tablet: {
-        smooth: true,
-      },
-    });
+    scroller.update();
   });
   //responsive tabs
   $(".res-tbs-btn").click(function (e) {
