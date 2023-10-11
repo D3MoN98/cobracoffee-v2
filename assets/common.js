@@ -228,7 +228,7 @@ window.addEventListener("load", () => {
   });
   setTimeout(() => {
     scroll.update();
-  }, 5000);
+  }, 3000);
   document.addEventListener("lazyloaded", function () {
     scroll.update();
   });
