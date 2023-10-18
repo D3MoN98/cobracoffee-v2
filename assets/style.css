@@ -3269,6 +3269,10 @@ table.cart-items{
     .mission-sec .sec-2 h2 {
         font-size: 78px;
     }
+    .product-slider .slick-next, .product-slider .slick-prev {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 @media (max-width: 575px) {
