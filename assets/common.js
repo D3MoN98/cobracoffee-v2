@@ -87,7 +87,7 @@ jQuery(document).ready(function ($) {
     centerMode: true,
     centerPadding: "250px",
     dots: false,
-    navs: false,
+    navs: true,
     responsive: [
       {
         breakpoint: 1800,
