@@ -2259,6 +2259,10 @@ table.cart-items tr td a:hover{
     top: 0;
     transform: rotate(-180deg);
 }
+.product-slider .slick-next, .product-slider .slick-prev {
+    width: 40px;
+    height: 40px;
+}
 
 
 /* =====body css end===== */
