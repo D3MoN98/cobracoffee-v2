@@ -34,7 +34,7 @@
             </div>
             {{ product.metafields.arena.product_key_details }}
             {% if product.type == 'Coffee' %}
-              <div class="d-flex justify-content-between">GROUND COFFEE {{ product.metafields.arena.net_weight }}</div>
+              <div class="d-flex justify-content-between"><span>GROUND COFFEE</span> <span>{{ product.metafields.arena.net_weight }}</span></div>
             {% endif %}
             <div class="pro-details-btn-wrap">
               {% if product.variants.size > 1 %}
