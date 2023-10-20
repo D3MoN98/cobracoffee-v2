@@ -14,7 +14,7 @@
       <div class="col-md-7 product-details-col">
         <div class="row">
           <div class="col-md-12">
-            <h4 class="product-details-stitle">{{ product.metafields.arena.product_category_type }}</h4>
+            <h4 class="product-details-stitle"><span>{{ product.metafields.arena.product_category_type }}</span> <span style="flex: 0 0 50%;">{{ product.metafields.arena.product_origin }}</span></h4>
             <h3>{{ product.title }}</h3>
             <div class="ratting">
               {% assign n = product.metafields.arena.product_rating %}
