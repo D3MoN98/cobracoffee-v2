@@ -88,6 +88,10 @@ jQuery(document).ready(function ($) {
     centerPadding: "250px",
     dots: false,
     arrows: false,
+    nextArrow:
+      '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>',
+    prevArrow:
+      '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>',
     responsive: [
       {
         breakpoint: 1800,
