@@ -88,8 +88,6 @@ jQuery(document).ready(function ($) {
     centerPadding: "250px",
     dots: false,
     arrows: true,
-    prevArrow: $(".pp2"),
-    nextArrow: $(".nn2"),
     responsive: [
       {
         breakpoint: 1800,
