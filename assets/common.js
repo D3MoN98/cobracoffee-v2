@@ -87,7 +87,7 @@ jQuery(document).ready(function ($) {
     centerMode: true,
     centerPadding: "250px",
     dots: false,
-    arrows: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1800,
@@ -113,6 +113,7 @@ jQuery(document).ready(function ($) {
         settings: {
           slidesToShow: 1,
           centerPadding: "150px",
+          arrows: true,
           speed: 3000,
         },
       },
@@ -121,6 +122,7 @@ jQuery(document).ready(function ($) {
         settings: {
           slidesToShow: 1,
           centerPadding: "0px",
+          arrows: true,
           speed: 3000,
         },
       },
