@@ -2979,6 +2979,9 @@ table.cart-items tr td a:hover {
     .ftr-frm input[type=email] {
         height: 65px;
     }
+    .ftr-content-wrap, .ftr-frm {
+        margin-bottom: 40px;
+    }
 }
 
 @media(max-width:1024px) {
