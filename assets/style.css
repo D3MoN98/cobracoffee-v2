@@ -3047,7 +3047,15 @@ table.cart-items tr td a:hover {
 
 
     /* navbar end*/
-
+    .ftr-content-wrap, .ftr-frm {
+        margin-bottom: 30px;
+    }
+    .footer {
+        padding: 50px 0;
+    }
+    .ftr-frm input[type=email] {
+        height: 60px;
+    }
 
 }
 
