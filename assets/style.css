@@ -3051,10 +3051,14 @@ table.cart-items tr td a:hover {
         margin-bottom: 30px;
     }
     .footer {
-        padding: 50px 0;
+        padding: 40px 0;
     }
     .ftr-frm input[type=email] {
         height: 60px;
+    }
+    .ftr-big-text h2 {
+        font-size: 15vh!important;
+        margin-bottom: 10px;
     }
 
 }
