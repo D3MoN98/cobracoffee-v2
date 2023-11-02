@@ -2975,11 +2975,14 @@ table.cart-items tr td a:hover {
     }
 
 }
-@media (max-width: 1280px){
+
+@media (max-width: 1280px) {
     .ftr-frm input[type=email] {
         height: 65px;
     }
-    .ftr-content-wrap, .ftr-frm {
+
+    .ftr-content-wrap,
+    .ftr-frm {
         margin-bottom: 40px;
     }
 }
@@ -3047,17 +3050,21 @@ table.cart-items tr td a:hover {
 
 
     /* navbar end*/
-    .ftr-content-wrap, .ftr-frm {
+    .ftr-content-wrap,
+    .ftr-frm {
         margin-bottom: 30px;
     }
+
     .footer {
         padding: 40px 0;
     }
+
     .ftr-frm input[type=email] {
         height: 60px;
     }
+
     .ftr-big-text h2 {
-        font-size: 15vh!important;
+        font-size: 15vh !important;
         margin-bottom: 10px;
     }
 
@@ -3748,7 +3755,7 @@ table.cart-items tr td a:hover {
     .footer .container {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         height: 100%;
     }
 
