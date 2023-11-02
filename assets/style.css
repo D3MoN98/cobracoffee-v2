@@ -4359,12 +4359,4 @@ table.cart-items tr td a:hover {
     flex: 0 0 50%;
 }
 
-@media (max-width: 767px) {
-    .footer .container {
-        justify-content: space-between;
-    }
-
-    .footer .container * {
-        margin-bottom: 0;
-    }
-}
+@media (max-width: 767px) {}
