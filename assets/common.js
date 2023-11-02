@@ -231,10 +231,10 @@ window.addEventListener("load", () => {
       smooth: true,
     },
   });
-  setInterval(() => {
-    // setInterval instead of setTimeout
-    scroll.update();
-  }, 1000);
+  // setTimeout(() => {
+  //   // setInterval instead of setTimeout
+  //   scroll.update();
+  // }, 1000);
   document.addEventListener("lazyloaded", function () {
     scroll.update();
   });
