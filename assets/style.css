@@ -3755,7 +3755,7 @@ table.cart-items tr td a:hover {
     .footer .container {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         height: 100%;
     }
 
@@ -4357,4 +4357,14 @@ table.cart-items tr td a:hover {
 
 .acc-body-content ul li {
     flex: 0 0 50%;
+}
+
+@media (max-width: 767px) {
+    .footer .container {
+        justify-content: space-between;
+    }
+
+    .footer .container * {
+        margin-bottom: 0;
+    }
 }
