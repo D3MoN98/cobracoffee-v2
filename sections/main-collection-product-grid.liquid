@@ -116,7 +116,7 @@
               <a href="{{ product.url }}">{{ product.title }}</a>
             </h4>
             {% if product.variants.size > 1 %}
-              <a class="btn" href="{{ product.url }}">VIEW MORE {{ product.price | money }}<i class="fas fa-chevron-right"></i>
+              <a class="btn" href="{{ product.url }}">ADD {{ product.price | money }}<i class="fas fa-chevron-right"></i>
               </a>
             {% else %}
               <a
@@ -226,7 +226,7 @@
               href="/products/${
               filtered_product[i].handle
             }"
-              >VIEW MORE ${
+              >ADD ${
               filtered_product[i].variants[0].price
             }<i class="fas fa-chevron-right"></i>
             </a>`;
