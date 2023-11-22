@@ -79,7 +79,10 @@
                 class="btn btn2 add-to-cart"
                 id="add-to-cart"
                 data-product-id="{{ product.id }}"
-                data-variant-id="{{product.variants[0].id }}">ADD <span id="ProductPrice">{{ product.price | money }}</span>
+                data-variant-id="{{product.variants[0].id }}">
+                <span>
+                  ADD <span id="ProductPrice">{{ product.price | money }}</span>
+                </span>
                 <i class="fas fa-chevron-right"></i>
               </button>
 
