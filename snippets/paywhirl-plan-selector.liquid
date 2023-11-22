@@ -43,6 +43,7 @@ it to Snippets/paywhirl-plan-selector.liquid snippet in your theme
         </select>
       </div>
     </li>
+    {{ selling_plan_group.selling_plans | json }}
     {% endfor %}
   </ul>
 
@@ -54,6 +55,7 @@ it to Snippets/paywhirl-plan-selector.liquid snippet in your theme
     var product = {{ all_products[product.handle] | json }};
 
     product.page_type = {{ request.page_type | json }};
+    console.log({{ product.selected_selling_plan | json }});
     product.selected_selling_plan = {{ product.selected_selling_plan | json }};
 
     product.selling_plans_by_id = (function() {
