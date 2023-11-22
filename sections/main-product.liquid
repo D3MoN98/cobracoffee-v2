@@ -55,36 +55,32 @@
               {% endif %}
               {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 
-<div class="cap-sld">
-  <div class="cap-txt">
 
-    <select name="id" id="ProductSelect-{{ section.id }}" hidden>
-      {% for variant in product.variants %}
-      <option value="{{ variant.id }}" {%- if variant==current_variant %} selected="selected" {%- endif -%}>
-        {{ variant.title }} {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-      </option>
-      {% endfor %}
-    </select>
+<select name="id" id="ProductSelect-{{ section.id }}" hidden>
+  {% for variant in product.variants %}
+  <option value="{{ variant.id }}" {%- if variant==current_variant %} selected="selected" {%- endif -%}>
+    {{ variant.title }} {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+  </option>
+  {% endfor %}
+</select>
 
 
-    {% if section.settings.show_quantity_selector %}
-      <input type="hidden" id="myNumber" name="quantity" value="1" min="1" pattern="[0-9]*"
-        class="input-number" data-quantity-input>
-    {% endif %}
+{% if section.settings.show_quantity_selector %}
+<input type="hidden" id="myNumber" name="quantity" value="1" min="1" pattern="[0-9]*" class="input-number"
+  data-quantity-input>
+{% endif %}
 
-    {% render 'paywhirl-plan-selector', product: product %}
+{% render 'paywhirl-plan-selector', product: product %}
 
-    <button type="submit" name="add" {% unless current_variant.available %} aria-disabled="true" {% endunless %}
-      aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
-      class="commn-btn pulse btn btn-primary product-form__cart-submit"
-      {% if settings.enable_ajax %}aria-haspopup="dialog" {% endif %} data-add-to-cart>
-      <span data-add-to-cart-text>
-        {{ 'products.product.add_to_cart' | t }}
-      </span>
-    </button>
+<button type="submit" name="add" {% unless current_variant.available %} aria-disabled="true" {% endunless %}
+  aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
+  class="commn-btn pulse btn btn-primary product-form__cart-submit" {% if settings.enable_ajax %}aria-haspopup="dialog"
+  {% endif %} data-add-to-cart>
+  <span data-add-to-cart-text>
+    {{ 'products.product.add_to_cart' | t }}
+  </span>
+</button>
 
-  </div>
-</div>
 {% endform %}
               <a
                 class="btn btn2 add-to-cart"
