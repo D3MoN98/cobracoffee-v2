@@ -53,7 +53,7 @@
                   {% endfor %}
                 {% endunless %}
               {% endif %}
-              {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 
 <div class="cap-sld">
   <div class="cap-txt">
@@ -113,13 +113,10 @@
       {% if settings.enable_ajax %}aria-haspopup="dialog" {% endif %} data-add-to-cart>
       <span data-add-to-cart-text>
         {% unless current_variant.available %}
-        Sold Out
+        {{ 'products.product.sold_out' | t }}
         {% else %}
-        Add To Cart
+        {{ 'products.product.add_to_cart' | t }}
         {% endunless %}
-      </span>
-      <span class="hide" data-loader>
-        {% include 'icon-spinner' %}
       </span>
     </button>
 
