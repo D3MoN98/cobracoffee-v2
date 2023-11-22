@@ -4366,7 +4366,7 @@ table.cart-items tr td a:hover {
 }
 
 .pro-details-btn-wrap .plan-selector-title {
-    width: 100%;
+    font-weight: bold;
 }
 
 .pro-details-btn-wrap .plan-selector-otr {
