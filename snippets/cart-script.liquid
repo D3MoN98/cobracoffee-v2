@@ -13,10 +13,8 @@
         
         var cartform = $(this).closest('form');
         console.log(cartform, cartform.length);
-        if (cartform.length > 1) {
-          console.log(cartform.find('input[name="selling_plan"]'));
+        if (cartform.length > 0) {
           var sellingPlan = cartform.find('input[name="selling_plan"]').val()
-          console.log(sellingPlan);
           payload = {...payload, selling_plan: sellingPlan}
         }
 
