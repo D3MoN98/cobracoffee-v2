@@ -4373,7 +4373,8 @@ table.cart-items tr td a:hover {
     margin: 0;
 }
 
-.pro-details-btn-wrap .plan-selector-otr li {
+.pro-details-btn-wrap .plan-selector-otr li,
+.paywhirl-plan-selector-plan label {
     font-size: 24px;
     font-weight: normal;
 }
@@ -4383,7 +4384,7 @@ table.cart-items tr td a:hover {
 }
 
 .pro-details-btn-wrap select {
-    font-size: 22px;
+    /* font-size: 22px; */
     font-family: source-sans-pro;
     font-weight: 400;
     display: inline-block;
@@ -4392,13 +4393,12 @@ table.cart-items tr td a:hover {
     -webkit-box-shadow: 0;
     box-shadow: 0;
     text-transform: uppercase;
-    padding: 15px 30px;
+    padding: 0 1rem;
     border: 1px solid #000;
     border-radius: 50px;
     z-index: 1;
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    line-height: 1.2;
     position: relative;
 }
