@@ -55,6 +55,10 @@
                 {{ item.price | money }}
                 <span>{{ item.variant.title }}</span>
               </div>
+              <hr>
+              <div class="cart-item-plan">
+                {{ item.selling_plan_allocation.selling_plan.name }}
+              </div>
             </div>
           </div>
           <hr>
