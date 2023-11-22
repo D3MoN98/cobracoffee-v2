@@ -11,7 +11,7 @@ it to Snippets/paywhirl-plan-selector.liquid snippet in your theme
 
 <fieldset class="paywhirl-plan-selector paywhirl-plan-selector-last product-form__fieldset" data-section-id="{{ section.id }}" style="display: none">
   <input type="hidden" name="selling_plan" value="{{ product.selected_selling_plan.id }}" />
-  <legend data-i18n="plan-selector-title">Purchase options</legend>
+  {% comment %} <legend data-i18n="plan-selector-title">Purchase options</legend> {% endcomment %}
 
   {% unless product.requires_selling_plan %}
   <div class="paywhirl-plan-selector-group">
