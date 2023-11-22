@@ -72,7 +72,7 @@ window.paywhirlForShopify.settings = {
     }
 
     // Update content of the price node
-
+    console.log(prices);
     if (this.theme === 'supply') {
       price = prices.price_formatted.split('.');
       $container.html(price[0] + '<sup>' + price[1] + '</sup>');
