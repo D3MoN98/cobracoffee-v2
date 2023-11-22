@@ -11,38 +11,40 @@ it to Snippets/paywhirl-plan-selector.liquid snippet in your theme
 
 <fieldset class="paywhirl-plan-selector paywhirl-plan-selector-last product-form__fieldset" data-section-id="{{ section.id }}" style="display: none">
   <input type="hidden" name="selling_plan" value="{{ product.selected_selling_plan.id }}" />
-  {% comment %} <legend data-i18n="plan-selector-title">Purchase options</legend> {% endcomment %}
+  <div data-i18n="plan-selector-title">Purchase options</div>
 
-  {% unless product.requires_selling_plan %}
-  <div class="paywhirl-plan-selector-group">
-    <label>
-      <input type="radio" name="paywhirl-plan-selector-group" value="" />
-      <span data-i18n="one-time-purchase-label">One-time purchase</span>
-    </label>
-
-    <div class="paywhirl-plan-selector-plan" style="display: none">
-      <select><option value=""></option></select>
+  <div class="plan-separator d-flex justify-content-between">
+    {% unless product.requires_selling_plan %}
+    <div class="paywhirl-plan-selector-group">
+      <label>
+        <input type="radio" name="paywhirl-plan-selector-group" value="" />
+        <span data-i18n="one-time-purchase-label">One-time purchase</span>
+      </label>
+  
+      <div class="paywhirl-plan-selector-plan" style="display: none">
+        <select><option value=""></option></select>
+      </div>
     </div>
-  </div>
-  {% endunless %}
-
-  {% for selling_plan_group in product.selling_plan_groups %}
-  <div class="paywhirl-plan-selector-group">
-    <label>
-      <input type="radio" name="paywhirl-plan-selector-group" value="{{ selling_plan_group.id }}" />
-      <span>{{ selling_plan_group.name }}</span>
-    </label>
-
-    <div class="paywhirl-plan-selector-plan">
-      <label>{{ selling_plan_group.options[0].name }}</label>
-      <select>
-        {% for plan in selling_plan_group.selling_plans %}
-        <option value="{{ plan.id }}">{{ plan.options[0].value }}</option>
-        {% endfor %}
-      </select>
+    {% endunless %}
+  
+    {% for selling_plan_group in product.selling_plan_groups %}
+    <div class="paywhirl-plan-selector-group">
+      <label>
+        <input type="radio" name="paywhirl-plan-selector-group" value="{{ selling_plan_group.id }}" />
+        <span>{{ selling_plan_group.name }}</span>
+      </label>
+  
+      <div class="paywhirl-plan-selector-plan">
+        <label>{{ selling_plan_group.options[0].name }}</label>
+        <select>
+          {% for plan in selling_plan_group.selling_plans %}
+          <option value="{{ plan.id }}">{{ plan.options[0].value }}</option>
+          {% endfor %}
+        </select>
+      </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 
   <div class="paywhirl-plan-selector-description"></div>
 </fieldset>
