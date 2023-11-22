@@ -13,9 +13,9 @@ it to Snippets/paywhirl-plan-selector.liquid snippet in your theme
   <input type="hidden" name="selling_plan" value="{{ product.selected_selling_plan.id }}" />
   <div data-i18n="plan-selector-title">Purchase options</div>
 
-  <div class="plan-separator d-flex justify-content-between">
+  <ul>
     {% unless product.requires_selling_plan %}
-    <div class="paywhirl-plan-selector-group">
+    <li class="paywhirl-plan-selector-group">
       <label>
         <input type="radio" name="paywhirl-plan-selector-group" value="" />
         <span data-i18n="one-time-purchase-label">One-time purchase</span>
@@ -24,11 +24,11 @@ it to Snippets/paywhirl-plan-selector.liquid snippet in your theme
       <div class="paywhirl-plan-selector-plan" style="display: none">
         <select><option value=""></option></select>
       </div>
-    </div>
+    </li>
     {% endunless %}
   
     {% for selling_plan_group in product.selling_plan_groups %}
-    <div class="paywhirl-plan-selector-group">
+    <li class="paywhirl-plan-selector-group">
       <label>
         <input type="radio" name="paywhirl-plan-selector-group" value="{{ selling_plan_group.id }}" />
         <span>{{ selling_plan_group.name }}</span>
@@ -42,9 +42,9 @@ it to Snippets/paywhirl-plan-selector.liquid snippet in your theme
           {% endfor %}
         </select>
       </div>
-    </div>
+    </li>
     {% endfor %}
-  </div>
+  </ul>
 
   <div class="paywhirl-plan-selector-description"></div>
 </fieldset>
