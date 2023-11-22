@@ -11,9 +11,9 @@ it to Snippets/paywhirl-plan-selector.liquid snippet in your theme
 
 <fieldset class="paywhirl-plan-selector paywhirl-plan-selector-last product-form__fieldset" data-section-id="{{ section.id }}" style="display: none">
   <input type="hidden" name="selling_plan" value="{{ product.selected_selling_plan.id }}" />
-  <div data-i18n="plan-selector-title">Purchase options</div>
+  <div class="plan-selector-title" data-i18n="plan-selector-title">Purchase options</div>
 
-  <ul>
+  <ul class="plan-selector-otr">
     {% unless product.requires_selling_plan %}
     <li class="paywhirl-plan-selector-group">
       <label>
@@ -35,8 +35,9 @@ it to Snippets/paywhirl-plan-selector.liquid snippet in your theme
       </label>
   
       <div class="paywhirl-plan-selector-plan">
-        <label>{{ selling_plan_group.options[0].name }}</label>
-        <select>
+        {% comment %} <label>{{ selling_plan_group.options[0].name }}</label> {% endcomment %}
+        <select class="plan-select-input">
+          <option value="">Select your plan</option>
           {% for plan in selling_plan_group.selling_plans %}
           <option value="{{ plan.id }}">{{ plan.options[0].value }}</option>
           {% endfor %}

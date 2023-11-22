@@ -4360,3 +4360,45 @@ table.cart-items tr td a:hover {
 }
 
 @media (max-width: 767px) {}
+
+.pro-details-btn-wrap form {
+    width: 100%;
+}
+
+.pro-details-btn-wrap .plan-selector-title {
+    width: 100%;
+}
+
+.pro-details-btn-wrap .plan-selector-otr {
+    margin: 0;
+}
+
+.pro-details-btn-wrap .plan-selector-otr li {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.pro-details-btn-wrap input[type="radio"] {
+    margin-right: 0 !important;
+}
+
+.pro-details-btn-wrap .plan-select-input {
+    font-size: 22px;
+    font-family: source-sans-pro;
+    font-weight: 400;
+    display: inline-block;
+    color: #000;
+    background-color: transparent;
+    -webkit-box-shadow: 0;
+    box-shadow: 0;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    z-index: 1;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    line-height: 1.2;
+    position: relative;
+}
