@@ -4400,5 +4400,12 @@ table.cart-items tr td a:hover {
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    position: relative;
+}
+
+.pro-details-btn-wrap .paywhirl-plan-selector .paywhirl-plan-selector-plan {
+    margin: 1rem 0;
+}
+
+.paywhirl-plan-selector {
+    margin: 0;
 }
